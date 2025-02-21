@@ -15,12 +15,6 @@ namespace TodoList.Controllers
             _context = context;
         }
 
-        [HttpGet("home")]
-        public IActionResult Demo()
-        {
-            return Content("Hello World");
-        }
-
         [HttpPost("add")]
         public async Task<IActionResult> AddTask([FromBody] TaskItem task)
         {
