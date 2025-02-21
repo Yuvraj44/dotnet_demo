@@ -1,7 +1,7 @@
 [
   {
     "ContainingType": "TodoList.Controllers.HomeController",
-    "Method": "addTask",
+    "Method": "AddTask",
     "RelativePath": "todo/add",
     "HttpMethod": "POST",
     "IsController": true,
@@ -17,7 +17,23 @@
   },
   {
     "ContainingType": "TodoList.Controllers.HomeController",
-    "Method": "demo",
+    "Method": "Delete",
+    "RelativePath": "todo/delete/{id}",
+    "HttpMethod": "DELETE",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.Int32",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "TodoList.Controllers.HomeController",
+    "Method": "Demo",
     "RelativePath": "todo/home",
     "HttpMethod": "GET",
     "IsController": true,
@@ -27,7 +43,28 @@
   },
   {
     "ContainingType": "TodoList.Controllers.HomeController",
-    "Method": "viewAll",
+    "Method": "Update",
+    "RelativePath": "todo/update/{id}",
+    "HttpMethod": "PUT",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.Int32",
+        "IsRequired": true
+      },
+      {
+        "Name": "updatedTask",
+        "Type": "TodoList.TaskItem",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "TodoList.Controllers.HomeController",
+    "Method": "ViewAll",
     "RelativePath": "todo/view",
     "HttpMethod": "GET",
     "IsController": true,
@@ -37,7 +74,7 @@
   },
   {
     "ContainingType": "TodoList.Controllers.HomeController",
-    "Method": "view",
+    "Method": "View",
     "RelativePath": "todo/view/{id}",
     "HttpMethod": "GET",
     "IsController": true,
