@@ -3,6 +3,10 @@
   "WorkspaceRootPath": "C:\\Users\\hello\\Downloads\\Desktop\\Visual Studio\\TodoList\\",
   "Documents": [
     {
+      "AbsoluteMoniker": "D:0:0:{0A1F740D-E867-4E79-902F-602881E52B9B}|TodoList\\TodoList.csproj|c:\\users\\hello\\downloads\\desktop\\visual studio\\todolist\\todolist\\logs\\log-20250222.txt||{8B382828-6202-11D1-8870-0000F87579D2}",
+      "RelativeMoniker": "D:0:0:{0A1F740D-E867-4E79-902F-602881E52B9B}|TodoList\\TodoList.csproj|solutionrelative:todolist\\logs\\log-20250222.txt||{8B382828-6202-11D1-8870-0000F87579D2}"
+    },
+    {
       "AbsoluteMoniker": "D:0:0:{0A1F740D-E867-4E79-902F-602881E52B9B}|TodoList\\TodoList.csproj|c:\\users\\hello\\downloads\\desktop\\visual studio\\todolist\\todolist\\controllers\\todocontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{0A1F740D-E867-4E79-902F-602881E52B9B}|TodoList\\TodoList.csproj|solutionrelative:todolist\\controllers\\todocontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
@@ -11,24 +15,12 @@
       "RelativeMoniker": "D:0:0:{0A1F740D-E867-4E79-902F-602881E52B9B}|TodoList\\TodoList.csproj|solutionrelative:todolist\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{0A1F740D-E867-4E79-902F-602881E52B9B}|TodoList\\TodoList.csproj|c:\\users\\hello\\downloads\\desktop\\visual studio\\todolist\\todolist\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
-      "RelativeMoniker": "D:0:0:{0A1F740D-E867-4E79-902F-602881E52B9B}|TodoList\\TodoList.csproj|solutionrelative:todolist\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{0A1F740D-E867-4E79-902F-602881E52B9B}|TodoList\\TodoList.csproj|c:\\users\\hello\\downloads\\desktop\\visual studio\\todolist\\todolist\\todolist.http||{5703B403-55E7-4C63-8C88-A8F52C7A45C5}",
-      "RelativeMoniker": "D:0:0:{0A1F740D-E867-4E79-902F-602881E52B9B}|TodoList\\TodoList.csproj|solutionrelative:todolist\\todolist.http||{5703B403-55E7-4C63-8C88-A8F52C7A45C5}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{0A1F740D-E867-4E79-902F-602881E52B9B}|TodoList\\TodoList.csproj|c:\\users\\hello\\downloads\\desktop\\visual studio\\todolist\\todolist\\taskitem.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{0A1F740D-E867-4E79-902F-602881E52B9B}|TodoList\\TodoList.csproj|solutionrelative:todolist\\taskitem.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
       "AbsoluteMoniker": "D:0:0:{0A1F740D-E867-4E79-902F-602881E52B9B}|TodoList\\TodoList.csproj|c:\\users\\hello\\downloads\\desktop\\visual studio\\todolist\\todolist\\todocontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{0A1F740D-E867-4E79-902F-602881E52B9B}|TodoList\\TodoList.csproj|solutionrelative:todolist\\todocontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{0A1F740D-E867-4E79-902F-602881E52B9B}|TodoList\\TodoList.csproj|c:\\users\\hello\\downloads\\desktop\\visual studio\\todolist\\todolist\\migrations\\20250221052711_new migration.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{0A1F740D-E867-4E79-902F-602881E52B9B}|TodoList\\TodoList.csproj|solutionrelative:todolist\\migrations\\20250221052711_new migration.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{0A1F740D-E867-4E79-902F-602881E52B9B}|TodoList\\TodoList.csproj|c:\\users\\hello\\downloads\\desktop\\visual studio\\todolist\\todolist\\taskitem.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{0A1F740D-E867-4E79-902F-602881E52B9B}|TodoList\\TodoList.csproj|solutionrelative:todolist\\taskitem.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -38,17 +30,17 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 5,
+          "SelectedChildIndex": 1,
           "Children": [
             {
               "$type": "Document",
-              "DocumentIndex": 1,
+              "DocumentIndex": 2,
               "Title": "Program.cs",
               "DocumentMoniker": "C:\\Users\\hello\\Downloads\\Desktop\\Visual Studio\\TodoList\\TodoList\\Program.cs",
               "RelativeDocumentMoniker": "TodoList\\Program.cs",
               "ToolTip": "C:\\Users\\hello\\Downloads\\Desktop\\Visual Studio\\TodoList\\TodoList\\Program.cs",
               "RelativeToolTip": "TodoList\\Program.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA0AAAAZAAAAAAAAAA==",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAoAAAAhAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-02-21T05:28:15.868Z",
               "IsPinned": true,
@@ -56,28 +48,28 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 3,
-              "Title": "TodoList.http",
-              "DocumentMoniker": "C:\\Users\\hello\\Downloads\\Desktop\\Visual Studio\\TodoList\\TodoList\\TodoList.http",
-              "RelativeDocumentMoniker": "TodoList\\TodoList.http",
-              "ToolTip": "C:\\Users\\hello\\Downloads\\Desktop\\Visual Studio\\TodoList\\TodoList\\TodoList.http",
-              "RelativeToolTip": "TodoList\\TodoList.http",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003502|",
-              "WhenOpened": "2025-02-21T08:08:20.465Z",
+              "DocumentIndex": 0,
+              "Title": "log-20250222.txt",
+              "DocumentMoniker": "C:\\Users\\hello\\Downloads\\Desktop\\Visual Studio\\TodoList\\TodoList\\Logs\\log-20250222.txt",
+              "RelativeDocumentMoniker": "TodoList\\Logs\\log-20250222.txt",
+              "ToolTip": "C:\\Users\\hello\\Downloads\\Desktop\\Visual Studio\\TodoList\\TodoList\\Logs\\log-20250222.txt",
+              "RelativeToolTip": "TodoList\\Logs\\log-20250222.txt",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAFYAAAANAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003109|",
+              "WhenOpened": "2025-02-22T02:36:29.141Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 2,
-              "Title": "appsettings.json",
-              "DocumentMoniker": "C:\\Users\\hello\\Downloads\\Desktop\\Visual Studio\\TodoList\\TodoList\\appsettings.json",
-              "RelativeDocumentMoniker": "TodoList\\appsettings.json",
-              "ToolTip": "C:\\Users\\hello\\Downloads\\Desktop\\Visual Studio\\TodoList\\TodoList\\appsettings.json",
-              "RelativeToolTip": "TodoList\\appsettings.json",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
-              "WhenOpened": "2025-02-21T08:06:14.936Z",
+              "DocumentIndex": 1,
+              "Title": "TodoController.cs",
+              "DocumentMoniker": "C:\\Users\\hello\\Downloads\\Desktop\\Visual Studio\\TodoList\\TodoList\\Controllers\\TodoController.cs",
+              "RelativeDocumentMoniker": "TodoList\\Controllers\\TodoController.cs",
+              "ToolTip": "C:\\Users\\hello\\Downloads\\Desktop\\Visual Studio\\TodoList\\TodoList\\Controllers\\TodoController.cs",
+              "RelativeToolTip": "TodoList\\Controllers\\TodoController.cs",
+              "ViewState": "AgIAAAEAAAAAAAAAAAAIwDwAAAAJAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-02-21T05:12:44.639Z",
               "EditorCaption": ""
             },
             {
@@ -88,49 +80,21 @@
               "RelativeDocumentMoniker": "TodoList\\TaskItem.cs",
               "ToolTip": "C:\\Users\\hello\\Downloads\\Desktop\\Visual Studio\\TodoList\\TodoList\\TaskItem.cs",
               "RelativeToolTip": "TodoList\\TaskItem.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABAAAAAFAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-02-21T07:56:39.568Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-02-21T07:56:39.568Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 5,
+              "DocumentIndex": 3,
               "Title": "TodoContext.cs",
               "DocumentMoniker": "C:\\Users\\hello\\Downloads\\Desktop\\Visual Studio\\TodoList\\TodoList\\TodoContext.cs",
               "RelativeDocumentMoniker": "TodoList\\TodoContext.cs",
               "ToolTip": "C:\\Users\\hello\\Downloads\\Desktop\\Visual Studio\\TodoList\\TodoList\\TodoContext.cs",
               "RelativeToolTip": "TodoList\\TodoContext.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAwAAAAAAAAAAAAAAA==",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA4AAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-02-21T05:20:27.202Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 0,
-              "Title": "TodoController.cs",
-              "DocumentMoniker": "C:\\Users\\hello\\Downloads\\Desktop\\Visual Studio\\TodoList\\TodoList\\Controllers\\TodoController.cs",
-              "RelativeDocumentMoniker": "TodoList\\Controllers\\TodoController.cs",
-              "ToolTip": "C:\\Users\\hello\\Downloads\\Desktop\\Visual Studio\\TodoList\\TodoList\\Controllers\\TodoController.cs",
-              "RelativeToolTip": "TodoList\\Controllers\\TodoController.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAwAAAAyAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-02-21T05:12:44.639Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 6,
-              "Title": "20250221052711_New Migration.cs",
-              "DocumentMoniker": "C:\\Users\\hello\\Downloads\\Desktop\\Visual Studio\\TodoList\\TodoList\\Migrations\\20250221052711_New Migration.cs",
-              "RelativeDocumentMoniker": "TodoList\\Migrations\\20250221052711_New Migration.cs",
-              "ToolTip": "C:\\Users\\hello\\Downloads\\Desktop\\Visual Studio\\TodoList\\TodoList\\Migrations\\20250221052711_New Migration.cs",
-              "RelativeToolTip": "TodoList\\Migrations\\20250221052711_New Migration.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAcAAAAxAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-02-21T05:27:11.7Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-02-21T05:20:27.202Z"
             }
           ]
         }

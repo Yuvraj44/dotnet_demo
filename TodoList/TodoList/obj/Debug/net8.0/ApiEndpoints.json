@@ -33,16 +33,6 @@
   },
   {
     "ContainingType": "TodoList.Controllers.HomeController",
-    "Method": "Demo",
-    "RelativePath": "todo/home",
-    "HttpMethod": "GET",
-    "IsController": true,
-    "Order": 0,
-    "Parameters": [],
-    "ReturnTypes": []
-  },
-  {
-    "ContainingType": "TodoList.Controllers.HomeController",
     "Method": "Update",
     "RelativePath": "todo/update/{id}",
     "HttpMethod": "PUT",
