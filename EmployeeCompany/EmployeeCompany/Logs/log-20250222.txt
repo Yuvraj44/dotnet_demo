@@ -1,0 +1,131 @@
+2025-02-22 20:16:28.639 +05:30 [INF] Request starting HTTP/2 GET https://localhost:44315/swagger/index.html - null null
+2025-02-22 20:16:28.764 +05:30 [INF] Application started. Press Ctrl+C to shut down.
+2025-02-22 20:16:28.765 +05:30 [INF] Hosting environment: Development
+2025-02-22 20:16:28.765 +05:30 [INF] Content root path: C:\Users\hello\Downloads\Desktop\Visual Studio\EmployeeCompany\EmployeeCompany
+2025-02-22 20:16:29.003 +05:30 [INF] Request finished HTTP/2 GET https://localhost:44315/swagger/index.html - 200 null text/html;charset=utf-8 371.048ms
+2025-02-22 20:16:29.065 +05:30 [INF] Request starting HTTP/2 GET https://localhost:44315/_framework/aspnetcore-browser-refresh.js - null null
+2025-02-22 20:16:29.073 +05:30 [INF] Request finished HTTP/2 GET https://localhost:44315/_framework/aspnetcore-browser-refresh.js - 200 16515 application/javascript; charset=utf-8 7.8161ms
+2025-02-22 20:16:29.090 +05:30 [INF] Request starting HTTP/2 GET https://localhost:44315/_vs/browserLink - null null
+2025-02-22 20:16:29.140 +05:30 [INF] Request finished HTTP/2 GET https://localhost:44315/_vs/browserLink - 200 null text/javascript; charset=UTF-8 49.7122ms
+2025-02-22 20:16:29.629 +05:30 [INF] Request starting HTTP/2 GET https://localhost:44315/swagger/v1/swagger.json - null null
+2025-02-22 20:16:29.674 +05:30 [INF] Request finished HTTP/2 GET https://localhost:44315/swagger/v1/swagger.json - 200 null application/json;charset=utf-8 45.2917ms
+2025-02-22 20:16:33.389 +05:30 [INF] Request starting HTTP/2 GET https://localhost:44315/api/employees - null null
+2025-02-22 20:16:33.402 +05:30 [INF] Executing endpoint 'EmployeeCompany.Controllers.EmployeeController.ViewAll (EmployeeCompany)'
+2025-02-22 20:16:33.432 +05:30 [INF] Route matched with {action = "ViewAll", controller = "Employee"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] ViewAll() on controller EmployeeCompany.Controllers.EmployeeController (EmployeeCompany).
+2025-02-22 20:16:33.972 +05:30 [WRN] No store type was specified for the decimal property 'Salary' on entity type 'Employee'. This will cause values to be silently truncated if they do not fit in the default precision and scale. Explicitly specify the SQL server column type that can accommodate all the values in 'OnModelCreating' using 'HasColumnType', specify precision and scale using 'HasPrecision', or configure a value converter using 'HasConversion'.
+2025-02-22 20:16:34.679 +05:30 [INF] Executed DbCommand (35ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [e].[Id], [e].[DepartmentId], [e].[Email], [e].[FirstName], [e].[HireDate], [e].[LastName], [e].[PhoneNumber], [e].[Salary]
+FROM [EmployeeList] AS [e]
+2025-02-22 20:16:34.791 +05:30 [INF] Executing OkObjectResult, writing value of type 'System.Collections.Generic.List`1[[EmployeeCompany.Models.Employee, EmployeeCompany, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2025-02-22 20:16:34.819 +05:30 [INF] Executed action EmployeeCompany.Controllers.EmployeeController.ViewAll (EmployeeCompany) in 1382.3241ms
+2025-02-22 20:16:34.820 +05:30 [INF] Executed endpoint 'EmployeeCompany.Controllers.EmployeeController.ViewAll (EmployeeCompany)'
+2025-02-22 20:16:34.832 +05:30 [INF] Request finished HTTP/2 GET https://localhost:44315/api/employees - 200 null application/json; charset=utf-8 1442.8551ms
+2025-02-22 20:18:27.413 +05:30 [INF] Request starting HTTP/2 GET https://localhost:44315/api/employees - null null
+2025-02-22 20:18:27.415 +05:30 [INF] Executing endpoint 'EmployeeCompany.Controllers.EmployeeController.ViewAll (EmployeeCompany)'
+2025-02-22 20:18:27.416 +05:30 [INF] Route matched with {action = "ViewAll", controller = "Employee"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] ViewAll() on controller EmployeeCompany.Controllers.EmployeeController (EmployeeCompany).
+2025-02-22 20:18:27.465 +05:30 [INF] Executed DbCommand (3ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [e].[Id], [e].[DepartmentId], [e].[Email], [e].[FirstName], [e].[HireDate], [e].[LastName], [e].[PhoneNumber], [e].[Salary]
+FROM [EmployeeList] AS [e]
+2025-02-22 20:18:27.468 +05:30 [INF] Executing OkObjectResult, writing value of type 'System.Collections.Generic.List`1[[EmployeeCompany.Models.Employee, EmployeeCompany, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2025-02-22 20:18:27.470 +05:30 [INF] Executed action EmployeeCompany.Controllers.EmployeeController.ViewAll (EmployeeCompany) in 53.4191ms
+2025-02-22 20:18:27.470 +05:30 [INF] Executed endpoint 'EmployeeCompany.Controllers.EmployeeController.ViewAll (EmployeeCompany)'
+2025-02-22 20:18:27.471 +05:30 [INF] Request finished HTTP/2 GET https://localhost:44315/api/employees - 200 null application/json; charset=utf-8 58.0846ms
+2025-02-22 20:18:41.052 +05:30 [INF] Request starting HTTP/2 POST https://localhost:44315/api/employees - application/json 203
+2025-02-22 20:18:41.054 +05:30 [INF] Executing endpoint 'EmployeeCompany.Controllers.EmployeeController.AddEmployee (EmployeeCompany)'
+2025-02-22 20:18:41.082 +05:30 [INF] Route matched with {action = "AddEmployee", controller = "Employee"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] AddEmployee(EmployeeCompany.Models.Employee) on controller EmployeeCompany.Controllers.EmployeeController (EmployeeCompany).
+2025-02-22 20:18:41.593 +05:30 [INF] Executed DbCommand (45ms) [Parameters=[@p0='?' (DbType = Int32), @p1='?' (Size = 4000), @p2='?' (Size = 4000), @p3='?' (DbType = DateTime2), @p4='?' (Size = 4000), @p5='?' (Size = 4000), @p6='?' (Precision = 18) (Scale = 2) (DbType = Decimal)], CommandType='"Text"', CommandTimeout='30']
+SET IMPLICIT_TRANSACTIONS OFF;
+SET NOCOUNT ON;
+INSERT INTO [EmployeeList] ([DepartmentId], [Email], [FirstName], [HireDate], [LastName], [PhoneNumber], [Salary])
+OUTPUT INSERTED.[Id]
+VALUES (@p0, @p1, @p2, @p3, @p4, @p5, @p6);
+2025-02-22 20:18:41.645 +05:30 [INF] Executing CreatedResult, writing value of type 'EmployeeCompany.Models.Employee'.
+2025-02-22 20:18:41.646 +05:30 [INF] Executed action EmployeeCompany.Controllers.EmployeeController.AddEmployee (EmployeeCompany) in 563.6699ms
+2025-02-22 20:18:41.646 +05:30 [INF] Executed endpoint 'EmployeeCompany.Controllers.EmployeeController.AddEmployee (EmployeeCompany)'
+2025-02-22 20:18:41.647 +05:30 [INF] Request finished HTTP/2 POST https://localhost:44315/api/employees - 201 null application/json; charset=utf-8 594.6434ms
+2025-02-22 20:18:50.586 +05:30 [INF] Request starting HTTP/2 GET https://localhost:44315/api/employees - null null
+2025-02-22 20:18:50.587 +05:30 [INF] Executing endpoint 'EmployeeCompany.Controllers.EmployeeController.ViewAll (EmployeeCompany)'
+2025-02-22 20:18:50.587 +05:30 [INF] Route matched with {action = "ViewAll", controller = "Employee"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] ViewAll() on controller EmployeeCompany.Controllers.EmployeeController (EmployeeCompany).
+2025-02-22 20:18:50.625 +05:30 [INF] Executed DbCommand (3ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [e].[Id], [e].[DepartmentId], [e].[Email], [e].[FirstName], [e].[HireDate], [e].[LastName], [e].[PhoneNumber], [e].[Salary]
+FROM [EmployeeList] AS [e]
+2025-02-22 20:18:50.627 +05:30 [INF] Executing OkObjectResult, writing value of type 'System.Collections.Generic.List`1[[EmployeeCompany.Models.Employee, EmployeeCompany, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2025-02-22 20:18:50.627 +05:30 [INF] Executed action EmployeeCompany.Controllers.EmployeeController.ViewAll (EmployeeCompany) in 39.8426ms
+2025-02-22 20:18:50.628 +05:30 [INF] Executed endpoint 'EmployeeCompany.Controllers.EmployeeController.ViewAll (EmployeeCompany)'
+2025-02-22 20:18:50.628 +05:30 [INF] Request finished HTTP/2 GET https://localhost:44315/api/employees - 200 null application/json; charset=utf-8 42.229ms
+2025-02-22 20:19:04.071 +05:30 [INF] Request starting HTTP/2 GET https://localhost:44315/api/employees/8 - null null
+2025-02-22 20:19:04.074 +05:30 [INF] Executing endpoint 'EmployeeCompany.Controllers.EmployeeController.View (EmployeeCompany)'
+2025-02-22 20:19:04.088 +05:30 [INF] Route matched with {action = "View", controller = "Employee"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] View(Int32) on controller EmployeeCompany.Controllers.EmployeeController (EmployeeCompany).
+2025-02-22 20:19:04.477 +05:30 [INF] Executed DbCommand (2ms) [Parameters=[@__p_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [e].[Id], [e].[DepartmentId], [e].[Email], [e].[FirstName], [e].[HireDate], [e].[LastName], [e].[PhoneNumber], [e].[Salary]
+FROM [EmployeeList] AS [e]
+WHERE [e].[Id] = @__p_0
+2025-02-22 20:19:04.480 +05:30 [INF] Executing OkObjectResult, writing value of type 'EmployeeCompany.Models.Employee'.
+2025-02-22 20:19:04.481 +05:30 [INF] Executed action EmployeeCompany.Controllers.EmployeeController.View (EmployeeCompany) in 392.3517ms
+2025-02-22 20:19:04.481 +05:30 [INF] Executed endpoint 'EmployeeCompany.Controllers.EmployeeController.View (EmployeeCompany)'
+2025-02-22 20:19:04.481 +05:30 [INF] Request finished HTTP/2 GET https://localhost:44315/api/employees/8 - 200 null application/json; charset=utf-8 410.9407ms
+2025-02-22 20:19:09.518 +05:30 [INF] Request starting HTTP/2 GET https://localhost:44315/api/employees/9 - null null
+2025-02-22 20:19:09.519 +05:30 [INF] Executing endpoint 'EmployeeCompany.Controllers.EmployeeController.View (EmployeeCompany)'
+2025-02-22 20:19:09.519 +05:30 [INF] Route matched with {action = "View", controller = "Employee"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] View(Int32) on controller EmployeeCompany.Controllers.EmployeeController (EmployeeCompany).
+2025-02-22 20:19:09.557 +05:30 [INF] Executed DbCommand (2ms) [Parameters=[@__p_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [e].[Id], [e].[DepartmentId], [e].[Email], [e].[FirstName], [e].[HireDate], [e].[LastName], [e].[PhoneNumber], [e].[Salary]
+FROM [EmployeeList] AS [e]
+WHERE [e].[Id] = @__p_0
+2025-02-22 20:19:09.558 +05:30 [INF] Executing NotFoundObjectResult, writing value of type 'System.String'.
+2025-02-22 20:19:09.560 +05:30 [INF] Executed action EmployeeCompany.Controllers.EmployeeController.View (EmployeeCompany) in 40.1434ms
+2025-02-22 20:19:09.560 +05:30 [INF] Executed endpoint 'EmployeeCompany.Controllers.EmployeeController.View (EmployeeCompany)'
+2025-02-22 20:19:09.560 +05:30 [INF] Request finished HTTP/2 GET https://localhost:44315/api/employees/9 - 404 null text/plain; charset=utf-8 42.4611ms
+2025-02-22 20:19:25.928 +05:30 [INF] Request starting HTTP/2 DELETE https://localhost:44315/api/employee/8 - null null
+2025-02-22 20:19:25.932 +05:30 [INF] Executing endpoint 'EmployeeCompany.Controllers.EmployeeController.Delete (EmployeeCompany)'
+2025-02-22 20:19:25.947 +05:30 [INF] Route matched with {action = "Delete", controller = "Employee"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] Delete(Int32) on controller EmployeeCompany.Controllers.EmployeeController (EmployeeCompany).
+2025-02-22 20:19:25.964 +05:30 [INF] Executed DbCommand (2ms) [Parameters=[@__p_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [e].[Id], [e].[DepartmentId], [e].[Email], [e].[FirstName], [e].[HireDate], [e].[LastName], [e].[PhoneNumber], [e].[Salary]
+FROM [EmployeeList] AS [e]
+WHERE [e].[Id] = @__p_0
+2025-02-22 20:19:26.006 +05:30 [INF] Executed DbCommand (9ms) [Parameters=[@p0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SET IMPLICIT_TRANSACTIONS OFF;
+SET NOCOUNT ON;
+DELETE FROM [EmployeeList]
+OUTPUT 1
+WHERE [Id] = @p0;
+2025-02-22 20:19:26.022 +05:30 [INF] Executing StatusCodeResult, setting HTTP status code 204
+2025-02-22 20:19:26.022 +05:30 [INF] Executed action EmployeeCompany.Controllers.EmployeeController.Delete (EmployeeCompany) in 74.4031ms
+2025-02-22 20:19:26.022 +05:30 [INF] Executed endpoint 'EmployeeCompany.Controllers.EmployeeController.Delete (EmployeeCompany)'
+2025-02-22 20:19:26.024 +05:30 [INF] Request finished HTTP/2 DELETE https://localhost:44315/api/employee/8 - 204 null null 97.3998ms
+2025-02-22 20:19:36.336 +05:30 [INF] Request starting HTTP/2 GET https://localhost:44315/api/employees - null null
+2025-02-22 20:19:36.336 +05:30 [INF] Executing endpoint 'EmployeeCompany.Controllers.EmployeeController.ViewAll (EmployeeCompany)'
+2025-02-22 20:19:36.337 +05:30 [INF] Route matched with {action = "ViewAll", controller = "Employee"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] ViewAll() on controller EmployeeCompany.Controllers.EmployeeController (EmployeeCompany).
+2025-02-22 20:19:36.351 +05:30 [INF] Executed DbCommand (3ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [e].[Id], [e].[DepartmentId], [e].[Email], [e].[FirstName], [e].[HireDate], [e].[LastName], [e].[PhoneNumber], [e].[Salary]
+FROM [EmployeeList] AS [e]
+2025-02-22 20:19:36.354 +05:30 [INF] Executing OkObjectResult, writing value of type 'System.Collections.Generic.List`1[[EmployeeCompany.Models.Employee, EmployeeCompany, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2025-02-22 20:19:36.355 +05:30 [INF] Executed action EmployeeCompany.Controllers.EmployeeController.ViewAll (EmployeeCompany) in 17.7205ms
+2025-02-22 20:19:36.355 +05:30 [INF] Executed endpoint 'EmployeeCompany.Controllers.EmployeeController.ViewAll (EmployeeCompany)'
+2025-02-22 20:19:36.355 +05:30 [INF] Request finished HTTP/2 GET https://localhost:44315/api/employees - 200 null application/json; charset=utf-8 19.5718ms
+2025-02-22 20:20:04.267 +05:30 [INF] Request starting HTTP/2 PUT https://localhost:44315/api/employees/7 - application/json 188
+2025-02-22 20:20:04.268 +05:30 [INF] Executing endpoint 'EmployeeCompany.Controllers.EmployeeController.Update (EmployeeCompany)'
+2025-02-22 20:20:04.279 +05:30 [INF] Route matched with {action = "Update", controller = "Employee"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] Update(Int32, EmployeeCompany.Models.Employee) on controller EmployeeCompany.Controllers.EmployeeController (EmployeeCompany).
+2025-02-22 20:20:04.298 +05:30 [INF] Executed DbCommand (5ms) [Parameters=[@__p_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [e].[Id], [e].[DepartmentId], [e].[Email], [e].[FirstName], [e].[HireDate], [e].[LastName], [e].[PhoneNumber], [e].[Salary]
+FROM [EmployeeList] AS [e]
+WHERE [e].[Id] = @__p_0
+2025-02-22 20:20:04.322 +05:30 [INF] Executed DbCommand (11ms) [Parameters=[@p7='?' (DbType = Int32), @p0='?' (DbType = Int32), @p1='?' (Size = 4000), @p2='?' (Size = 4000), @p3='?' (DbType = DateTime2), @p4='?' (Size = 4000), @p5='?' (Size = 4000), @p6='?' (Precision = 18) (Scale = 2) (DbType = Decimal)], CommandType='"Text"', CommandTimeout='30']
+SET IMPLICIT_TRANSACTIONS OFF;
+SET NOCOUNT ON;
+UPDATE [EmployeeList] SET [DepartmentId] = @p0, [Email] = @p1, [FirstName] = @p2, [HireDate] = @p3, [LastName] = @p4, [PhoneNumber] = @p5, [Salary] = @p6
+OUTPUT 1
+WHERE [Id] = @p7;
+2025-02-22 20:20:04.323 +05:30 [INF] Executing OkObjectResult, writing value of type 'EmployeeCompany.Models.Employee'.
+2025-02-22 20:20:04.324 +05:30 [INF] Executed action EmployeeCompany.Controllers.EmployeeController.Update (EmployeeCompany) in 45.1969ms
+2025-02-22 20:20:04.324 +05:30 [INF] Executed endpoint 'EmployeeCompany.Controllers.EmployeeController.Update (EmployeeCompany)'
+2025-02-22 20:20:04.325 +05:30 [INF] Request finished HTTP/2 PUT https://localhost:44315/api/employees/7 - 200 null application/json; charset=utf-8 58.0143ms
+2025-02-22 20:20:14.004 +05:30 [INF] Request starting HTTP/2 GET https://localhost:44315/api/employees - null null
+2025-02-22 20:20:14.005 +05:30 [INF] Executing endpoint 'EmployeeCompany.Controllers.EmployeeController.ViewAll (EmployeeCompany)'
+2025-02-22 20:20:14.005 +05:30 [INF] Route matched with {action = "ViewAll", controller = "Employee"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] ViewAll() on controller EmployeeCompany.Controllers.EmployeeController (EmployeeCompany).
+2025-02-22 20:20:14.027 +05:30 [INF] Executed DbCommand (3ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [e].[Id], [e].[DepartmentId], [e].[Email], [e].[FirstName], [e].[HireDate], [e].[LastName], [e].[PhoneNumber], [e].[Salary]
+FROM [EmployeeList] AS [e]
+2025-02-22 20:20:14.029 +05:30 [INF] Executing OkObjectResult, writing value of type 'System.Collections.Generic.List`1[[EmployeeCompany.Models.Employee, EmployeeCompany, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2025-02-22 20:20:14.030 +05:30 [INF] Executed action EmployeeCompany.Controllers.EmployeeController.ViewAll (EmployeeCompany) in 24.9824ms
+2025-02-22 20:20:14.030 +05:30 [INF] Executed endpoint 'EmployeeCompany.Controllers.EmployeeController.ViewAll (EmployeeCompany)'
+2025-02-22 20:20:14.031 +05:30 [INF] Request finished HTTP/2 GET https://localhost:44315/api/employees - 200 null application/json; charset=utf-8 26.7283ms
