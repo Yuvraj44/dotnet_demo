@@ -23,8 +23,9 @@ namespace EmployeeCompany.Models
         public string PhoneNumber { get; set; }
 
         public DateTime HireDate { get; set; }
-        
-        [ForeignKey("DepartmentId")]
+
+        [Required(ErrorMessage = "Department ID is required.")]
+        [ForeignKey(nameof(Department))]
         public int DepartmentId { get; set; }
 
         public decimal Salary { get; set; }
@@ -42,4 +43,3 @@ namespace EmployeeCompany.Models
         }
     }
 }
-

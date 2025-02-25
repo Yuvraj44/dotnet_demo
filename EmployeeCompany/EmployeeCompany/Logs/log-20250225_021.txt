@@ -1,0 +1,114 @@
+2025-02-25 11:19:04.185 +05:30 [INF] Request starting HTTP/2 GET https://localhost:44315/swagger/index.html - null null
+2025-02-25 11:19:04.393 +05:30 [INF] Application started. Press Ctrl+C to shut down.
+2025-02-25 11:19:04.395 +05:30 [INF] Hosting environment: Development
+2025-02-25 11:19:04.395 +05:30 [INF] Content root path: C:\Users\hello\Downloads\Desktop\Visual Studio\EmployeeCompany\EmployeeCompany
+2025-02-25 11:19:04.774 +05:30 [INF] Request starting HTTP/2 GET https://localhost:44315/_framework/aspnetcore-browser-refresh.js - null null
+2025-02-25 11:19:04.763 +05:30 [INF] Request finished HTTP/2 GET https://localhost:44315/swagger/index.html - 200 null text/html;charset=utf-8 590.8012ms
+2025-02-25 11:19:04.777 +05:30 [INF] Request starting HTTP/2 GET https://localhost:44315/_vs/browserLink - null null
+2025-02-25 11:19:04.792 +05:30 [INF] Request finished HTTP/2 GET https://localhost:44315/_framework/aspnetcore-browser-refresh.js - 200 16515 application/javascript; charset=utf-8 15.8692ms
+2025-02-25 11:19:04.860 +05:30 [INF] Request finished HTTP/2 GET https://localhost:44315/_vs/browserLink - 200 null text/javascript; charset=UTF-8 83.2039ms
+2025-02-25 11:19:05.409 +05:30 [INF] Request starting HTTP/2 GET https://localhost:44315/swagger/v1/swagger.json - null null
+2025-02-25 11:19:05.446 +05:30 [INF] Request finished HTTP/2 GET https://localhost:44315/swagger/v1/swagger.json - 200 null application/json;charset=utf-8 37.6113ms
+2025-02-25 11:19:14.968 +05:30 [INF] Request starting HTTP/2 GET https://localhost:44315/swagger/index.html - null null
+2025-02-25 11:19:15.157 +05:30 [INF] Application started. Press Ctrl+C to shut down.
+2025-02-25 11:19:15.158 +05:30 [INF] Hosting environment: Development
+2025-02-25 11:19:15.158 +05:30 [INF] Content root path: C:\Users\hello\Downloads\Desktop\Visual Studio\EmployeeCompany\EmployeeCompany
+2025-02-25 11:19:15.481 +05:30 [INF] Request starting HTTP/2 GET https://localhost:44315/_vs/browserLink - null null
+2025-02-25 11:19:15.474 +05:30 [INF] Request finished HTTP/2 GET https://localhost:44315/swagger/index.html - 200 null text/html;charset=utf-8 512.9252ms
+2025-02-25 11:19:15.489 +05:30 [INF] Request starting HTTP/2 GET https://localhost:44315/_framework/aspnetcore-browser-refresh.js - null null
+2025-02-25 11:19:15.500 +05:30 [INF] Request finished HTTP/2 GET https://localhost:44315/_framework/aspnetcore-browser-refresh.js - 200 16515 application/javascript; charset=utf-8 8.5957ms
+2025-02-25 11:19:15.548 +05:30 [INF] Request finished HTTP/2 GET https://localhost:44315/_vs/browserLink - 200 null text/javascript; charset=UTF-8 67.5138ms
+2025-02-25 11:19:15.767 +05:30 [INF] Request starting HTTP/2 GET https://localhost:44315/swagger/v1/swagger.json - null null
+2025-02-25 11:19:15.798 +05:30 [INF] Request finished HTTP/2 GET https://localhost:44315/swagger/v1/swagger.json - 200 null application/json;charset=utf-8 31.3501ms
+2025-02-25 11:19:22.049 +05:30 [INF] Request starting HTTP/2 GET https://localhost:44315/swagger/index.html - null null
+2025-02-25 11:19:22.063 +05:30 [INF] Request finished HTTP/2 GET https://localhost:44315/swagger/index.html - 200 null text/html;charset=utf-8 13.5226ms
+2025-02-25 11:19:22.111 +05:30 [INF] Request starting HTTP/2 GET https://localhost:44315/_vs/browserLink - null null
+2025-02-25 11:19:22.113 +05:30 [INF] Request starting HTTP/2 GET https://localhost:44315/_framework/aspnetcore-browser-refresh.js - null null
+2025-02-25 11:19:22.115 +05:30 [INF] Request finished HTTP/2 GET https://localhost:44315/_framework/aspnetcore-browser-refresh.js - 200 16515 application/javascript; charset=utf-8 1.8547ms
+2025-02-25 11:19:22.137 +05:30 [INF] Request finished HTTP/2 GET https://localhost:44315/_vs/browserLink - 200 null text/javascript; charset=UTF-8 25.9577ms
+2025-02-25 11:19:22.334 +05:30 [INF] Request starting HTTP/2 GET https://localhost:44315/swagger/v1/swagger.json - null null
+2025-02-25 11:19:22.348 +05:30 [INF] Request finished HTTP/2 GET https://localhost:44315/swagger/v1/swagger.json - 200 null application/json;charset=utf-8 13.7687ms
+2025-02-25 11:19:34.077 +05:30 [INF] Request starting HTTP/2 POST https://localhost:44315/api/employees - application/json 202
+2025-02-25 11:19:34.100 +05:30 [INF] Executing endpoint 'EmployeeCompany.Controllers.EmployeeController.AddEmployee (EmployeeCompany)'
+2025-02-25 11:19:34.151 +05:30 [INF] Route matched with {action = "AddEmployee", controller = "Employee"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] AddEmployee(EmployeeCompany.Models.Employee) on controller EmployeeCompany.Controllers.EmployeeController (EmployeeCompany).
+2025-02-25 11:19:35.512 +05:30 [WRN] No store type was specified for the decimal property 'Salary' on entity type 'Employee'. This will cause values to be silently truncated if they do not fit in the default precision and scale. Explicitly specify the SQL server column type that can accommodate all the values in 'OnModelCreating' using 'HasColumnType', specify precision and scale using 'HasPrecision', or configure a value converter using 'HasConversion'.
+2025-02-25 11:19:37.184 +05:30 [INF] Executed DbCommand (101ms) [Parameters=[@p0='?' (DbType = Int32), @p1='?' (Size = 4000), @p2='?' (Size = 4000), @p3='?' (DbType = DateTime2), @p4='?' (Size = 4000), @p5='?' (Size = 4000), @p6='?' (Precision = 18) (Scale = 2) (DbType = Decimal)], CommandType='"Text"', CommandTimeout='30']
+SET IMPLICIT_TRANSACTIONS OFF;
+SET NOCOUNT ON;
+INSERT INTO [EmployeeList] ([DepartmentId], [Email], [FirstName], [HireDate], [LastName], [PhoneNumber], [Salary])
+OUTPUT INSERTED.[Id]
+VALUES (@p0, @p1, @p2, @p3, @p4, @p5, @p6);
+2025-02-25 11:19:37.324 +05:30 [ERR] An exception occurred in the database while saving changes for context type 'EmployeeCompany.EmployeeContext'.
+Microsoft.EntityFrameworkCore.DbUpdateException: An error occurred while saving the entity changes. See the inner exception for details.
+ ---> Microsoft.Data.SqlClient.SqlException (0x80131904): The INSERT statement conflicted with the FOREIGN KEY constraint "FK_EmployeeList_DepartmentList_DepartmentId". The conflict occurred in database "webapiexercisedb", table "dbo.DepartmentList", column 'DepartmentId'.
+   at Microsoft.Data.SqlClient.SqlConnection.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)
+   at Microsoft.Data.SqlClient.SqlInternalConnection.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)
+   at Microsoft.Data.SqlClient.TdsParser.ThrowExceptionAndWarning(TdsParserStateObject stateObj, Boolean callerHasConnectionLock, Boolean asyncClose)
+   at Microsoft.Data.SqlClient.TdsParser.TryRun(RunBehavior runBehavior, SqlCommand cmdHandler, SqlDataReader dataStream, BulkCopySimpleResultSet bulkCopyHandler, TdsParserStateObject stateObj, Boolean& dataReady)
+   at Microsoft.Data.SqlClient.SqlDataReader.TryHasMoreRows(Boolean& moreRows)
+   at Microsoft.Data.SqlClient.SqlDataReader.TryReadInternal(Boolean setTimeout, Boolean& more)
+   at Microsoft.Data.SqlClient.SqlDataReader.ReadAsyncExecute(Task task, Object state)
+   at Microsoft.Data.SqlClient.SqlDataReader.InvokeAsyncCall[T](SqlDataReaderBaseAsyncCallContext`1 context)
+--- End of stack trace from previous location ---
+   at Microsoft.EntityFrameworkCore.Update.AffectedCountModificationCommandBatch.ConsumeResultSetAsync(Int32 startCommandIndex, RelationalDataReader reader, CancellationToken cancellationToken)
+ClientConnectionId:e7f045dd-6aa5-4554-9552-b3be53a2da58
+Error Number:547,State:0,Class:16
+   --- End of inner exception stack trace ---
+   at Microsoft.EntityFrameworkCore.Update.AffectedCountModificationCommandBatch.ConsumeResultSetAsync(Int32 startCommandIndex, RelationalDataReader reader, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Update.AffectedCountModificationCommandBatch.ConsumeAsync(RelationalDataReader reader, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Update.ReaderModificationCommandBatch.ExecuteAsync(IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Update.ReaderModificationCommandBatch.ExecuteAsync(IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.SqlServer.Update.Internal.SqlServerModificationCommandBatch.ExecuteAsync(IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Update.Internal.BatchExecutor.ExecuteAsync(IEnumerable`1 commandBatches, IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Update.Internal.BatchExecutor.ExecuteAsync(IEnumerable`1 commandBatches, IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Update.Internal.BatchExecutor.ExecuteAsync(IEnumerable`1 commandBatches, IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Storage.RelationalDatabase.SaveChangesAsync(IList`1 entries, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.ChangeTracking.Internal.StateManager.SaveChangesAsync(IList`1 entriesToSave, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.ChangeTracking.Internal.StateManager.SaveChangesAsync(StateManager stateManager, Boolean acceptAllChangesOnSuccess, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.SqlServer.Storage.Internal.SqlServerExecutionStrategy.ExecuteAsync[TState,TResult](TState state, Func`4 operation, Func`4 verifySucceeded, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.DbContext.SaveChangesAsync(Boolean acceptAllChangesOnSuccess, CancellationToken cancellationToken)
+Microsoft.EntityFrameworkCore.DbUpdateException: An error occurred while saving the entity changes. See the inner exception for details.
+ ---> Microsoft.Data.SqlClient.SqlException (0x80131904): The INSERT statement conflicted with the FOREIGN KEY constraint "FK_EmployeeList_DepartmentList_DepartmentId". The conflict occurred in database "webapiexercisedb", table "dbo.DepartmentList", column 'DepartmentId'.
+   at Microsoft.Data.SqlClient.SqlConnection.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)
+   at Microsoft.Data.SqlClient.SqlInternalConnection.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)
+   at Microsoft.Data.SqlClient.TdsParser.ThrowExceptionAndWarning(TdsParserStateObject stateObj, Boolean callerHasConnectionLock, Boolean asyncClose)
+   at Microsoft.Data.SqlClient.TdsParser.TryRun(RunBehavior runBehavior, SqlCommand cmdHandler, SqlDataReader dataStream, BulkCopySimpleResultSet bulkCopyHandler, TdsParserStateObject stateObj, Boolean& dataReady)
+   at Microsoft.Data.SqlClient.SqlDataReader.TryHasMoreRows(Boolean& moreRows)
+   at Microsoft.Data.SqlClient.SqlDataReader.TryReadInternal(Boolean setTimeout, Boolean& more)
+   at Microsoft.Data.SqlClient.SqlDataReader.ReadAsyncExecute(Task task, Object state)
+   at Microsoft.Data.SqlClient.SqlDataReader.InvokeAsyncCall[T](SqlDataReaderBaseAsyncCallContext`1 context)
+--- End of stack trace from previous location ---
+   at Microsoft.EntityFrameworkCore.Update.AffectedCountModificationCommandBatch.ConsumeResultSetAsync(Int32 startCommandIndex, RelationalDataReader reader, CancellationToken cancellationToken)
+ClientConnectionId:e7f045dd-6aa5-4554-9552-b3be53a2da58
+Error Number:547,State:0,Class:16
+   --- End of inner exception stack trace ---
+   at Microsoft.EntityFrameworkCore.Update.AffectedCountModificationCommandBatch.ConsumeResultSetAsync(Int32 startCommandIndex, RelationalDataReader reader, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Update.AffectedCountModificationCommandBatch.ConsumeAsync(RelationalDataReader reader, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Update.ReaderModificationCommandBatch.ExecuteAsync(IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Update.ReaderModificationCommandBatch.ExecuteAsync(IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.SqlServer.Update.Internal.SqlServerModificationCommandBatch.ExecuteAsync(IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Update.Internal.BatchExecutor.ExecuteAsync(IEnumerable`1 commandBatches, IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Update.Internal.BatchExecutor.ExecuteAsync(IEnumerable`1 commandBatches, IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Update.Internal.BatchExecutor.ExecuteAsync(IEnumerable`1 commandBatches, IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Storage.RelationalDatabase.SaveChangesAsync(IList`1 entries, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.ChangeTracking.Internal.StateManager.SaveChangesAsync(IList`1 entriesToSave, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.ChangeTracking.Internal.StateManager.SaveChangesAsync(StateManager stateManager, Boolean acceptAllChangesOnSuccess, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.SqlServer.Storage.Internal.SqlServerExecutionStrategy.ExecuteAsync[TState,TResult](TState state, Func`4 operation, Func`4 verifySucceeded, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.DbContext.SaveChangesAsync(Boolean acceptAllChangesOnSuccess, CancellationToken cancellationToken)
+2025-02-25 11:19:37.349 +05:30 [INF] Executing ObjectResult, writing value of type 'System.String'.
+2025-02-25 11:19:37.361 +05:30 [INF] Executed action EmployeeCompany.Controllers.EmployeeController.AddEmployee (EmployeeCompany) in 3200.8112ms
+2025-02-25 11:19:37.363 +05:30 [INF] Executed endpoint 'EmployeeCompany.Controllers.EmployeeController.AddEmployee (EmployeeCompany)'
+2025-02-25 11:19:37.385 +05:30 [INF] Request finished HTTP/2 POST https://localhost:44315/api/employees - 500 null text/plain; charset=utf-8 3307.0776ms
+2025-02-25 11:19:44.988 +05:30 [INF] Request starting HTTP/2 POST https://localhost:44315/api/employees - application/json 202
+2025-02-25 11:19:44.990 +05:30 [INF] Executing endpoint 'EmployeeCompany.Controllers.EmployeeController.AddEmployee (EmployeeCompany)'
+2025-02-25 11:19:44.991 +05:30 [INF] Route matched with {action = "AddEmployee", controller = "Employee"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] AddEmployee(EmployeeCompany.Models.Employee) on controller EmployeeCompany.Controllers.EmployeeController (EmployeeCompany).
+2025-02-25 11:19:45.129 +05:30 [INF] Executed DbCommand (6ms) [Parameters=[@p0='?' (DbType = Int32), @p1='?' (Size = 4000), @p2='?' (Size = 4000), @p3='?' (DbType = DateTime2), @p4='?' (Size = 4000), @p5='?' (Size = 4000), @p6='?' (Precision = 18) (Scale = 2) (DbType = Decimal)], CommandType='"Text"', CommandTimeout='30']
+SET IMPLICIT_TRANSACTIONS OFF;
+SET NOCOUNT ON;
+INSERT INTO [EmployeeList] ([DepartmentId], [Email], [FirstName], [HireDate], [LastName], [PhoneNumber], [Salary])
+OUTPUT INSERTED.[Id]
+VALUES (@p0, @p1, @p2, @p3, @p4, @p5, @p6);
+2025-02-25 11:19:45.192 +05:30 [INF] Executing CreatedResult, writing value of type 'EmployeeCompany.Models.Employee'.
+2025-02-25 11:19:45.210 +05:30 [INF] Executed action EmployeeCompany.Controllers.EmployeeController.AddEmployee (EmployeeCompany) in 218.9842ms
+2025-02-25 11:19:45.211 +05:30 [INF] Executed endpoint 'EmployeeCompany.Controllers.EmployeeController.AddEmployee (EmployeeCompany)'
+2025-02-25 11:19:45.212 +05:30 [INF] Request finished HTTP/2 POST https://localhost:44315/api/employees - 201 null application/json; charset=utf-8 223.4182ms

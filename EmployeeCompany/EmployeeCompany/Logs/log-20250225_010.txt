@@ -1,0 +1,12 @@
+2025-02-25 11:04:24.789 +05:30 [WRN] No store type was specified for the decimal property 'Salary' on entity type 'Employee'. This will cause values to be silently truncated if they do not fit in the default precision and scale. Explicitly specify the SQL server column type that can accommodate all the values in 'OnModelCreating' using 'HasColumnType', specify precision and scale using 'HasPrecision', or configure a value converter using 'HasConversion'.
+2025-02-25 11:04:32.971 +05:30 [INF] Request starting HTTP/2 GET https://localhost:44315/swagger/index.html - null null
+2025-02-25 11:04:33.172 +05:30 [INF] Application started. Press Ctrl+C to shut down.
+2025-02-25 11:04:33.174 +05:30 [INF] Hosting environment: Development
+2025-02-25 11:04:33.174 +05:30 [INF] Content root path: C:\Users\hello\Downloads\Desktop\Visual Studio\EmployeeCompany\EmployeeCompany
+2025-02-25 11:04:33.233 +05:30 [INF] Request finished HTTP/2 GET https://localhost:44315/swagger/index.html - 200 null text/html;charset=utf-8 265.4903ms
+2025-02-25 11:04:33.246 +05:30 [INF] Request starting HTTP/2 GET https://localhost:44315/_vs/browserLink - null null
+2025-02-25 11:04:33.246 +05:30 [INF] Request starting HTTP/2 GET https://localhost:44315/_framework/aspnetcore-browser-refresh.js - null null
+2025-02-25 11:04:33.255 +05:30 [INF] Request finished HTTP/2 GET https://localhost:44315/_framework/aspnetcore-browser-refresh.js - 200 16515 application/javascript; charset=utf-8 8.1339ms
+2025-02-25 11:04:33.284 +05:30 [INF] Request finished HTTP/2 GET https://localhost:44315/_vs/browserLink - 200 null text/javascript; charset=UTF-8 39.3571ms
+2025-02-25 11:04:33.448 +05:30 [INF] Request starting HTTP/2 GET https://localhost:44315/swagger/v1/swagger.json - null null
+2025-02-25 11:04:33.463 +05:30 [INF] Request finished HTTP/2 GET https://localhost:44315/swagger/v1/swagger.json - 200 null application/json;charset=utf-8 14.5862ms

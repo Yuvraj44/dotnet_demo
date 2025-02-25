@@ -74,7 +74,23 @@ namespace EmployeeCompany.Migrations
 
                     b.HasKey("Id");
 
+                    b.HasIndex("DepartmentId");
+
                     b.ToTable("EmployeeList");
+                });
+
+            modelBuilder.Entity("EmployeeCompany.Models.Employee", b =>
+                {
+                    b.HasOne("EmployeeCompany.Models.Department", null)
+                        .WithMany("Employees")
+                        .HasForeignKey("DepartmentId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+                });
+
+            modelBuilder.Entity("EmployeeCompany.Models.Department", b =>
+                {
+                    b.Navigation("Employees");
                 });
 #pragma warning restore 612, 618
         }
