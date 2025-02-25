@@ -1,16 +1,32 @@
-﻿namespace EmployeeCompany.Models
+﻿using System.ComponentModel.DataAnnotations;
+using System.ComponentModel.DataAnnotations.Schema;
+
+namespace EmployeeCompany.Models
 {
     public class Employee
     {
-
+        [Key]
         public int Id { get; set; }
-        public required string FirstName { get; set; }
-        public required string LastName { get; set; }
-        public required string Email { get; set; }
 
-        public required string PhoneNumber { get; set; }
+        [Required(ErrorMessage = "First name is required.")]
+        public string FirstName { get; set; }
+
+        [Required(ErrorMessage = "Last name is required.")]
+        public string LastName { get; set; }
+
+        [Required(ErrorMessage = "Email is required.")]
+        [EmailAddress(ErrorMessage = "Invalid email format.")]
+        public string Email { get; set; }
+
+        [Required(ErrorMessage = "Phone number is required.")]
+        [RegularExpression("^\\d{10}$", ErrorMessage = "Phone number must be exactly 10 digits.")]
+        public string PhoneNumber { get; set; }
+
         public DateTime HireDate { get; set; }
+        
+        [ForeignKey("DepartmentId")]
         public int DepartmentId { get; set; }
+
         public decimal Salary { get; set; }
 
         public Employee(int id, string firstName, string lastName, string email, string phoneNumber, DateTime hireDate, int departmentId, decimal salary)
