@@ -124,5 +124,19 @@ namespace EmployeeCompany.Controllers
                 return StatusCode(500, $"Unexpected error: {ex.Message}");
             }
         }
+
+
+        [HttpPost("login")]
+        public async Task<IActionResult> Login([FromBody] UserCredentials user)
+        {
+            var existingUser = await _context.UserCredentialsList
+                .FirstOrDefaultAsync(u => u.Username == user.Username && u.Password == user.Password);
+
+            if (existingUser == null)
+                return Unauthorized(new { success = false, message = "Invalid credentials" });
+
+            return Ok(new { success = true, role = existingUser.IsAdmin ? "admin" : "user" });
+        }
+
     }
 }

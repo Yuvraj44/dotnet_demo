@@ -4,6 +4,7 @@ using EmployeeCompany;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 #nullable disable
@@ -11,9 +12,11 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace EmployeeCompany.Migrations
 {
     [DbContext(typeof(EmployeeContext))]
-    partial class EmployeeContextModelSnapshot : ModelSnapshot
+    [Migration("20250304113338_User table")]
+    partial class Usertable
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        /// <inheritdoc />
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -79,7 +82,7 @@ namespace EmployeeCompany.Migrations
                     b.ToTable("EmployeeList");
                 });
 
-            modelBuilder.Entity("EmployeeCompany.Models.UserCredentials", b =>
+            modelBuilder.Entity("EmployeeCompany.Models.UserDetails", b =>
                 {
                     b.Property<int>("UserId")
                         .ValueGeneratedOnAdd()
@@ -100,7 +103,7 @@ namespace EmployeeCompany.Migrations
 
                     b.HasKey("UserId");
 
-                    b.ToTable("UserCredentialsList");
+                    b.ToTable("Users");
                 });
 
             modelBuilder.Entity("EmployeeCompany.Models.Employee", b =>

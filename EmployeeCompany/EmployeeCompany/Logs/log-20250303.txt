@@ -1,0 +1,1433 @@
+2025-03-03 18:33:43.942 +05:30 [INF] Request starting HTTP/2 GET https://localhost:44315/swagger/index.html - null null
+2025-03-03 18:33:44.112 +05:30 [INF] Application started. Press Ctrl+C to shut down.
+2025-03-03 18:33:44.113 +05:30 [INF] Hosting environment: Development
+2025-03-03 18:33:44.113 +05:30 [INF] Content root path: C:\Users\hello\Downloads\Desktop\Visual Studio\EmployeeCompany\EmployeeCompany
+2025-03-03 18:33:45.123 +05:30 [INF] Request starting HTTP/2 GET https://localhost:44315/_framework/aspnetcore-browser-refresh.js - null null
+2025-03-03 18:33:45.124 +05:30 [INF] Request finished HTTP/2 GET https://localhost:44315/swagger/index.html - 200 null text/html;charset=utf-8 1184.0162ms
+2025-03-03 18:33:45.132 +05:30 [INF] Request starting HTTP/2 GET https://localhost:44315/_vs/browserLink - null null
+2025-03-03 18:33:45.153 +05:30 [INF] Request finished HTTP/2 GET https://localhost:44315/_framework/aspnetcore-browser-refresh.js - 200 16515 application/javascript; charset=utf-8 24.374ms
+2025-03-03 18:33:45.336 +05:30 [INF] Request finished HTTP/2 GET https://localhost:44315/_vs/browserLink - 200 null text/javascript; charset=UTF-8 204.0909ms
+2025-03-03 18:33:45.812 +05:30 [INF] Request starting HTTP/2 GET https://localhost:44315/swagger/v1/swagger.json - null null
+2025-03-03 18:33:45.859 +05:30 [INF] Request finished HTTP/2 GET https://localhost:44315/swagger/v1/swagger.json - 200 null application/json;charset=utf-8 46.9889ms
+2025-03-03 18:34:42.409 +05:30 [INF] Request starting HTTP/2 POST https://localhost:44315/api/employees - application/json 202
+2025-03-03 18:34:42.440 +05:30 [INF] Executing endpoint 'EmployeeCompany.Controllers.EmployeeController.AddEmployee (EmployeeCompany)'
+2025-03-03 18:34:42.516 +05:30 [INF] Route matched with {action = "AddEmployee", controller = "Employee"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] AddEmployee(EmployeeCompany.Models.Employee) on controller EmployeeCompany.Controllers.EmployeeController (EmployeeCompany).
+2025-03-03 18:34:44.125 +05:30 [WRN] No store type was specified for the decimal property 'Salary' on entity type 'Employee'. This will cause values to be silently truncated if they do not fit in the default precision and scale. Explicitly specify the SQL server column type that can accommodate all the values in 'OnModelCreating' using 'HasColumnType', specify precision and scale using 'HasPrecision', or configure a value converter using 'HasConversion'.
+2025-03-03 18:34:46.703 +05:30 [INF] Executed DbCommand (292ms) [Parameters=[@p0='?' (DbType = Int32), @p1='?' (Size = 4000), @p2='?' (Size = 4000), @p3='?' (DbType = DateTime2), @p4='?' (Size = 4000), @p5='?' (Size = 4000), @p6='?' (Precision = 18) (Scale = 2) (DbType = Decimal)], CommandType='"Text"', CommandTimeout='30']
+SET IMPLICIT_TRANSACTIONS OFF;
+SET NOCOUNT ON;
+INSERT INTO [EmployeeList] ([DepartmentId], [Email], [FirstName], [HireDate], [LastName], [PhoneNumber], [Salary])
+OUTPUT INSERTED.[Id]
+VALUES (@p0, @p1, @p2, @p3, @p4, @p5, @p6);
+2025-03-03 18:34:46.840 +05:30 [ERR] An exception occurred in the database while saving changes for context type 'EmployeeCompany.EmployeeContext'.
+Microsoft.EntityFrameworkCore.DbUpdateException: An error occurred while saving the entity changes. See the inner exception for details.
+ ---> Microsoft.Data.SqlClient.SqlException (0x80131904): The INSERT statement conflicted with the FOREIGN KEY constraint "FK_EmployeeList_DepartmentList_DepartmentId". The conflict occurred in database "webapiexercisedb", table "dbo.DepartmentList", column 'DepartmentId'.
+   at Microsoft.Data.SqlClient.SqlConnection.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)
+   at Microsoft.Data.SqlClient.SqlInternalConnection.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)
+   at Microsoft.Data.SqlClient.TdsParser.ThrowExceptionAndWarning(TdsParserStateObject stateObj, Boolean callerHasConnectionLock, Boolean asyncClose)
+   at Microsoft.Data.SqlClient.TdsParser.TryRun(RunBehavior runBehavior, SqlCommand cmdHandler, SqlDataReader dataStream, BulkCopySimpleResultSet bulkCopyHandler, TdsParserStateObject stateObj, Boolean& dataReady)
+   at Microsoft.Data.SqlClient.SqlDataReader.TryHasMoreRows(Boolean& moreRows)
+   at Microsoft.Data.SqlClient.SqlDataReader.TryReadInternal(Boolean setTimeout, Boolean& more)
+   at Microsoft.Data.SqlClient.SqlDataReader.ReadAsyncExecute(Task task, Object state)
+   at Microsoft.Data.SqlClient.SqlDataReader.InvokeAsyncCall[T](SqlDataReaderBaseAsyncCallContext`1 context)
+--- End of stack trace from previous location ---
+   at Microsoft.EntityFrameworkCore.Update.AffectedCountModificationCommandBatch.ConsumeResultSetAsync(Int32 startCommandIndex, RelationalDataReader reader, CancellationToken cancellationToken)
+ClientConnectionId:ad2b0bf0-a7b3-44e6-9e3a-2fcf59bf8f9f
+Error Number:547,State:0,Class:16
+   --- End of inner exception stack trace ---
+   at Microsoft.EntityFrameworkCore.Update.AffectedCountModificationCommandBatch.ConsumeResultSetAsync(Int32 startCommandIndex, RelationalDataReader reader, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Update.AffectedCountModificationCommandBatch.ConsumeAsync(RelationalDataReader reader, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Update.ReaderModificationCommandBatch.ExecuteAsync(IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Update.ReaderModificationCommandBatch.ExecuteAsync(IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.SqlServer.Update.Internal.SqlServerModificationCommandBatch.ExecuteAsync(IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Update.Internal.BatchExecutor.ExecuteAsync(IEnumerable`1 commandBatches, IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Update.Internal.BatchExecutor.ExecuteAsync(IEnumerable`1 commandBatches, IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Update.Internal.BatchExecutor.ExecuteAsync(IEnumerable`1 commandBatches, IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Storage.RelationalDatabase.SaveChangesAsync(IList`1 entries, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.ChangeTracking.Internal.StateManager.SaveChangesAsync(IList`1 entriesToSave, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.ChangeTracking.Internal.StateManager.SaveChangesAsync(StateManager stateManager, Boolean acceptAllChangesOnSuccess, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.SqlServer.Storage.Internal.SqlServerExecutionStrategy.ExecuteAsync[TState,TResult](TState state, Func`4 operation, Func`4 verifySucceeded, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.DbContext.SaveChangesAsync(Boolean acceptAllChangesOnSuccess, CancellationToken cancellationToken)
+Microsoft.EntityFrameworkCore.DbUpdateException: An error occurred while saving the entity changes. See the inner exception for details.
+ ---> Microsoft.Data.SqlClient.SqlException (0x80131904): The INSERT statement conflicted with the FOREIGN KEY constraint "FK_EmployeeList_DepartmentList_DepartmentId". The conflict occurred in database "webapiexercisedb", table "dbo.DepartmentList", column 'DepartmentId'.
+   at Microsoft.Data.SqlClient.SqlConnection.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)
+   at Microsoft.Data.SqlClient.SqlInternalConnection.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)
+   at Microsoft.Data.SqlClient.TdsParser.ThrowExceptionAndWarning(TdsParserStateObject stateObj, Boolean callerHasConnectionLock, Boolean asyncClose)
+   at Microsoft.Data.SqlClient.TdsParser.TryRun(RunBehavior runBehavior, SqlCommand cmdHandler, SqlDataReader dataStream, BulkCopySimpleResultSet bulkCopyHandler, TdsParserStateObject stateObj, Boolean& dataReady)
+   at Microsoft.Data.SqlClient.SqlDataReader.TryHasMoreRows(Boolean& moreRows)
+   at Microsoft.Data.SqlClient.SqlDataReader.TryReadInternal(Boolean setTimeout, Boolean& more)
+   at Microsoft.Data.SqlClient.SqlDataReader.ReadAsyncExecute(Task task, Object state)
+   at Microsoft.Data.SqlClient.SqlDataReader.InvokeAsyncCall[T](SqlDataReaderBaseAsyncCallContext`1 context)
+--- End of stack trace from previous location ---
+   at Microsoft.EntityFrameworkCore.Update.AffectedCountModificationCommandBatch.ConsumeResultSetAsync(Int32 startCommandIndex, RelationalDataReader reader, CancellationToken cancellationToken)
+ClientConnectionId:ad2b0bf0-a7b3-44e6-9e3a-2fcf59bf8f9f
+Error Number:547,State:0,Class:16
+   --- End of inner exception stack trace ---
+   at Microsoft.EntityFrameworkCore.Update.AffectedCountModificationCommandBatch.ConsumeResultSetAsync(Int32 startCommandIndex, RelationalDataReader reader, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Update.AffectedCountModificationCommandBatch.ConsumeAsync(RelationalDataReader reader, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Update.ReaderModificationCommandBatch.ExecuteAsync(IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Update.ReaderModificationCommandBatch.ExecuteAsync(IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.SqlServer.Update.Internal.SqlServerModificationCommandBatch.ExecuteAsync(IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Update.Internal.BatchExecutor.ExecuteAsync(IEnumerable`1 commandBatches, IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Update.Internal.BatchExecutor.ExecuteAsync(IEnumerable`1 commandBatches, IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Update.Internal.BatchExecutor.ExecuteAsync(IEnumerable`1 commandBatches, IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Storage.RelationalDatabase.SaveChangesAsync(IList`1 entries, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.ChangeTracking.Internal.StateManager.SaveChangesAsync(IList`1 entriesToSave, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.ChangeTracking.Internal.StateManager.SaveChangesAsync(StateManager stateManager, Boolean acceptAllChangesOnSuccess, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.SqlServer.Storage.Internal.SqlServerExecutionStrategy.ExecuteAsync[TState,TResult](TState state, Func`4 operation, Func`4 verifySucceeded, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.DbContext.SaveChangesAsync(Boolean acceptAllChangesOnSuccess, CancellationToken cancellationToken)
+2025-03-03 18:34:47.073 +05:30 [INF] Executing ObjectResult, writing value of type 'System.String'.
+2025-03-03 18:34:47.084 +05:30 [INF] Executed action EmployeeCompany.Controllers.EmployeeController.AddEmployee (EmployeeCompany) in 4562.3929ms
+2025-03-03 18:34:47.086 +05:30 [INF] Executed endpoint 'EmployeeCompany.Controllers.EmployeeController.AddEmployee (EmployeeCompany)'
+2025-03-03 18:34:47.107 +05:30 [INF] Request finished HTTP/2 POST https://localhost:44315/api/employees - 500 null text/plain; charset=utf-8 4698.7255ms
+2025-03-03 18:36:19.279 +05:30 [INF] Request starting HTTP/2 OPTIONS https://localhost:44315/api/employees - null null
+2025-03-03 18:36:19.292 +05:30 [INF] Executing endpoint '405 HTTP Method Not Supported'
+2025-03-03 18:36:19.293 +05:30 [INF] Executed endpoint '405 HTTP Method Not Supported'
+2025-03-03 18:36:19.296 +05:30 [INF] Request finished HTTP/2 OPTIONS https://localhost:44315/api/employees - 405 null null 17.0866ms
+2025-03-03 18:50:06.637 +05:30 [INF] Request starting HTTP/2 GET https://localhost:44315/swagger/index.html - null null
+2025-03-03 18:50:06.933 +05:30 [INF] Application started. Press Ctrl+C to shut down.
+2025-03-03 18:50:06.933 +05:30 [INF] Hosting environment: Development
+2025-03-03 18:50:06.934 +05:30 [INF] Content root path: C:\Users\hello\Downloads\Desktop\Visual Studio\EmployeeCompany\EmployeeCompany
+2025-03-03 18:50:07.304 +05:30 [INF] Request starting HTTP/2 GET https://localhost:44315/_framework/aspnetcore-browser-refresh.js - null null
+2025-03-03 18:50:07.304 +05:30 [INF] Request starting HTTP/2 GET https://localhost:44315/_vs/browserLink - null null
+2025-03-03 18:50:07.306 +05:30 [INF] Request finished HTTP/2 GET https://localhost:44315/swagger/index.html - 200 null text/html;charset=utf-8 705.5981ms
+2025-03-03 18:50:07.314 +05:30 [INF] Request finished HTTP/2 GET https://localhost:44315/_framework/aspnetcore-browser-refresh.js - 200 16515 application/javascript; charset=utf-8 11.4636ms
+2025-03-03 18:50:07.389 +05:30 [INF] Request finished HTTP/2 GET https://localhost:44315/_vs/browserLink - 200 null text/javascript; charset=UTF-8 87.2327ms
+2025-03-03 18:50:07.643 +05:30 [INF] Request starting HTTP/2 GET https://localhost:44315/swagger/v1/swagger.json - null null
+2025-03-03 18:50:07.668 +05:30 [INF] Request finished HTTP/2 GET https://localhost:44315/swagger/v1/swagger.json - 200 null application/json;charset=utf-8 24.2664ms
+2025-03-03 18:51:54.071 +05:30 [INF] Request starting HTTP/2 GET https://localhost:44315/swagger/index.html - null null
+2025-03-03 18:51:54.177 +05:30 [INF] Application started. Press Ctrl+C to shut down.
+2025-03-03 18:51:54.178 +05:30 [INF] Hosting environment: Development
+2025-03-03 18:51:54.178 +05:30 [INF] Content root path: C:\Users\hello\Downloads\Desktop\Visual Studio\EmployeeCompany\EmployeeCompany
+2025-03-03 18:51:54.420 +05:30 [INF] Request starting HTTP/2 GET https://localhost:44315/_framework/aspnetcore-browser-refresh.js - null null
+2025-03-03 18:51:54.422 +05:30 [INF] Request starting HTTP/2 GET https://localhost:44315/_vs/browserLink - null null
+2025-03-03 18:51:54.415 +05:30 [INF] Request finished HTTP/2 GET https://localhost:44315/swagger/index.html - 200 null text/html;charset=utf-8 355.0938ms
+2025-03-03 18:51:54.430 +05:30 [INF] Request finished HTTP/2 GET https://localhost:44315/_framework/aspnetcore-browser-refresh.js - 200 16515 application/javascript; charset=utf-8 10.3812ms
+2025-03-03 18:51:54.548 +05:30 [INF] Request finished HTTP/2 GET https://localhost:44315/_vs/browserLink - 200 null text/javascript; charset=UTF-8 127.6631ms
+2025-03-03 18:51:54.628 +05:30 [INF] Request starting HTTP/2 GET https://localhost:44315/swagger/v1/swagger.json - null null
+2025-03-03 18:51:54.651 +05:30 [INF] Request finished HTTP/2 GET https://localhost:44315/swagger/v1/swagger.json - 200 null application/json;charset=utf-8 23.3743ms
+2025-03-03 19:05:44.740 +05:30 [INF] Request starting HTTP/2 GET https://localhost:44315/swagger/index.html - null null
+2025-03-03 19:05:45.061 +05:30 [INF] Application started. Press Ctrl+C to shut down.
+2025-03-03 19:05:45.062 +05:30 [INF] Hosting environment: Development
+2025-03-03 19:05:45.062 +05:30 [INF] Content root path: C:\Users\hello\Downloads\Desktop\Visual Studio\EmployeeCompany\EmployeeCompany
+2025-03-03 19:05:45.245 +05:30 [INF] Request finished HTTP/2 GET https://localhost:44315/swagger/index.html - 200 null text/html;charset=utf-8 538.533ms
+2025-03-03 19:05:45.256 +05:30 [INF] Request starting HTTP/2 GET https://localhost:44315/_framework/aspnetcore-browser-refresh.js - null null
+2025-03-03 19:05:45.257 +05:30 [INF] Request starting HTTP/2 GET https://localhost:44315/_vs/browserLink - null null
+2025-03-03 19:05:45.277 +05:30 [INF] Request finished HTTP/2 GET https://localhost:44315/_framework/aspnetcore-browser-refresh.js - 200 16515 application/javascript; charset=utf-8 9.2332ms
+2025-03-03 19:05:45.481 +05:30 [INF] Request finished HTTP/2 GET https://localhost:44315/_vs/browserLink - 200 null text/javascript; charset=UTF-8 225.3549ms
+2025-03-03 19:05:45.602 +05:30 [INF] Request starting HTTP/2 GET https://localhost:44315/swagger/v1/swagger.json - null null
+2025-03-03 19:05:45.629 +05:30 [INF] Request finished HTTP/2 GET https://localhost:44315/swagger/v1/swagger.json - 200 null application/json;charset=utf-8 26.9226ms
+2025-03-03 19:05:52.899 +05:30 [INF] Request starting HTTP/2 GET https://localhost:44315/api/employees - null null
+2025-03-03 19:05:52.918 +05:30 [INF] Executing endpoint 'EmployeeCompany.Controllers.EmployeeController.ViewAll (EmployeeCompany)'
+2025-03-03 19:05:52.997 +05:30 [INF] Route matched with {action = "ViewAll", controller = "Employee"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] ViewAll() on controller EmployeeCompany.Controllers.EmployeeController (EmployeeCompany).
+2025-03-03 19:05:54.370 +05:30 [WRN] No store type was specified for the decimal property 'Salary' on entity type 'Employee'. This will cause values to be silently truncated if they do not fit in the default precision and scale. Explicitly specify the SQL server column type that can accommodate all the values in 'OnModelCreating' using 'HasColumnType', specify precision and scale using 'HasPrecision', or configure a value converter using 'HasConversion'.
+2025-03-03 19:05:56.881 +05:30 [INF] Executed DbCommand (149ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [e].[Id], [e].[DepartmentId], [e].[Email], [e].[FirstName], [e].[HireDate], [e].[LastName], [e].[PhoneNumber], [e].[Salary]
+FROM [EmployeeList] AS [e]
+2025-03-03 19:05:56.991 +05:30 [INF] Executing OkObjectResult, writing value of type 'System.Collections.Generic.List`1[[EmployeeCompany.Models.Employee, EmployeeCompany, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2025-03-03 19:05:57.019 +05:30 [INF] Executed action EmployeeCompany.Controllers.EmployeeController.ViewAll (EmployeeCompany) in 4015.3216ms
+2025-03-03 19:05:57.021 +05:30 [INF] Executed endpoint 'EmployeeCompany.Controllers.EmployeeController.ViewAll (EmployeeCompany)'
+2025-03-03 19:05:57.045 +05:30 [INF] Request finished HTTP/2 GET https://localhost:44315/api/employees - 200 null application/json; charset=utf-8 4145.5179ms
+2025-03-03 19:13:30.169 +05:30 [INF] Request starting HTTP/2 GET https://localhost:44315/swagger/index.html - null null
+2025-03-03 19:13:30.393 +05:30 [INF] Application started. Press Ctrl+C to shut down.
+2025-03-03 19:13:30.395 +05:30 [INF] Hosting environment: Development
+2025-03-03 19:13:30.395 +05:30 [INF] Content root path: C:\Users\hello\Downloads\Desktop\Visual Studio\EmployeeCompany\EmployeeCompany
+2025-03-03 19:13:30.714 +05:30 [INF] Request finished HTTP/2 GET https://localhost:44315/swagger/index.html - 200 null text/html;charset=utf-8 578.6487ms
+2025-03-03 19:13:30.719 +05:30 [INF] Request starting HTTP/2 GET https://localhost:44315/_framework/aspnetcore-browser-refresh.js - null null
+2025-03-03 19:13:30.733 +05:30 [INF] Request starting HTTP/2 GET https://localhost:44315/_vs/browserLink - null null
+2025-03-03 19:13:30.737 +05:30 [INF] Request finished HTTP/2 GET https://localhost:44315/_framework/aspnetcore-browser-refresh.js - 200 16515 application/javascript; charset=utf-8 17.6297ms
+2025-03-03 19:13:30.788 +05:30 [INF] Request finished HTTP/2 GET https://localhost:44315/_vs/browserLink - 200 null text/javascript; charset=UTF-8 54.7866ms
+2025-03-03 19:13:31.025 +05:30 [INF] Request starting HTTP/2 GET https://localhost:44315/swagger/v1/swagger.json - null null
+2025-03-03 19:13:31.045 +05:30 [INF] Request finished HTTP/2 GET https://localhost:44315/swagger/v1/swagger.json - 200 null application/json;charset=utf-8 20.7958ms
+2025-03-03 19:13:40.279 +05:30 [INF] Request starting HTTP/2 GET https://localhost:44315/api/employees - null null
+2025-03-03 19:13:40.291 +05:30 [INF] Executing endpoint 'EmployeeCompany.Controllers.EmployeeController.ViewAll (EmployeeCompany)'
+2025-03-03 19:13:40.317 +05:30 [INF] Route matched with {action = "ViewAll", controller = "Employee"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] ViewAll() on controller EmployeeCompany.Controllers.EmployeeController (EmployeeCompany).
+2025-03-03 19:13:41.747 +05:30 [WRN] No store type was specified for the decimal property 'Salary' on entity type 'Employee'. This will cause values to be silently truncated if they do not fit in the default precision and scale. Explicitly specify the SQL server column type that can accommodate all the values in 'OnModelCreating' using 'HasColumnType', specify precision and scale using 'HasPrecision', or configure a value converter using 'HasConversion'.
+2025-03-03 19:13:43.161 +05:30 [INF] Executed DbCommand (73ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [e].[Id], [e].[DepartmentId], [e].[Email], [e].[FirstName], [e].[HireDate], [e].[LastName], [e].[PhoneNumber], [e].[Salary]
+FROM [EmployeeList] AS [e]
+2025-03-03 19:13:43.366 +05:30 [INF] Executing OkObjectResult, writing value of type 'System.Collections.Generic.List`1[[EmployeeCompany.Models.Employee, EmployeeCompany, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2025-03-03 19:13:43.396 +05:30 [INF] Executed action EmployeeCompany.Controllers.EmployeeController.ViewAll (EmployeeCompany) in 3070.962ms
+2025-03-03 19:13:43.397 +05:30 [INF] Executed endpoint 'EmployeeCompany.Controllers.EmployeeController.ViewAll (EmployeeCompany)'
+2025-03-03 19:13:43.421 +05:30 [INF] Request finished HTTP/2 GET https://localhost:44315/api/employees - 200 null application/json; charset=utf-8 3142.1587ms
+2025-03-03 19:14:35.592 +05:30 [INF] Request starting HTTP/2 GET https://localhost:44315/api/employees - null null
+2025-03-03 19:14:35.595 +05:30 [INF] Executing endpoint 'EmployeeCompany.Controllers.EmployeeController.ViewAll (EmployeeCompany)'
+2025-03-03 19:14:35.597 +05:30 [INF] Route matched with {action = "ViewAll", controller = "Employee"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] ViewAll() on controller EmployeeCompany.Controllers.EmployeeController (EmployeeCompany).
+2025-03-03 19:14:35.680 +05:30 [INF] Executed DbCommand (14ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [e].[Id], [e].[DepartmentId], [e].[Email], [e].[FirstName], [e].[HireDate], [e].[LastName], [e].[PhoneNumber], [e].[Salary]
+FROM [EmployeeList] AS [e]
+2025-03-03 19:14:35.681 +05:30 [INF] Executing OkObjectResult, writing value of type 'System.Collections.Generic.List`1[[EmployeeCompany.Models.Employee, EmployeeCompany, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2025-03-03 19:14:35.682 +05:30 [INF] Executed action EmployeeCompany.Controllers.EmployeeController.ViewAll (EmployeeCompany) in 79.3952ms
+2025-03-03 19:14:35.682 +05:30 [INF] Executed endpoint 'EmployeeCompany.Controllers.EmployeeController.ViewAll (EmployeeCompany)'
+2025-03-03 19:14:35.683 +05:30 [INF] Request finished HTTP/2 GET https://localhost:44315/api/employees - 200 null application/json; charset=utf-8 90.9894ms
+2025-03-03 19:16:03.583 +05:30 [INF] Request starting HTTP/2 GET https://localhost:44315/api/employees - null null
+2025-03-03 19:16:03.591 +05:30 [INF] Executing endpoint 'EmployeeCompany.Controllers.EmployeeController.ViewAll (EmployeeCompany)'
+2025-03-03 19:16:03.591 +05:30 [INF] Route matched with {action = "ViewAll", controller = "Employee"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] ViewAll() on controller EmployeeCompany.Controllers.EmployeeController (EmployeeCompany).
+2025-03-03 19:16:03.700 +05:30 [INF] Executed DbCommand (9ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [e].[Id], [e].[DepartmentId], [e].[Email], [e].[FirstName], [e].[HireDate], [e].[LastName], [e].[PhoneNumber], [e].[Salary]
+FROM [EmployeeList] AS [e]
+2025-03-03 19:16:03.703 +05:30 [INF] Executing OkObjectResult, writing value of type 'System.Collections.Generic.List`1[[EmployeeCompany.Models.Employee, EmployeeCompany, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2025-03-03 19:16:03.705 +05:30 [INF] Executed action EmployeeCompany.Controllers.EmployeeController.ViewAll (EmployeeCompany) in 113.347ms
+2025-03-03 19:16:03.705 +05:30 [INF] Executed endpoint 'EmployeeCompany.Controllers.EmployeeController.ViewAll (EmployeeCompany)'
+2025-03-03 19:16:03.705 +05:30 [INF] Request finished HTTP/2 GET https://localhost:44315/api/employees - 200 null application/json; charset=utf-8 122.0778ms
+2025-03-03 19:28:45.974 +05:30 [INF] Request starting HTTP/2 GET https://localhost:44315/api/employees - null null
+2025-03-03 19:28:45.978 +05:30 [INF] CORS policy execution successful.
+2025-03-03 19:28:45.981 +05:30 [INF] Executing endpoint 'EmployeeCompany.Controllers.EmployeeController.ViewAll (EmployeeCompany)'
+2025-03-03 19:28:45.982 +05:30 [INF] Route matched with {action = "ViewAll", controller = "Employee"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] ViewAll() on controller EmployeeCompany.Controllers.EmployeeController (EmployeeCompany).
+2025-03-03 19:28:46.019 +05:30 [INF] Executed DbCommand (4ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [e].[Id], [e].[DepartmentId], [e].[Email], [e].[FirstName], [e].[HireDate], [e].[LastName], [e].[PhoneNumber], [e].[Salary]
+FROM [EmployeeList] AS [e]
+2025-03-03 19:28:46.021 +05:30 [INF] Executing OkObjectResult, writing value of type 'System.Collections.Generic.List`1[[EmployeeCompany.Models.Employee, EmployeeCompany, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2025-03-03 19:28:46.023 +05:30 [INF] Executed action EmployeeCompany.Controllers.EmployeeController.ViewAll (EmployeeCompany) in 40.7289ms
+2025-03-03 19:28:46.024 +05:30 [INF] Executed endpoint 'EmployeeCompany.Controllers.EmployeeController.ViewAll (EmployeeCompany)'
+2025-03-03 19:28:46.024 +05:30 [INF] Request finished HTTP/2 GET https://localhost:44315/api/employees - 200 null application/json; charset=utf-8 50.6611ms
+2025-03-03 19:28:46.032 +05:30 [INF] Request starting HTTP/2 GET https://localhost:44315/api/employees - null null
+2025-03-03 19:28:46.033 +05:30 [INF] CORS policy execution successful.
+2025-03-03 19:28:46.033 +05:30 [INF] Executing endpoint 'EmployeeCompany.Controllers.EmployeeController.ViewAll (EmployeeCompany)'
+2025-03-03 19:28:46.033 +05:30 [INF] Route matched with {action = "ViewAll", controller = "Employee"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] ViewAll() on controller EmployeeCompany.Controllers.EmployeeController (EmployeeCompany).
+2025-03-03 19:28:46.052 +05:30 [INF] Executed DbCommand (3ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [e].[Id], [e].[DepartmentId], [e].[Email], [e].[FirstName], [e].[HireDate], [e].[LastName], [e].[PhoneNumber], [e].[Salary]
+FROM [EmployeeList] AS [e]
+2025-03-03 19:28:46.053 +05:30 [INF] Executing OkObjectResult, writing value of type 'System.Collections.Generic.List`1[[EmployeeCompany.Models.Employee, EmployeeCompany, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2025-03-03 19:28:46.054 +05:30 [INF] Executed action EmployeeCompany.Controllers.EmployeeController.ViewAll (EmployeeCompany) in 20.3427ms
+2025-03-03 19:28:46.054 +05:30 [INF] Executed endpoint 'EmployeeCompany.Controllers.EmployeeController.ViewAll (EmployeeCompany)'
+2025-03-03 19:28:46.054 +05:30 [INF] Request finished HTTP/2 GET https://localhost:44315/api/employees - 200 null application/json; charset=utf-8 22.0466ms
+2025-03-03 19:30:11.481 +05:30 [INF] Request starting HTTP/2 GET https://localhost:44315/api/employees - null null
+2025-03-03 19:30:11.513 +05:30 [INF] CORS policy execution successful.
+2025-03-03 19:30:11.513 +05:30 [INF] Executing endpoint 'EmployeeCompany.Controllers.EmployeeController.ViewAll (EmployeeCompany)'
+2025-03-03 19:30:11.513 +05:30 [INF] Route matched with {action = "ViewAll", controller = "Employee"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] ViewAll() on controller EmployeeCompany.Controllers.EmployeeController (EmployeeCompany).
+2025-03-03 19:30:11.544 +05:30 [INF] Executed DbCommand (3ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [e].[Id], [e].[DepartmentId], [e].[Email], [e].[FirstName], [e].[HireDate], [e].[LastName], [e].[PhoneNumber], [e].[Salary]
+FROM [EmployeeList] AS [e]
+2025-03-03 19:30:11.545 +05:30 [INF] Executing OkObjectResult, writing value of type 'System.Collections.Generic.List`1[[EmployeeCompany.Models.Employee, EmployeeCompany, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2025-03-03 19:30:11.546 +05:30 [INF] Executed action EmployeeCompany.Controllers.EmployeeController.ViewAll (EmployeeCompany) in 32.9503ms
+2025-03-03 19:30:11.546 +05:30 [INF] Executed endpoint 'EmployeeCompany.Controllers.EmployeeController.ViewAll (EmployeeCompany)'
+2025-03-03 19:30:11.547 +05:30 [INF] Request finished HTTP/2 GET https://localhost:44315/api/employees - 200 null application/json; charset=utf-8 70.0732ms
+2025-03-03 19:30:11.548 +05:30 [INF] Request starting HTTP/2 GET https://localhost:44315/api/employees - null null
+2025-03-03 19:30:11.548 +05:30 [INF] CORS policy execution successful.
+2025-03-03 19:30:11.548 +05:30 [INF] Executing endpoint 'EmployeeCompany.Controllers.EmployeeController.ViewAll (EmployeeCompany)'
+2025-03-03 19:30:11.549 +05:30 [INF] Route matched with {action = "ViewAll", controller = "Employee"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] ViewAll() on controller EmployeeCompany.Controllers.EmployeeController (EmployeeCompany).
+2025-03-03 19:30:11.565 +05:30 [INF] Executed DbCommand (0ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [e].[Id], [e].[DepartmentId], [e].[Email], [e].[FirstName], [e].[HireDate], [e].[LastName], [e].[PhoneNumber], [e].[Salary]
+FROM [EmployeeList] AS [e]
+2025-03-03 19:30:11.566 +05:30 [INF] Executing OkObjectResult, writing value of type 'System.Collections.Generic.List`1[[EmployeeCompany.Models.Employee, EmployeeCompany, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2025-03-03 19:30:11.567 +05:30 [INF] Executed action EmployeeCompany.Controllers.EmployeeController.ViewAll (EmployeeCompany) in 18.0155ms
+2025-03-03 19:30:11.567 +05:30 [INF] Executed endpoint 'EmployeeCompany.Controllers.EmployeeController.ViewAll (EmployeeCompany)'
+2025-03-03 19:30:11.568 +05:30 [INF] Request finished HTTP/2 GET https://localhost:44315/api/employees - 200 null application/json; charset=utf-8 19.5295ms
+2025-03-03 19:33:32.925 +05:30 [INF] Request starting HTTP/2 GET https://localhost:44315/api/employees - null null
+2025-03-03 19:33:32.928 +05:30 [INF] CORS policy execution successful.
+2025-03-03 19:33:32.928 +05:30 [INF] Executing endpoint 'EmployeeCompany.Controllers.EmployeeController.ViewAll (EmployeeCompany)'
+2025-03-03 19:33:32.934 +05:30 [INF] Route matched with {action = "ViewAll", controller = "Employee"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] ViewAll() on controller EmployeeCompany.Controllers.EmployeeController (EmployeeCompany).
+2025-03-03 19:33:32.970 +05:30 [INF] Executed DbCommand (3ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [e].[Id], [e].[DepartmentId], [e].[Email], [e].[FirstName], [e].[HireDate], [e].[LastName], [e].[PhoneNumber], [e].[Salary]
+FROM [EmployeeList] AS [e]
+2025-03-03 19:33:32.971 +05:30 [INF] Executing OkObjectResult, writing value of type 'System.Collections.Generic.List`1[[EmployeeCompany.Models.Employee, EmployeeCompany, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2025-03-03 19:33:32.972 +05:30 [INF] Executed action EmployeeCompany.Controllers.EmployeeController.ViewAll (EmployeeCompany) in 37.3792ms
+2025-03-03 19:33:32.972 +05:30 [INF] Executed endpoint 'EmployeeCompany.Controllers.EmployeeController.ViewAll (EmployeeCompany)'
+2025-03-03 19:33:32.972 +05:30 [INF] Request finished HTTP/2 GET https://localhost:44315/api/employees - 200 null application/json; charset=utf-8 53.7393ms
+2025-03-03 19:33:32.981 +05:30 [INF] Request starting HTTP/2 GET https://localhost:44315/api/employees - null null
+2025-03-03 19:33:32.982 +05:30 [INF] CORS policy execution successful.
+2025-03-03 19:33:32.982 +05:30 [INF] Executing endpoint 'EmployeeCompany.Controllers.EmployeeController.ViewAll (EmployeeCompany)'
+2025-03-03 19:33:32.982 +05:30 [INF] Route matched with {action = "ViewAll", controller = "Employee"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] ViewAll() on controller EmployeeCompany.Controllers.EmployeeController (EmployeeCompany).
+2025-03-03 19:33:33.002 +05:30 [INF] Executed DbCommand (3ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [e].[Id], [e].[DepartmentId], [e].[Email], [e].[FirstName], [e].[HireDate], [e].[LastName], [e].[PhoneNumber], [e].[Salary]
+FROM [EmployeeList] AS [e]
+2025-03-03 19:33:33.004 +05:30 [INF] Executing OkObjectResult, writing value of type 'System.Collections.Generic.List`1[[EmployeeCompany.Models.Employee, EmployeeCompany, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2025-03-03 19:33:33.005 +05:30 [INF] Executed action EmployeeCompany.Controllers.EmployeeController.ViewAll (EmployeeCompany) in 22.0203ms
+2025-03-03 19:33:33.005 +05:30 [INF] Executed endpoint 'EmployeeCompany.Controllers.EmployeeController.ViewAll (EmployeeCompany)'
+2025-03-03 19:33:33.005 +05:30 [INF] Request finished HTTP/2 GET https://localhost:44315/api/employees - 200 null application/json; charset=utf-8 24.3002ms
+2025-03-03 19:35:36.655 +05:30 [INF] Request starting HTTP/2 GET https://localhost:44315/api/employees - null null
+2025-03-03 19:35:36.680 +05:30 [INF] CORS policy execution successful.
+2025-03-03 19:35:36.680 +05:30 [INF] Executing endpoint 'EmployeeCompany.Controllers.EmployeeController.ViewAll (EmployeeCompany)'
+2025-03-03 19:35:36.680 +05:30 [INF] Route matched with {action = "ViewAll", controller = "Employee"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] ViewAll() on controller EmployeeCompany.Controllers.EmployeeController (EmployeeCompany).
+2025-03-03 19:35:36.742 +05:30 [INF] Executed DbCommand (3ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [e].[Id], [e].[DepartmentId], [e].[Email], [e].[FirstName], [e].[HireDate], [e].[LastName], [e].[PhoneNumber], [e].[Salary]
+FROM [EmployeeList] AS [e]
+2025-03-03 19:35:36.744 +05:30 [INF] Executing OkObjectResult, writing value of type 'System.Collections.Generic.List`1[[EmployeeCompany.Models.Employee, EmployeeCompany, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2025-03-03 19:35:36.745 +05:30 [INF] Executed action EmployeeCompany.Controllers.EmployeeController.ViewAll (EmployeeCompany) in 64.396ms
+2025-03-03 19:35:36.745 +05:30 [INF] Executed endpoint 'EmployeeCompany.Controllers.EmployeeController.ViewAll (EmployeeCompany)'
+2025-03-03 19:35:36.745 +05:30 [INF] Request finished HTTP/2 GET https://localhost:44315/api/employees - 200 null application/json; charset=utf-8 90.5553ms
+2025-03-03 19:35:36.747 +05:30 [INF] Request starting HTTP/2 GET https://localhost:44315/api/employees - null null
+2025-03-03 19:35:36.747 +05:30 [INF] CORS policy execution successful.
+2025-03-03 19:35:36.747 +05:30 [INF] Executing endpoint 'EmployeeCompany.Controllers.EmployeeController.ViewAll (EmployeeCompany)'
+2025-03-03 19:35:36.747 +05:30 [INF] Route matched with {action = "ViewAll", controller = "Employee"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] ViewAll() on controller EmployeeCompany.Controllers.EmployeeController (EmployeeCompany).
+2025-03-03 19:35:36.769 +05:30 [INF] Executed DbCommand (3ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [e].[Id], [e].[DepartmentId], [e].[Email], [e].[FirstName], [e].[HireDate], [e].[LastName], [e].[PhoneNumber], [e].[Salary]
+FROM [EmployeeList] AS [e]
+2025-03-03 19:35:36.771 +05:30 [INF] Executing OkObjectResult, writing value of type 'System.Collections.Generic.List`1[[EmployeeCompany.Models.Employee, EmployeeCompany, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2025-03-03 19:35:36.771 +05:30 [INF] Executed action EmployeeCompany.Controllers.EmployeeController.ViewAll (EmployeeCompany) in 23.961ms
+2025-03-03 19:35:36.772 +05:30 [INF] Executed endpoint 'EmployeeCompany.Controllers.EmployeeController.ViewAll (EmployeeCompany)'
+2025-03-03 19:35:36.772 +05:30 [INF] Request finished HTTP/2 GET https://localhost:44315/api/employees - 200 null application/json; charset=utf-8 25.0717ms
+2025-03-03 19:36:28.946 +05:30 [INF] Request starting HTTP/2 GET https://localhost:44315/api/employees - null null
+2025-03-03 19:36:28.947 +05:30 [INF] CORS policy execution successful.
+2025-03-03 19:36:28.947 +05:30 [INF] Executing endpoint 'EmployeeCompany.Controllers.EmployeeController.ViewAll (EmployeeCompany)'
+2025-03-03 19:36:28.947 +05:30 [INF] Route matched with {action = "ViewAll", controller = "Employee"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] ViewAll() on controller EmployeeCompany.Controllers.EmployeeController (EmployeeCompany).
+2025-03-03 19:36:28.988 +05:30 [INF] Executed DbCommand (8ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [e].[Id], [e].[DepartmentId], [e].[Email], [e].[FirstName], [e].[HireDate], [e].[LastName], [e].[PhoneNumber], [e].[Salary]
+FROM [EmployeeList] AS [e]
+2025-03-03 19:36:28.994 +05:30 [INF] Executing OkObjectResult, writing value of type 'System.Collections.Generic.List`1[[EmployeeCompany.Models.Employee, EmployeeCompany, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2025-03-03 19:36:28.995 +05:30 [INF] Executed action EmployeeCompany.Controllers.EmployeeController.ViewAll (EmployeeCompany) in 47.8644ms
+2025-03-03 19:36:28.996 +05:30 [INF] Executed endpoint 'EmployeeCompany.Controllers.EmployeeController.ViewAll (EmployeeCompany)'
+2025-03-03 19:36:28.996 +05:30 [INF] Request finished HTTP/2 GET https://localhost:44315/api/employees - 200 null application/json; charset=utf-8 50.0079ms
+2025-03-03 19:36:28.999 +05:30 [INF] Request starting HTTP/2 GET https://localhost:44315/api/employees - null null
+2025-03-03 19:36:28.999 +05:30 [INF] CORS policy execution successful.
+2025-03-03 19:36:29.000 +05:30 [INF] Executing endpoint 'EmployeeCompany.Controllers.EmployeeController.ViewAll (EmployeeCompany)'
+2025-03-03 19:36:29.000 +05:30 [INF] Route matched with {action = "ViewAll", controller = "Employee"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] ViewAll() on controller EmployeeCompany.Controllers.EmployeeController (EmployeeCompany).
+2025-03-03 19:36:29.030 +05:30 [INF] Executed DbCommand (3ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [e].[Id], [e].[DepartmentId], [e].[Email], [e].[FirstName], [e].[HireDate], [e].[LastName], [e].[PhoneNumber], [e].[Salary]
+FROM [EmployeeList] AS [e]
+2025-03-03 19:36:29.031 +05:30 [INF] Executing OkObjectResult, writing value of type 'System.Collections.Generic.List`1[[EmployeeCompany.Models.Employee, EmployeeCompany, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2025-03-03 19:36:29.032 +05:30 [INF] Executed action EmployeeCompany.Controllers.EmployeeController.ViewAll (EmployeeCompany) in 32.0023ms
+2025-03-03 19:36:29.032 +05:30 [INF] Executed endpoint 'EmployeeCompany.Controllers.EmployeeController.ViewAll (EmployeeCompany)'
+2025-03-03 19:36:29.032 +05:30 [INF] Request finished HTTP/2 GET https://localhost:44315/api/employees - 200 null application/json; charset=utf-8 33.654ms
+2025-03-03 19:36:34.910 +05:30 [INF] Request starting HTTP/2 GET https://localhost:44315/api/employees - null null
+2025-03-03 19:36:34.911 +05:30 [INF] CORS policy execution successful.
+2025-03-03 19:36:34.911 +05:30 [INF] Executing endpoint 'EmployeeCompany.Controllers.EmployeeController.ViewAll (EmployeeCompany)'
+2025-03-03 19:36:34.911 +05:30 [INF] Route matched with {action = "ViewAll", controller = "Employee"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] ViewAll() on controller EmployeeCompany.Controllers.EmployeeController (EmployeeCompany).
+2025-03-03 19:36:34.934 +05:30 [INF] Executed DbCommand (0ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [e].[Id], [e].[DepartmentId], [e].[Email], [e].[FirstName], [e].[HireDate], [e].[LastName], [e].[PhoneNumber], [e].[Salary]
+FROM [EmployeeList] AS [e]
+2025-03-03 19:36:34.936 +05:30 [INF] Executing OkObjectResult, writing value of type 'System.Collections.Generic.List`1[[EmployeeCompany.Models.Employee, EmployeeCompany, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2025-03-03 19:36:34.938 +05:30 [INF] Executed action EmployeeCompany.Controllers.EmployeeController.ViewAll (EmployeeCompany) in 26.4961ms
+2025-03-03 19:36:34.938 +05:30 [INF] Executed endpoint 'EmployeeCompany.Controllers.EmployeeController.ViewAll (EmployeeCompany)'
+2025-03-03 19:36:34.939 +05:30 [INF] Request finished HTTP/2 GET https://localhost:44315/api/employees - 200 null application/json; charset=utf-8 29.0985ms
+2025-03-03 19:36:34.941 +05:30 [INF] Request starting HTTP/2 GET https://localhost:44315/api/employees - null null
+2025-03-03 19:36:34.941 +05:30 [INF] CORS policy execution successful.
+2025-03-03 19:36:34.941 +05:30 [INF] Executing endpoint 'EmployeeCompany.Controllers.EmployeeController.ViewAll (EmployeeCompany)'
+2025-03-03 19:36:34.941 +05:30 [INF] Route matched with {action = "ViewAll", controller = "Employee"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] ViewAll() on controller EmployeeCompany.Controllers.EmployeeController (EmployeeCompany).
+2025-03-03 19:36:34.961 +05:30 [INF] Executed DbCommand (3ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [e].[Id], [e].[DepartmentId], [e].[Email], [e].[FirstName], [e].[HireDate], [e].[LastName], [e].[PhoneNumber], [e].[Salary]
+FROM [EmployeeList] AS [e]
+2025-03-03 19:36:34.962 +05:30 [INF] Executing OkObjectResult, writing value of type 'System.Collections.Generic.List`1[[EmployeeCompany.Models.Employee, EmployeeCompany, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2025-03-03 19:36:34.962 +05:30 [INF] Executed action EmployeeCompany.Controllers.EmployeeController.ViewAll (EmployeeCompany) in 21.0841ms
+2025-03-03 19:36:34.962 +05:30 [INF] Executed endpoint 'EmployeeCompany.Controllers.EmployeeController.ViewAll (EmployeeCompany)'
+2025-03-03 19:36:34.963 +05:30 [INF] Request finished HTTP/2 GET https://localhost:44315/api/employees - 200 null application/json; charset=utf-8 22.1069ms
+2025-03-03 19:39:09.284 +05:30 [INF] Request starting HTTP/2 OPTIONS https://localhost:44315/api/employees - null null
+2025-03-03 19:39:09.289 +05:30 [INF] CORS policy execution successful.
+2025-03-03 19:39:09.293 +05:30 [INF] Request finished HTTP/2 OPTIONS https://localhost:44315/api/employees - 204 null null 9.1526ms
+2025-03-03 19:39:09.295 +05:30 [INF] Request starting HTTP/2 POST https://localhost:44315/api/employees - application/json 162
+2025-03-03 19:39:09.296 +05:30 [INF] CORS policy execution successful.
+2025-03-03 19:39:09.296 +05:30 [INF] Executing endpoint 'EmployeeCompany.Controllers.EmployeeController.AddEmployee (EmployeeCompany)'
+2025-03-03 19:39:09.306 +05:30 [INF] Route matched with {action = "AddEmployee", controller = "Employee"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] AddEmployee(EmployeeCompany.Models.Employee) on controller EmployeeCompany.Controllers.EmployeeController (EmployeeCompany).
+2025-03-03 19:39:09.556 +05:30 [INF] Executed DbCommand (46ms) [Parameters=[@p0='?' (DbType = Int32), @p1='?' (Size = 4000), @p2='?' (Size = 4000), @p3='?' (DbType = DateTime2), @p4='?' (Size = 4000), @p5='?' (Size = 4000), @p6='?' (Precision = 18) (Scale = 2) (DbType = Decimal)], CommandType='"Text"', CommandTimeout='30']
+SET IMPLICIT_TRANSACTIONS OFF;
+SET NOCOUNT ON;
+INSERT INTO [EmployeeList] ([DepartmentId], [Email], [FirstName], [HireDate], [LastName], [PhoneNumber], [Salary])
+OUTPUT INSERTED.[Id]
+VALUES (@p0, @p1, @p2, @p3, @p4, @p5, @p6);
+2025-03-03 19:39:09.578 +05:30 [INF] Executing CreatedResult, writing value of type 'EmployeeCompany.Models.Employee'.
+2025-03-03 19:39:09.579 +05:30 [INF] Executed action EmployeeCompany.Controllers.EmployeeController.AddEmployee (EmployeeCompany) in 273.1298ms
+2025-03-03 19:39:09.579 +05:30 [INF] Executed endpoint 'EmployeeCompany.Controllers.EmployeeController.AddEmployee (EmployeeCompany)'
+2025-03-03 19:39:09.579 +05:30 [INF] Request finished HTTP/2 POST https://localhost:44315/api/employees - 201 null application/json; charset=utf-8 284.0333ms
+2025-03-03 19:39:13.001 +05:30 [INF] Request starting HTTP/2 GET https://localhost:44315/api/employees - null null
+2025-03-03 19:39:13.001 +05:30 [INF] CORS policy execution successful.
+2025-03-03 19:39:13.002 +05:30 [INF] Executing endpoint 'EmployeeCompany.Controllers.EmployeeController.ViewAll (EmployeeCompany)'
+2025-03-03 19:39:13.003 +05:30 [INF] Route matched with {action = "ViewAll", controller = "Employee"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] ViewAll() on controller EmployeeCompany.Controllers.EmployeeController (EmployeeCompany).
+2025-03-03 19:39:13.026 +05:30 [INF] Executed DbCommand (3ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [e].[Id], [e].[DepartmentId], [e].[Email], [e].[FirstName], [e].[HireDate], [e].[LastName], [e].[PhoneNumber], [e].[Salary]
+FROM [EmployeeList] AS [e]
+2025-03-03 19:39:13.027 +05:30 [INF] Executing OkObjectResult, writing value of type 'System.Collections.Generic.List`1[[EmployeeCompany.Models.Employee, EmployeeCompany, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2025-03-03 19:39:13.027 +05:30 [INF] Executed action EmployeeCompany.Controllers.EmployeeController.ViewAll (EmployeeCompany) in 23.3345ms
+2025-03-03 19:39:13.027 +05:30 [INF] Executed endpoint 'EmployeeCompany.Controllers.EmployeeController.ViewAll (EmployeeCompany)'
+2025-03-03 19:39:13.027 +05:30 [INF] Request finished HTTP/2 GET https://localhost:44315/api/employees - 200 null application/json; charset=utf-8 26.5055ms
+2025-03-03 19:39:13.029 +05:30 [INF] Request starting HTTP/2 GET https://localhost:44315/api/employees - null null
+2025-03-03 19:39:13.029 +05:30 [INF] CORS policy execution successful.
+2025-03-03 19:39:13.029 +05:30 [INF] Executing endpoint 'EmployeeCompany.Controllers.EmployeeController.ViewAll (EmployeeCompany)'
+2025-03-03 19:39:13.029 +05:30 [INF] Route matched with {action = "ViewAll", controller = "Employee"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] ViewAll() on controller EmployeeCompany.Controllers.EmployeeController (EmployeeCompany).
+2025-03-03 19:39:13.052 +05:30 [INF] Executed DbCommand (5ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [e].[Id], [e].[DepartmentId], [e].[Email], [e].[FirstName], [e].[HireDate], [e].[LastName], [e].[PhoneNumber], [e].[Salary]
+FROM [EmployeeList] AS [e]
+2025-03-03 19:39:13.053 +05:30 [INF] Executing OkObjectResult, writing value of type 'System.Collections.Generic.List`1[[EmployeeCompany.Models.Employee, EmployeeCompany, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2025-03-03 19:39:13.053 +05:30 [INF] Executed action EmployeeCompany.Controllers.EmployeeController.ViewAll (EmployeeCompany) in 24.0223ms
+2025-03-03 19:39:13.054 +05:30 [INF] Executed endpoint 'EmployeeCompany.Controllers.EmployeeController.ViewAll (EmployeeCompany)'
+2025-03-03 19:39:13.054 +05:30 [INF] Request finished HTTP/2 GET https://localhost:44315/api/employees - 200 null application/json; charset=utf-8 24.9006ms
+2025-03-03 19:40:29.140 +05:30 [INF] Request starting HTTP/2 OPTIONS https://localhost:44315/api/employees - null null
+2025-03-03 19:40:29.141 +05:30 [INF] CORS policy execution successful.
+2025-03-03 19:40:29.142 +05:30 [INF] Request finished HTTP/2 OPTIONS https://localhost:44315/api/employees - 204 null null 1.4836ms
+2025-03-03 19:40:29.144 +05:30 [INF] Request starting HTTP/2 POST https://localhost:44315/api/employees - application/json 107
+2025-03-03 19:40:29.145 +05:30 [INF] CORS policy execution successful.
+2025-03-03 19:40:29.145 +05:30 [INF] Executing endpoint 'EmployeeCompany.Controllers.EmployeeController.AddEmployee (EmployeeCompany)'
+2025-03-03 19:40:29.145 +05:30 [INF] Route matched with {action = "AddEmployee", controller = "Employee"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] AddEmployee(EmployeeCompany.Models.Employee) on controller EmployeeCompany.Controllers.EmployeeController (EmployeeCompany).
+2025-03-03 19:40:29.161 +05:30 [INF] Executing BadRequestObjectResult, writing value of type 'Microsoft.AspNetCore.Mvc.ValidationProblemDetails'.
+2025-03-03 19:40:29.206 +05:30 [INF] Executed action EmployeeCompany.Controllers.EmployeeController.AddEmployee (EmployeeCompany) in 61.5696ms
+2025-03-03 19:40:29.206 +05:30 [INF] Executed endpoint 'EmployeeCompany.Controllers.EmployeeController.AddEmployee (EmployeeCompany)'
+2025-03-03 19:40:29.207 +05:30 [INF] Request finished HTTP/2 POST https://localhost:44315/api/employees - 400 null application/problem+json; charset=utf-8 62.2907ms
+2025-03-03 19:42:20.009 +05:30 [INF] Request starting HTTP/2 OPTIONS https://localhost:44315/api/employees - null null
+2025-03-03 19:42:20.009 +05:30 [INF] CORS policy execution successful.
+2025-03-03 19:42:20.009 +05:30 [INF] Request finished HTTP/2 OPTIONS https://localhost:44315/api/employees - 204 null null 1.221ms
+2025-03-03 19:42:20.012 +05:30 [INF] Request starting HTTP/2 POST https://localhost:44315/api/employees - application/json 147
+2025-03-03 19:42:20.012 +05:30 [INF] CORS policy execution successful.
+2025-03-03 19:42:20.013 +05:30 [INF] Executing endpoint 'EmployeeCompany.Controllers.EmployeeController.AddEmployee (EmployeeCompany)'
+2025-03-03 19:42:20.013 +05:30 [INF] Route matched with {action = "AddEmployee", controller = "Employee"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] AddEmployee(EmployeeCompany.Models.Employee) on controller EmployeeCompany.Controllers.EmployeeController (EmployeeCompany).
+2025-03-03 19:42:20.014 +05:30 [INF] Executing BadRequestObjectResult, writing value of type 'Microsoft.AspNetCore.Mvc.ValidationProblemDetails'.
+2025-03-03 19:42:20.015 +05:30 [INF] Executed action EmployeeCompany.Controllers.EmployeeController.AddEmployee (EmployeeCompany) in 2.2808ms
+2025-03-03 19:42:20.015 +05:30 [INF] Executed endpoint 'EmployeeCompany.Controllers.EmployeeController.AddEmployee (EmployeeCompany)'
+2025-03-03 19:42:20.015 +05:30 [INF] Request finished HTTP/2 POST https://localhost:44315/api/employees - 400 null application/problem+json; charset=utf-8 3.0981ms
+2025-03-03 19:42:30.999 +05:30 [INF] Request starting HTTP/2 OPTIONS https://localhost:44315/api/employees - null null
+2025-03-03 19:42:30.999 +05:30 [INF] CORS policy execution successful.
+2025-03-03 19:42:30.999 +05:30 [INF] Request finished HTTP/2 OPTIONS https://localhost:44315/api/employees - 204 null null 0.7716ms
+2025-03-03 19:42:31.002 +05:30 [INF] Request starting HTTP/2 POST https://localhost:44315/api/employees - application/json 148
+2025-03-03 19:42:31.002 +05:30 [INF] CORS policy execution successful.
+2025-03-03 19:42:31.003 +05:30 [INF] Executing endpoint 'EmployeeCompany.Controllers.EmployeeController.AddEmployee (EmployeeCompany)'
+2025-03-03 19:42:31.003 +05:30 [INF] Route matched with {action = "AddEmployee", controller = "Employee"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] AddEmployee(EmployeeCompany.Models.Employee) on controller EmployeeCompany.Controllers.EmployeeController (EmployeeCompany).
+2025-03-03 19:42:31.041 +05:30 [INF] Executed DbCommand (15ms) [Parameters=[@p0='?' (DbType = Int32), @p1='?' (Size = 4000), @p2='?' (Size = 4000), @p3='?' (DbType = DateTime2), @p4='?' (Size = 4000), @p5='?' (Size = 4000), @p6='?' (Precision = 18) (Scale = 2) (DbType = Decimal)], CommandType='"Text"', CommandTimeout='30']
+SET IMPLICIT_TRANSACTIONS OFF;
+SET NOCOUNT ON;
+INSERT INTO [EmployeeList] ([DepartmentId], [Email], [FirstName], [HireDate], [LastName], [PhoneNumber], [Salary])
+OUTPUT INSERTED.[Id]
+VALUES (@p0, @p1, @p2, @p3, @p4, @p5, @p6);
+2025-03-03 19:42:31.089 +05:30 [ERR] An exception occurred in the database while saving changes for context type 'EmployeeCompany.EmployeeContext'.
+Microsoft.EntityFrameworkCore.DbUpdateException: An error occurred while saving the entity changes. See the inner exception for details.
+ ---> Microsoft.Data.SqlClient.SqlException (0x80131904): The INSERT statement conflicted with the FOREIGN KEY constraint "FK_EmployeeList_DepartmentList_DepartmentId". The conflict occurred in database "webapiexercisedb", table "dbo.DepartmentList", column 'DepartmentId'.
+   at Microsoft.Data.SqlClient.SqlConnection.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)
+   at Microsoft.Data.SqlClient.SqlInternalConnection.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)
+   at Microsoft.Data.SqlClient.TdsParser.ThrowExceptionAndWarning(TdsParserStateObject stateObj, Boolean callerHasConnectionLock, Boolean asyncClose)
+   at Microsoft.Data.SqlClient.TdsParser.TryRun(RunBehavior runBehavior, SqlCommand cmdHandler, SqlDataReader dataStream, BulkCopySimpleResultSet bulkCopyHandler, TdsParserStateObject stateObj, Boolean& dataReady)
+   at Microsoft.Data.SqlClient.SqlDataReader.TryHasMoreRows(Boolean& moreRows)
+   at Microsoft.Data.SqlClient.SqlDataReader.TryReadInternal(Boolean setTimeout, Boolean& more)
+   at Microsoft.Data.SqlClient.SqlDataReader.ReadAsyncExecute(Task task, Object state)
+   at Microsoft.Data.SqlClient.SqlDataReader.InvokeAsyncCall[T](SqlDataReaderBaseAsyncCallContext`1 context)
+--- End of stack trace from previous location ---
+   at Microsoft.EntityFrameworkCore.Update.AffectedCountModificationCommandBatch.ConsumeResultSetAsync(Int32 startCommandIndex, RelationalDataReader reader, CancellationToken cancellationToken)
+ClientConnectionId:8dc4d6d2-4bcb-4b06-bfcc-e5fa34b95469
+Error Number:547,State:0,Class:16
+   --- End of inner exception stack trace ---
+   at Microsoft.EntityFrameworkCore.Update.AffectedCountModificationCommandBatch.ConsumeResultSetAsync(Int32 startCommandIndex, RelationalDataReader reader, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Update.AffectedCountModificationCommandBatch.ConsumeAsync(RelationalDataReader reader, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Update.ReaderModificationCommandBatch.ExecuteAsync(IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Update.ReaderModificationCommandBatch.ExecuteAsync(IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.SqlServer.Update.Internal.SqlServerModificationCommandBatch.ExecuteAsync(IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Update.Internal.BatchExecutor.ExecuteAsync(IEnumerable`1 commandBatches, IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Update.Internal.BatchExecutor.ExecuteAsync(IEnumerable`1 commandBatches, IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Update.Internal.BatchExecutor.ExecuteAsync(IEnumerable`1 commandBatches, IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Storage.RelationalDatabase.SaveChangesAsync(IList`1 entries, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.ChangeTracking.Internal.StateManager.SaveChangesAsync(IList`1 entriesToSave, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.ChangeTracking.Internal.StateManager.SaveChangesAsync(StateManager stateManager, Boolean acceptAllChangesOnSuccess, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.SqlServer.Storage.Internal.SqlServerExecutionStrategy.ExecuteAsync[TState,TResult](TState state, Func`4 operation, Func`4 verifySucceeded, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.DbContext.SaveChangesAsync(Boolean acceptAllChangesOnSuccess, CancellationToken cancellationToken)
+Microsoft.EntityFrameworkCore.DbUpdateException: An error occurred while saving the entity changes. See the inner exception for details.
+ ---> Microsoft.Data.SqlClient.SqlException (0x80131904): The INSERT statement conflicted with the FOREIGN KEY constraint "FK_EmployeeList_DepartmentList_DepartmentId". The conflict occurred in database "webapiexercisedb", table "dbo.DepartmentList", column 'DepartmentId'.
+   at Microsoft.Data.SqlClient.SqlConnection.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)
+   at Microsoft.Data.SqlClient.SqlInternalConnection.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)
+   at Microsoft.Data.SqlClient.TdsParser.ThrowExceptionAndWarning(TdsParserStateObject stateObj, Boolean callerHasConnectionLock, Boolean asyncClose)
+   at Microsoft.Data.SqlClient.TdsParser.TryRun(RunBehavior runBehavior, SqlCommand cmdHandler, SqlDataReader dataStream, BulkCopySimpleResultSet bulkCopyHandler, TdsParserStateObject stateObj, Boolean& dataReady)
+   at Microsoft.Data.SqlClient.SqlDataReader.TryHasMoreRows(Boolean& moreRows)
+   at Microsoft.Data.SqlClient.SqlDataReader.TryReadInternal(Boolean setTimeout, Boolean& more)
+   at Microsoft.Data.SqlClient.SqlDataReader.ReadAsyncExecute(Task task, Object state)
+   at Microsoft.Data.SqlClient.SqlDataReader.InvokeAsyncCall[T](SqlDataReaderBaseAsyncCallContext`1 context)
+--- End of stack trace from previous location ---
+   at Microsoft.EntityFrameworkCore.Update.AffectedCountModificationCommandBatch.ConsumeResultSetAsync(Int32 startCommandIndex, RelationalDataReader reader, CancellationToken cancellationToken)
+ClientConnectionId:8dc4d6d2-4bcb-4b06-bfcc-e5fa34b95469
+Error Number:547,State:0,Class:16
+   --- End of inner exception stack trace ---
+   at Microsoft.EntityFrameworkCore.Update.AffectedCountModificationCommandBatch.ConsumeResultSetAsync(Int32 startCommandIndex, RelationalDataReader reader, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Update.AffectedCountModificationCommandBatch.ConsumeAsync(RelationalDataReader reader, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Update.ReaderModificationCommandBatch.ExecuteAsync(IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Update.ReaderModificationCommandBatch.ExecuteAsync(IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.SqlServer.Update.Internal.SqlServerModificationCommandBatch.ExecuteAsync(IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Update.Internal.BatchExecutor.ExecuteAsync(IEnumerable`1 commandBatches, IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Update.Internal.BatchExecutor.ExecuteAsync(IEnumerable`1 commandBatches, IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Update.Internal.BatchExecutor.ExecuteAsync(IEnumerable`1 commandBatches, IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Storage.RelationalDatabase.SaveChangesAsync(IList`1 entries, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.ChangeTracking.Internal.StateManager.SaveChangesAsync(IList`1 entriesToSave, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.ChangeTracking.Internal.StateManager.SaveChangesAsync(StateManager stateManager, Boolean acceptAllChangesOnSuccess, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.SqlServer.Storage.Internal.SqlServerExecutionStrategy.ExecuteAsync[TState,TResult](TState state, Func`4 operation, Func`4 verifySucceeded, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.DbContext.SaveChangesAsync(Boolean acceptAllChangesOnSuccess, CancellationToken cancellationToken)
+2025-03-03 19:42:31.311 +05:30 [INF] Executing ObjectResult, writing value of type 'System.String'.
+2025-03-03 19:42:31.312 +05:30 [INF] Executed action EmployeeCompany.Controllers.EmployeeController.AddEmployee (EmployeeCompany) in 309.1124ms
+2025-03-03 19:42:31.312 +05:30 [INF] Executed endpoint 'EmployeeCompany.Controllers.EmployeeController.AddEmployee (EmployeeCompany)'
+2025-03-03 19:42:31.312 +05:30 [INF] Request finished HTTP/2 POST https://localhost:44315/api/employees - 500 null text/plain; charset=utf-8 310.3248ms
+2025-03-03 19:42:42.765 +05:30 [INF] Request starting HTTP/2 GET https://localhost:44315/api/employees - null null
+2025-03-03 19:42:42.765 +05:30 [INF] CORS policy execution successful.
+2025-03-03 19:42:42.766 +05:30 [INF] Executing endpoint 'EmployeeCompany.Controllers.EmployeeController.ViewAll (EmployeeCompany)'
+2025-03-03 19:42:42.766 +05:30 [INF] Route matched with {action = "ViewAll", controller = "Employee"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] ViewAll() on controller EmployeeCompany.Controllers.EmployeeController (EmployeeCompany).
+2025-03-03 19:42:42.793 +05:30 [INF] Executed DbCommand (5ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [e].[Id], [e].[DepartmentId], [e].[Email], [e].[FirstName], [e].[HireDate], [e].[LastName], [e].[PhoneNumber], [e].[Salary]
+FROM [EmployeeList] AS [e]
+2025-03-03 19:42:42.794 +05:30 [INF] Executing OkObjectResult, writing value of type 'System.Collections.Generic.List`1[[EmployeeCompany.Models.Employee, EmployeeCompany, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2025-03-03 19:42:42.794 +05:30 [INF] Executed action EmployeeCompany.Controllers.EmployeeController.ViewAll (EmployeeCompany) in 28.2952ms
+2025-03-03 19:42:42.794 +05:30 [INF] Executed endpoint 'EmployeeCompany.Controllers.EmployeeController.ViewAll (EmployeeCompany)'
+2025-03-03 19:42:42.795 +05:30 [INF] Request finished HTTP/2 GET https://localhost:44315/api/employees - 200 null application/json; charset=utf-8 30.1809ms
+2025-03-03 19:42:42.796 +05:30 [INF] Request starting HTTP/2 GET https://localhost:44315/api/employees - null null
+2025-03-03 19:42:42.797 +05:30 [INF] CORS policy execution successful.
+2025-03-03 19:42:42.797 +05:30 [INF] Executing endpoint 'EmployeeCompany.Controllers.EmployeeController.ViewAll (EmployeeCompany)'
+2025-03-03 19:42:42.797 +05:30 [INF] Route matched with {action = "ViewAll", controller = "Employee"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] ViewAll() on controller EmployeeCompany.Controllers.EmployeeController (EmployeeCompany).
+2025-03-03 19:42:42.815 +05:30 [INF] Executed DbCommand (0ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [e].[Id], [e].[DepartmentId], [e].[Email], [e].[FirstName], [e].[HireDate], [e].[LastName], [e].[PhoneNumber], [e].[Salary]
+FROM [EmployeeList] AS [e]
+2025-03-03 19:42:42.818 +05:30 [INF] Executing OkObjectResult, writing value of type 'System.Collections.Generic.List`1[[EmployeeCompany.Models.Employee, EmployeeCompany, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2025-03-03 19:42:42.819 +05:30 [INF] Executed action EmployeeCompany.Controllers.EmployeeController.ViewAll (EmployeeCompany) in 21.4072ms
+2025-03-03 19:42:42.819 +05:30 [INF] Executed endpoint 'EmployeeCompany.Controllers.EmployeeController.ViewAll (EmployeeCompany)'
+2025-03-03 19:42:42.820 +05:30 [INF] Request finished HTTP/2 GET https://localhost:44315/api/employees - 200 null application/json; charset=utf-8 23.2963ms
+2025-03-03 19:43:18.700 +05:30 [INF] Request starting HTTP/2 OPTIONS https://localhost:44315/api/employees - null null
+2025-03-03 19:43:18.701 +05:30 [INF] CORS policy execution successful.
+2025-03-03 19:43:18.701 +05:30 [INF] Request finished HTTP/2 OPTIONS https://localhost:44315/api/employees - 204 null null 1.0084ms
+2025-03-03 19:43:18.704 +05:30 [INF] Request starting HTTP/2 POST https://localhost:44315/api/employees - application/json 150
+2025-03-03 19:43:18.705 +05:30 [INF] CORS policy execution successful.
+2025-03-03 19:43:18.705 +05:30 [INF] Executing endpoint 'EmployeeCompany.Controllers.EmployeeController.AddEmployee (EmployeeCompany)'
+2025-03-03 19:43:18.705 +05:30 [INF] Route matched with {action = "AddEmployee", controller = "Employee"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] AddEmployee(EmployeeCompany.Models.Employee) on controller EmployeeCompany.Controllers.EmployeeController (EmployeeCompany).
+2025-03-03 19:43:18.706 +05:30 [INF] Executing BadRequestObjectResult, writing value of type 'Microsoft.AspNetCore.Mvc.ValidationProblemDetails'.
+2025-03-03 19:43:18.707 +05:30 [INF] Executed action EmployeeCompany.Controllers.EmployeeController.AddEmployee (EmployeeCompany) in 2.2439ms
+2025-03-03 19:43:18.707 +05:30 [INF] Executed endpoint 'EmployeeCompany.Controllers.EmployeeController.AddEmployee (EmployeeCompany)'
+2025-03-03 19:43:18.708 +05:30 [INF] Request finished HTTP/2 POST https://localhost:44315/api/employees - 400 null application/problem+json; charset=utf-8 3.7259ms
+2025-03-03 19:44:22.529 +05:30 [INF] Request starting HTTP/2 OPTIONS https://localhost:44315/api/employees - null null
+2025-03-03 19:44:22.529 +05:30 [INF] CORS policy execution successful.
+2025-03-03 19:44:22.529 +05:30 [INF] Request finished HTTP/2 OPTIONS https://localhost:44315/api/employees - 204 null null 1.1862ms
+2025-03-03 19:44:22.532 +05:30 [INF] Request starting HTTP/2 POST https://localhost:44315/api/employees - application/json 107
+2025-03-03 19:44:22.532 +05:30 [INF] CORS policy execution successful.
+2025-03-03 19:44:22.532 +05:30 [INF] Executing endpoint 'EmployeeCompany.Controllers.EmployeeController.AddEmployee (EmployeeCompany)'
+2025-03-03 19:44:22.532 +05:30 [INF] Route matched with {action = "AddEmployee", controller = "Employee"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] AddEmployee(EmployeeCompany.Models.Employee) on controller EmployeeCompany.Controllers.EmployeeController (EmployeeCompany).
+2025-03-03 19:44:22.535 +05:30 [INF] Executing BadRequestObjectResult, writing value of type 'Microsoft.AspNetCore.Mvc.ValidationProblemDetails'.
+2025-03-03 19:44:22.536 +05:30 [INF] Executed action EmployeeCompany.Controllers.EmployeeController.AddEmployee (EmployeeCompany) in 3.0154ms
+2025-03-03 19:44:22.536 +05:30 [INF] Executed endpoint 'EmployeeCompany.Controllers.EmployeeController.AddEmployee (EmployeeCompany)'
+2025-03-03 19:44:22.536 +05:30 [INF] Request finished HTTP/2 POST https://localhost:44315/api/employees - 400 null application/problem+json; charset=utf-8 3.9632ms
+2025-03-03 19:44:28.464 +05:30 [INF] Request starting HTTP/2 GET https://localhost:44315/api/employees - null null
+2025-03-03 19:44:28.465 +05:30 [INF] CORS policy execution successful.
+2025-03-03 19:44:28.465 +05:30 [INF] Executing endpoint 'EmployeeCompany.Controllers.EmployeeController.ViewAll (EmployeeCompany)'
+2025-03-03 19:44:28.466 +05:30 [INF] Route matched with {action = "ViewAll", controller = "Employee"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] ViewAll() on controller EmployeeCompany.Controllers.EmployeeController (EmployeeCompany).
+2025-03-03 19:44:28.499 +05:30 [INF] Executed DbCommand (5ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [e].[Id], [e].[DepartmentId], [e].[Email], [e].[FirstName], [e].[HireDate], [e].[LastName], [e].[PhoneNumber], [e].[Salary]
+FROM [EmployeeList] AS [e]
+2025-03-03 19:44:28.500 +05:30 [INF] Executing OkObjectResult, writing value of type 'System.Collections.Generic.List`1[[EmployeeCompany.Models.Employee, EmployeeCompany, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2025-03-03 19:44:28.501 +05:30 [INF] Executed action EmployeeCompany.Controllers.EmployeeController.ViewAll (EmployeeCompany) in 34.4331ms
+2025-03-03 19:44:28.501 +05:30 [INF] Executed endpoint 'EmployeeCompany.Controllers.EmployeeController.ViewAll (EmployeeCompany)'
+2025-03-03 19:44:28.501 +05:30 [INF] Request finished HTTP/2 GET https://localhost:44315/api/employees - 200 null application/json; charset=utf-8 37.0026ms
+2025-03-03 19:44:28.503 +05:30 [INF] Request starting HTTP/2 GET https://localhost:44315/api/employees - null null
+2025-03-03 19:44:28.503 +05:30 [INF] CORS policy execution successful.
+2025-03-03 19:44:28.504 +05:30 [INF] Executing endpoint 'EmployeeCompany.Controllers.EmployeeController.ViewAll (EmployeeCompany)'
+2025-03-03 19:44:28.504 +05:30 [INF] Route matched with {action = "ViewAll", controller = "Employee"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] ViewAll() on controller EmployeeCompany.Controllers.EmployeeController (EmployeeCompany).
+2025-03-03 19:44:28.546 +05:30 [INF] Executed DbCommand (6ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [e].[Id], [e].[DepartmentId], [e].[Email], [e].[FirstName], [e].[HireDate], [e].[LastName], [e].[PhoneNumber], [e].[Salary]
+FROM [EmployeeList] AS [e]
+2025-03-03 19:44:28.548 +05:30 [INF] Executing OkObjectResult, writing value of type 'System.Collections.Generic.List`1[[EmployeeCompany.Models.Employee, EmployeeCompany, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2025-03-03 19:44:28.550 +05:30 [INF] Executed action EmployeeCompany.Controllers.EmployeeController.ViewAll (EmployeeCompany) in 45.4552ms
+2025-03-03 19:44:28.550 +05:30 [INF] Executed endpoint 'EmployeeCompany.Controllers.EmployeeController.ViewAll (EmployeeCompany)'
+2025-03-03 19:44:28.550 +05:30 [INF] Request finished HTTP/2 GET https://localhost:44315/api/employees - 200 null application/json; charset=utf-8 47.6735ms
+2025-03-03 19:45:00.793 +05:30 [INF] Request starting HTTP/2 GET https://localhost:44315/api/employees - null null
+2025-03-03 19:45:00.794 +05:30 [INF] CORS policy execution successful.
+2025-03-03 19:45:00.794 +05:30 [INF] Executing endpoint 'EmployeeCompany.Controllers.EmployeeController.ViewAll (EmployeeCompany)'
+2025-03-03 19:45:00.794 +05:30 [INF] Route matched with {action = "ViewAll", controller = "Employee"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] ViewAll() on controller EmployeeCompany.Controllers.EmployeeController (EmployeeCompany).
+2025-03-03 19:45:00.822 +05:30 [INF] Executed DbCommand (6ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [e].[Id], [e].[DepartmentId], [e].[Email], [e].[FirstName], [e].[HireDate], [e].[LastName], [e].[PhoneNumber], [e].[Salary]
+FROM [EmployeeList] AS [e]
+2025-03-03 19:45:00.824 +05:30 [INF] Executing OkObjectResult, writing value of type 'System.Collections.Generic.List`1[[EmployeeCompany.Models.Employee, EmployeeCompany, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2025-03-03 19:45:00.825 +05:30 [INF] Executed action EmployeeCompany.Controllers.EmployeeController.ViewAll (EmployeeCompany) in 30.5111ms
+2025-03-03 19:45:00.825 +05:30 [INF] Executed endpoint 'EmployeeCompany.Controllers.EmployeeController.ViewAll (EmployeeCompany)'
+2025-03-03 19:45:00.825 +05:30 [INF] Request finished HTTP/2 GET https://localhost:44315/api/employees - 200 null application/json; charset=utf-8 32.0708ms
+2025-03-03 19:45:00.827 +05:30 [INF] Request starting HTTP/2 GET https://localhost:44315/api/employees - null null
+2025-03-03 19:45:00.827 +05:30 [INF] CORS policy execution successful.
+2025-03-03 19:45:00.828 +05:30 [INF] Executing endpoint 'EmployeeCompany.Controllers.EmployeeController.ViewAll (EmployeeCompany)'
+2025-03-03 19:45:00.828 +05:30 [INF] Route matched with {action = "ViewAll", controller = "Employee"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] ViewAll() on controller EmployeeCompany.Controllers.EmployeeController (EmployeeCompany).
+2025-03-03 19:45:00.860 +05:30 [INF] Executed DbCommand (4ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [e].[Id], [e].[DepartmentId], [e].[Email], [e].[FirstName], [e].[HireDate], [e].[LastName], [e].[PhoneNumber], [e].[Salary]
+FROM [EmployeeList] AS [e]
+2025-03-03 19:45:00.861 +05:30 [INF] Executing OkObjectResult, writing value of type 'System.Collections.Generic.List`1[[EmployeeCompany.Models.Employee, EmployeeCompany, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2025-03-03 19:45:00.861 +05:30 [INF] Executed action EmployeeCompany.Controllers.EmployeeController.ViewAll (EmployeeCompany) in 33.4669ms
+2025-03-03 19:45:00.861 +05:30 [INF] Executed endpoint 'EmployeeCompany.Controllers.EmployeeController.ViewAll (EmployeeCompany)'
+2025-03-03 19:45:00.862 +05:30 [INF] Request finished HTTP/2 GET https://localhost:44315/api/employees - 200 null application/json; charset=utf-8 34.7372ms
+2025-03-03 19:46:42.030 +05:30 [INF] Request starting HTTP/2 GET https://localhost:44315/swagger/index.html - null null
+2025-03-03 19:46:42.083 +05:30 [INF] Request finished HTTP/2 GET https://localhost:44315/swagger/index.html - 200 null text/html;charset=utf-8 55.4527ms
+2025-03-03 19:46:42.105 +05:30 [INF] Request starting HTTP/2 GET https://localhost:44315/_framework/aspnetcore-browser-refresh.js - null null
+2025-03-03 19:46:42.106 +05:30 [INF] Request finished HTTP/2 GET https://localhost:44315/_framework/aspnetcore-browser-refresh.js - 200 16515 application/javascript; charset=utf-8 1.8207ms
+2025-03-03 19:46:42.107 +05:30 [INF] Request starting HTTP/2 GET https://localhost:44315/_vs/browserLink - null null
+2025-03-03 19:46:42.129 +05:30 [INF] Request finished HTTP/2 GET https://localhost:44315/_vs/browserLink - 200 null text/javascript; charset=UTF-8 22.8311ms
+2025-03-03 19:46:42.231 +05:30 [INF] Request starting HTTP/2 GET https://localhost:44315/swagger/v1/swagger.json - null null
+2025-03-03 19:46:42.251 +05:30 [INF] Request finished HTTP/2 GET https://localhost:44315/swagger/v1/swagger.json - 200 null application/json;charset=utf-8 19.9295ms
+2025-03-03 19:51:14.658 +05:30 [INF] Request starting HTTP/2 OPTIONS https://localhost:44315/api/employees - null null
+2025-03-03 19:51:14.658 +05:30 [INF] CORS policy execution successful.
+2025-03-03 19:51:14.659 +05:30 [INF] Request finished HTTP/2 OPTIONS https://localhost:44315/api/employees - 204 null null 1.137ms
+2025-03-03 19:51:14.665 +05:30 [INF] Request starting HTTP/2 POST https://localhost:44315/api/employees - application/json 174
+2025-03-03 19:51:14.665 +05:30 [INF] CORS policy execution successful.
+2025-03-03 19:51:14.665 +05:30 [INF] Executing endpoint 'EmployeeCompany.Controllers.EmployeeController.AddEmployee (EmployeeCompany)'
+2025-03-03 19:51:14.665 +05:30 [INF] Route matched with {action = "AddEmployee", controller = "Employee"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] AddEmployee(EmployeeCompany.Models.Employee) on controller EmployeeCompany.Controllers.EmployeeController (EmployeeCompany).
+2025-03-03 19:51:14.740 +05:30 [INF] Executed DbCommand (9ms) [Parameters=[@p0='?' (DbType = Int32), @p1='?' (Size = 4000), @p2='?' (Size = 4000), @p3='?' (DbType = DateTime2), @p4='?' (Size = 4000), @p5='?' (Size = 4000), @p6='?' (Precision = 18) (Scale = 2) (DbType = Decimal)], CommandType='"Text"', CommandTimeout='30']
+SET IMPLICIT_TRANSACTIONS OFF;
+SET NOCOUNT ON;
+INSERT INTO [EmployeeList] ([DepartmentId], [Email], [FirstName], [HireDate], [LastName], [PhoneNumber], [Salary])
+OUTPUT INSERTED.[Id]
+VALUES (@p0, @p1, @p2, @p3, @p4, @p5, @p6);
+2025-03-03 19:51:14.751 +05:30 [INF] Executing CreatedResult, writing value of type 'EmployeeCompany.Models.Employee'.
+2025-03-03 19:51:14.757 +05:30 [INF] Executed action EmployeeCompany.Controllers.EmployeeController.AddEmployee (EmployeeCompany) in 91.6332ms
+2025-03-03 19:51:14.757 +05:30 [INF] Executed endpoint 'EmployeeCompany.Controllers.EmployeeController.AddEmployee (EmployeeCompany)'
+2025-03-03 19:51:14.758 +05:30 [INF] Request finished HTTP/2 POST https://localhost:44315/api/employees - 201 null application/json; charset=utf-8 93.1372ms
+2025-03-03 19:54:15.526 +05:30 [INF] Request starting HTTP/2 OPTIONS https://localhost:44315/api/employees - null null
+2025-03-03 19:54:15.527 +05:30 [INF] CORS policy execution successful.
+2025-03-03 19:54:15.528 +05:30 [INF] Request finished HTTP/2 OPTIONS https://localhost:44315/api/employees - 204 null null 1.5048ms
+2025-03-03 19:54:15.532 +05:30 [INF] Request starting HTTP/2 POST https://localhost:44315/api/employees - application/json 107
+2025-03-03 19:54:15.532 +05:30 [INF] CORS policy execution successful.
+2025-03-03 19:54:15.533 +05:30 [INF] Executing endpoint 'EmployeeCompany.Controllers.EmployeeController.AddEmployee (EmployeeCompany)'
+2025-03-03 19:54:15.533 +05:30 [INF] Route matched with {action = "AddEmployee", controller = "Employee"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] AddEmployee(EmployeeCompany.Models.Employee) on controller EmployeeCompany.Controllers.EmployeeController (EmployeeCompany).
+2025-03-03 19:54:15.536 +05:30 [INF] Executing BadRequestObjectResult, writing value of type 'Microsoft.AspNetCore.Mvc.ValidationProblemDetails'.
+2025-03-03 19:54:15.538 +05:30 [INF] Executed action EmployeeCompany.Controllers.EmployeeController.AddEmployee (EmployeeCompany) in 4.7584ms
+2025-03-03 19:54:15.538 +05:30 [INF] Executed endpoint 'EmployeeCompany.Controllers.EmployeeController.AddEmployee (EmployeeCompany)'
+2025-03-03 19:54:15.538 +05:30 [INF] Request finished HTTP/2 POST https://localhost:44315/api/employees - 400 null application/problem+json; charset=utf-8 6.101ms
+2025-03-03 19:54:39.204 +05:30 [INF] Request starting HTTP/2 OPTIONS https://localhost:44315/api/employees - null null
+2025-03-03 19:54:39.206 +05:30 [INF] CORS policy execution successful.
+2025-03-03 19:54:39.207 +05:30 [INF] Request finished HTTP/2 OPTIONS https://localhost:44315/api/employees - 204 null null 4.2825ms
+2025-03-03 19:54:39.215 +05:30 [INF] Request starting HTTP/2 POST https://localhost:44315/api/employees - application/json 162
+2025-03-03 19:54:39.215 +05:30 [INF] CORS policy execution successful.
+2025-03-03 19:54:39.215 +05:30 [INF] Executing endpoint 'EmployeeCompany.Controllers.EmployeeController.AddEmployee (EmployeeCompany)'
+2025-03-03 19:54:39.215 +05:30 [INF] Route matched with {action = "AddEmployee", controller = "Employee"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] AddEmployee(EmployeeCompany.Models.Employee) on controller EmployeeCompany.Controllers.EmployeeController (EmployeeCompany).
+2025-03-03 19:54:39.286 +05:30 [INF] Executed DbCommand (8ms) [Parameters=[@p0='?' (DbType = Int32), @p1='?' (Size = 4000), @p2='?' (Size = 4000), @p3='?' (DbType = DateTime2), @p4='?' (Size = 4000), @p5='?' (Size = 4000), @p6='?' (Precision = 18) (Scale = 2) (DbType = Decimal)], CommandType='"Text"', CommandTimeout='30']
+SET IMPLICIT_TRANSACTIONS OFF;
+SET NOCOUNT ON;
+INSERT INTO [EmployeeList] ([DepartmentId], [Email], [FirstName], [HireDate], [LastName], [PhoneNumber], [Salary])
+OUTPUT INSERTED.[Id]
+VALUES (@p0, @p1, @p2, @p3, @p4, @p5, @p6);
+2025-03-03 19:54:39.288 +05:30 [INF] Executing CreatedResult, writing value of type 'EmployeeCompany.Models.Employee'.
+2025-03-03 19:54:39.290 +05:30 [INF] Executed action EmployeeCompany.Controllers.EmployeeController.AddEmployee (EmployeeCompany) in 73.913ms
+2025-03-03 19:54:39.290 +05:30 [INF] Executed endpoint 'EmployeeCompany.Controllers.EmployeeController.AddEmployee (EmployeeCompany)'
+2025-03-03 19:54:39.290 +05:30 [INF] Request finished HTTP/2 POST https://localhost:44315/api/employees - 201 null application/json; charset=utf-8 77.8517ms
+2025-03-03 19:55:00.772 +05:30 [INF] Request starting HTTP/2 OPTIONS https://localhost:44315/api/employees - null null
+2025-03-03 19:55:00.773 +05:30 [INF] CORS policy execution successful.
+2025-03-03 19:55:00.774 +05:30 [INF] Request finished HTTP/2 OPTIONS https://localhost:44315/api/employees - 204 null null 2.3112ms
+2025-03-03 19:55:00.777 +05:30 [INF] Request starting HTTP/2 POST https://localhost:44315/api/employees - application/json 163
+2025-03-03 19:55:00.778 +05:30 [INF] CORS policy execution successful.
+2025-03-03 19:55:00.778 +05:30 [INF] Executing endpoint 'EmployeeCompany.Controllers.EmployeeController.AddEmployee (EmployeeCompany)'
+2025-03-03 19:55:00.778 +05:30 [INF] Route matched with {action = "AddEmployee", controller = "Employee"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] AddEmployee(EmployeeCompany.Models.Employee) on controller EmployeeCompany.Controllers.EmployeeController (EmployeeCompany).
+2025-03-03 19:55:00.822 +05:30 [INF] Executed DbCommand (9ms) [Parameters=[@p0='?' (DbType = Int32), @p1='?' (Size = 4000), @p2='?' (Size = 4000), @p3='?' (DbType = DateTime2), @p4='?' (Size = 4000), @p5='?' (Size = 4000), @p6='?' (Precision = 18) (Scale = 2) (DbType = Decimal)], CommandType='"Text"', CommandTimeout='30']
+SET IMPLICIT_TRANSACTIONS OFF;
+SET NOCOUNT ON;
+INSERT INTO [EmployeeList] ([DepartmentId], [Email], [FirstName], [HireDate], [LastName], [PhoneNumber], [Salary])
+OUTPUT INSERTED.[Id]
+VALUES (@p0, @p1, @p2, @p3, @p4, @p5, @p6);
+2025-03-03 19:55:00.852 +05:30 [ERR] An exception occurred in the database while saving changes for context type 'EmployeeCompany.EmployeeContext'.
+Microsoft.EntityFrameworkCore.DbUpdateException: An error occurred while saving the entity changes. See the inner exception for details.
+ ---> Microsoft.Data.SqlClient.SqlException (0x80131904): The INSERT statement conflicted with the FOREIGN KEY constraint "FK_EmployeeList_DepartmentList_DepartmentId". The conflict occurred in database "webapiexercisedb", table "dbo.DepartmentList", column 'DepartmentId'.
+   at Microsoft.Data.SqlClient.SqlConnection.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)
+   at Microsoft.Data.SqlClient.SqlInternalConnection.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)
+   at Microsoft.Data.SqlClient.TdsParser.ThrowExceptionAndWarning(TdsParserStateObject stateObj, Boolean callerHasConnectionLock, Boolean asyncClose)
+   at Microsoft.Data.SqlClient.TdsParser.TryRun(RunBehavior runBehavior, SqlCommand cmdHandler, SqlDataReader dataStream, BulkCopySimpleResultSet bulkCopyHandler, TdsParserStateObject stateObj, Boolean& dataReady)
+   at Microsoft.Data.SqlClient.SqlDataReader.TryHasMoreRows(Boolean& moreRows)
+   at Microsoft.Data.SqlClient.SqlDataReader.TryReadInternal(Boolean setTimeout, Boolean& more)
+   at Microsoft.Data.SqlClient.SqlDataReader.ReadAsyncExecute(Task task, Object state)
+   at Microsoft.Data.SqlClient.SqlDataReader.InvokeAsyncCall[T](SqlDataReaderBaseAsyncCallContext`1 context)
+--- End of stack trace from previous location ---
+   at Microsoft.EntityFrameworkCore.Update.AffectedCountModificationCommandBatch.ConsumeResultSetAsync(Int32 startCommandIndex, RelationalDataReader reader, CancellationToken cancellationToken)
+ClientConnectionId:f060c2ab-c37a-4234-9d14-65064f9bd823
+Error Number:547,State:0,Class:16
+   --- End of inner exception stack trace ---
+   at Microsoft.EntityFrameworkCore.Update.AffectedCountModificationCommandBatch.ConsumeResultSetAsync(Int32 startCommandIndex, RelationalDataReader reader, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Update.AffectedCountModificationCommandBatch.ConsumeAsync(RelationalDataReader reader, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Update.ReaderModificationCommandBatch.ExecuteAsync(IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Update.ReaderModificationCommandBatch.ExecuteAsync(IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.SqlServer.Update.Internal.SqlServerModificationCommandBatch.ExecuteAsync(IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Update.Internal.BatchExecutor.ExecuteAsync(IEnumerable`1 commandBatches, IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Update.Internal.BatchExecutor.ExecuteAsync(IEnumerable`1 commandBatches, IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Update.Internal.BatchExecutor.ExecuteAsync(IEnumerable`1 commandBatches, IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Storage.RelationalDatabase.SaveChangesAsync(IList`1 entries, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.ChangeTracking.Internal.StateManager.SaveChangesAsync(IList`1 entriesToSave, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.ChangeTracking.Internal.StateManager.SaveChangesAsync(StateManager stateManager, Boolean acceptAllChangesOnSuccess, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.SqlServer.Storage.Internal.SqlServerExecutionStrategy.ExecuteAsync[TState,TResult](TState state, Func`4 operation, Func`4 verifySucceeded, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.DbContext.SaveChangesAsync(Boolean acceptAllChangesOnSuccess, CancellationToken cancellationToken)
+Microsoft.EntityFrameworkCore.DbUpdateException: An error occurred while saving the entity changes. See the inner exception for details.
+ ---> Microsoft.Data.SqlClient.SqlException (0x80131904): The INSERT statement conflicted with the FOREIGN KEY constraint "FK_EmployeeList_DepartmentList_DepartmentId". The conflict occurred in database "webapiexercisedb", table "dbo.DepartmentList", column 'DepartmentId'.
+   at Microsoft.Data.SqlClient.SqlConnection.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)
+   at Microsoft.Data.SqlClient.SqlInternalConnection.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)
+   at Microsoft.Data.SqlClient.TdsParser.ThrowExceptionAndWarning(TdsParserStateObject stateObj, Boolean callerHasConnectionLock, Boolean asyncClose)
+   at Microsoft.Data.SqlClient.TdsParser.TryRun(RunBehavior runBehavior, SqlCommand cmdHandler, SqlDataReader dataStream, BulkCopySimpleResultSet bulkCopyHandler, TdsParserStateObject stateObj, Boolean& dataReady)
+   at Microsoft.Data.SqlClient.SqlDataReader.TryHasMoreRows(Boolean& moreRows)
+   at Microsoft.Data.SqlClient.SqlDataReader.TryReadInternal(Boolean setTimeout, Boolean& more)
+   at Microsoft.Data.SqlClient.SqlDataReader.ReadAsyncExecute(Task task, Object state)
+   at Microsoft.Data.SqlClient.SqlDataReader.InvokeAsyncCall[T](SqlDataReaderBaseAsyncCallContext`1 context)
+--- End of stack trace from previous location ---
+   at Microsoft.EntityFrameworkCore.Update.AffectedCountModificationCommandBatch.ConsumeResultSetAsync(Int32 startCommandIndex, RelationalDataReader reader, CancellationToken cancellationToken)
+ClientConnectionId:f060c2ab-c37a-4234-9d14-65064f9bd823
+Error Number:547,State:0,Class:16
+   --- End of inner exception stack trace ---
+   at Microsoft.EntityFrameworkCore.Update.AffectedCountModificationCommandBatch.ConsumeResultSetAsync(Int32 startCommandIndex, RelationalDataReader reader, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Update.AffectedCountModificationCommandBatch.ConsumeAsync(RelationalDataReader reader, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Update.ReaderModificationCommandBatch.ExecuteAsync(IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Update.ReaderModificationCommandBatch.ExecuteAsync(IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.SqlServer.Update.Internal.SqlServerModificationCommandBatch.ExecuteAsync(IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Update.Internal.BatchExecutor.ExecuteAsync(IEnumerable`1 commandBatches, IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Update.Internal.BatchExecutor.ExecuteAsync(IEnumerable`1 commandBatches, IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Update.Internal.BatchExecutor.ExecuteAsync(IEnumerable`1 commandBatches, IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Storage.RelationalDatabase.SaveChangesAsync(IList`1 entries, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.ChangeTracking.Internal.StateManager.SaveChangesAsync(IList`1 entriesToSave, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.ChangeTracking.Internal.StateManager.SaveChangesAsync(StateManager stateManager, Boolean acceptAllChangesOnSuccess, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.SqlServer.Storage.Internal.SqlServerExecutionStrategy.ExecuteAsync[TState,TResult](TState state, Func`4 operation, Func`4 verifySucceeded, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.DbContext.SaveChangesAsync(Boolean acceptAllChangesOnSuccess, CancellationToken cancellationToken)
+2025-03-03 19:55:00.937 +05:30 [INF] Executing ObjectResult, writing value of type 'System.String'.
+2025-03-03 19:55:00.937 +05:30 [INF] Executed action EmployeeCompany.Controllers.EmployeeController.AddEmployee (EmployeeCompany) in 159.4038ms
+2025-03-03 19:55:00.938 +05:30 [INF] Executed endpoint 'EmployeeCompany.Controllers.EmployeeController.AddEmployee (EmployeeCompany)'
+2025-03-03 19:55:00.938 +05:30 [INF] Request finished HTTP/2 POST https://localhost:44315/api/employees - 500 null text/plain; charset=utf-8 160.6407ms
+2025-03-03 19:55:17.344 +05:30 [INF] Request starting HTTP/2 GET https://localhost:44315/api/employees - null null
+2025-03-03 19:55:17.344 +05:30 [INF] CORS policy execution successful.
+2025-03-03 19:55:17.345 +05:30 [INF] Executing endpoint 'EmployeeCompany.Controllers.EmployeeController.ViewAll (EmployeeCompany)'
+2025-03-03 19:55:17.345 +05:30 [INF] Route matched with {action = "ViewAll", controller = "Employee"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] ViewAll() on controller EmployeeCompany.Controllers.EmployeeController (EmployeeCompany).
+2025-03-03 19:55:17.390 +05:30 [INF] Executed DbCommand (8ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [e].[Id], [e].[DepartmentId], [e].[Email], [e].[FirstName], [e].[HireDate], [e].[LastName], [e].[PhoneNumber], [e].[Salary]
+FROM [EmployeeList] AS [e]
+2025-03-03 19:55:17.392 +05:30 [INF] Executing OkObjectResult, writing value of type 'System.Collections.Generic.List`1[[EmployeeCompany.Models.Employee, EmployeeCompany, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2025-03-03 19:55:17.393 +05:30 [INF] Executed action EmployeeCompany.Controllers.EmployeeController.ViewAll (EmployeeCompany) in 46.6793ms
+2025-03-03 19:55:17.393 +05:30 [INF] Executed endpoint 'EmployeeCompany.Controllers.EmployeeController.ViewAll (EmployeeCompany)'
+2025-03-03 19:55:17.393 +05:30 [INF] Request finished HTTP/2 GET https://localhost:44315/api/employees - 200 null application/json; charset=utf-8 49.2719ms
+2025-03-03 19:55:17.394 +05:30 [INF] Request starting HTTP/2 GET https://localhost:44315/api/employees - null null
+2025-03-03 19:55:17.395 +05:30 [INF] CORS policy execution successful.
+2025-03-03 19:55:17.395 +05:30 [INF] Executing endpoint 'EmployeeCompany.Controllers.EmployeeController.ViewAll (EmployeeCompany)'
+2025-03-03 19:55:17.395 +05:30 [INF] Route matched with {action = "ViewAll", controller = "Employee"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] ViewAll() on controller EmployeeCompany.Controllers.EmployeeController (EmployeeCompany).
+2025-03-03 19:55:17.430 +05:30 [INF] Executed DbCommand (1ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [e].[Id], [e].[DepartmentId], [e].[Email], [e].[FirstName], [e].[HireDate], [e].[LastName], [e].[PhoneNumber], [e].[Salary]
+FROM [EmployeeList] AS [e]
+2025-03-03 19:55:17.437 +05:30 [INF] Executing OkObjectResult, writing value of type 'System.Collections.Generic.List`1[[EmployeeCompany.Models.Employee, EmployeeCompany, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2025-03-03 19:55:17.440 +05:30 [INF] Executed action EmployeeCompany.Controllers.EmployeeController.ViewAll (EmployeeCompany) in 44.6553ms
+2025-03-03 19:55:17.440 +05:30 [INF] Executed endpoint 'EmployeeCompany.Controllers.EmployeeController.ViewAll (EmployeeCompany)'
+2025-03-03 19:55:17.440 +05:30 [INF] Request finished HTTP/2 GET https://localhost:44315/api/employees - 200 null application/json; charset=utf-8 46.2681ms
+2025-03-03 19:56:15.976 +05:30 [INF] Request starting HTTP/2 PUT https://localhost:44315/api/employees/33 - application/json 202
+2025-03-03 19:56:15.976 +05:30 [INF] CORS policy execution successful.
+2025-03-03 19:56:15.977 +05:30 [INF] Executing endpoint 'EmployeeCompany.Controllers.EmployeeController.Update (EmployeeCompany)'
+2025-03-03 19:56:15.986 +05:30 [INF] Route matched with {action = "Update", controller = "Employee"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] Update(Int32, EmployeeCompany.Models.Employee) on controller EmployeeCompany.Controllers.EmployeeController (EmployeeCompany).
+2025-03-03 19:56:16.140 +05:30 [INF] Executed DbCommand (3ms) [Parameters=[@__p_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [e].[Id], [e].[DepartmentId], [e].[Email], [e].[FirstName], [e].[HireDate], [e].[LastName], [e].[PhoneNumber], [e].[Salary]
+FROM [EmployeeList] AS [e]
+WHERE [e].[Id] = @__p_0
+2025-03-03 19:56:16.166 +05:30 [INF] Executed DbCommand (10ms) [Parameters=[@p7='?' (DbType = Int32), @p0='?' (DbType = Int32), @p1='?' (Size = 4000), @p2='?' (Size = 4000), @p3='?' (DbType = DateTime2), @p4='?' (Size = 4000), @p5='?' (Size = 4000), @p6='?' (Precision = 18) (Scale = 2) (DbType = Decimal)], CommandType='"Text"', CommandTimeout='30']
+SET IMPLICIT_TRANSACTIONS OFF;
+SET NOCOUNT ON;
+UPDATE [EmployeeList] SET [DepartmentId] = @p0, [Email] = @p1, [FirstName] = @p2, [HireDate] = @p3, [LastName] = @p4, [PhoneNumber] = @p5, [Salary] = @p6
+OUTPUT 1
+WHERE [Id] = @p7;
+2025-03-03 19:56:16.171 +05:30 [ERR] An exception occurred in the database while saving changes for context type 'EmployeeCompany.EmployeeContext'.
+Microsoft.EntityFrameworkCore.DbUpdateException: An error occurred while saving the entity changes. See the inner exception for details.
+ ---> Microsoft.Data.SqlClient.SqlException (0x80131904): The UPDATE statement conflicted with the FOREIGN KEY constraint "FK_EmployeeList_DepartmentList_DepartmentId". The conflict occurred in database "webapiexercisedb", table "dbo.DepartmentList", column 'DepartmentId'.
+   at Microsoft.Data.SqlClient.SqlConnection.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)
+   at Microsoft.Data.SqlClient.SqlInternalConnection.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)
+   at Microsoft.Data.SqlClient.TdsParser.ThrowExceptionAndWarning(TdsParserStateObject stateObj, Boolean callerHasConnectionLock, Boolean asyncClose)
+   at Microsoft.Data.SqlClient.TdsParser.TryRun(RunBehavior runBehavior, SqlCommand cmdHandler, SqlDataReader dataStream, BulkCopySimpleResultSet bulkCopyHandler, TdsParserStateObject stateObj, Boolean& dataReady)
+   at Microsoft.Data.SqlClient.SqlDataReader.TryHasMoreRows(Boolean& moreRows)
+   at Microsoft.Data.SqlClient.SqlDataReader.TryReadInternal(Boolean setTimeout, Boolean& more)
+   at Microsoft.Data.SqlClient.SqlDataReader.ReadAsyncExecute(Task task, Object state)
+   at Microsoft.Data.SqlClient.SqlDataReader.InvokeAsyncCall[T](SqlDataReaderBaseAsyncCallContext`1 context)
+--- End of stack trace from previous location ---
+   at Microsoft.EntityFrameworkCore.Update.AffectedCountModificationCommandBatch.ConsumeResultSetWithRowsAffectedOnlyAsync(Int32 commandIndex, RelationalDataReader reader, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Update.AffectedCountModificationCommandBatch.ConsumeAsync(RelationalDataReader reader, CancellationToken cancellationToken)
+ClientConnectionId:26884968-9af6-49ba-8957-1c6a5c44088f
+Error Number:547,State:0,Class:16
+   --- End of inner exception stack trace ---
+   at Microsoft.EntityFrameworkCore.Update.AffectedCountModificationCommandBatch.ConsumeAsync(RelationalDataReader reader, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Update.ReaderModificationCommandBatch.ExecuteAsync(IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Update.ReaderModificationCommandBatch.ExecuteAsync(IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.SqlServer.Update.Internal.SqlServerModificationCommandBatch.ExecuteAsync(IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Update.Internal.BatchExecutor.ExecuteAsync(IEnumerable`1 commandBatches, IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Update.Internal.BatchExecutor.ExecuteAsync(IEnumerable`1 commandBatches, IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Update.Internal.BatchExecutor.ExecuteAsync(IEnumerable`1 commandBatches, IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Storage.RelationalDatabase.SaveChangesAsync(IList`1 entries, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.ChangeTracking.Internal.StateManager.SaveChangesAsync(IList`1 entriesToSave, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.ChangeTracking.Internal.StateManager.SaveChangesAsync(StateManager stateManager, Boolean acceptAllChangesOnSuccess, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.SqlServer.Storage.Internal.SqlServerExecutionStrategy.ExecuteAsync[TState,TResult](TState state, Func`4 operation, Func`4 verifySucceeded, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.DbContext.SaveChangesAsync(Boolean acceptAllChangesOnSuccess, CancellationToken cancellationToken)
+Microsoft.EntityFrameworkCore.DbUpdateException: An error occurred while saving the entity changes. See the inner exception for details.
+ ---> Microsoft.Data.SqlClient.SqlException (0x80131904): The UPDATE statement conflicted with the FOREIGN KEY constraint "FK_EmployeeList_DepartmentList_DepartmentId". The conflict occurred in database "webapiexercisedb", table "dbo.DepartmentList", column 'DepartmentId'.
+   at Microsoft.Data.SqlClient.SqlConnection.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)
+   at Microsoft.Data.SqlClient.SqlInternalConnection.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)
+   at Microsoft.Data.SqlClient.TdsParser.ThrowExceptionAndWarning(TdsParserStateObject stateObj, Boolean callerHasConnectionLock, Boolean asyncClose)
+   at Microsoft.Data.SqlClient.TdsParser.TryRun(RunBehavior runBehavior, SqlCommand cmdHandler, SqlDataReader dataStream, BulkCopySimpleResultSet bulkCopyHandler, TdsParserStateObject stateObj, Boolean& dataReady)
+   at Microsoft.Data.SqlClient.SqlDataReader.TryHasMoreRows(Boolean& moreRows)
+   at Microsoft.Data.SqlClient.SqlDataReader.TryReadInternal(Boolean setTimeout, Boolean& more)
+   at Microsoft.Data.SqlClient.SqlDataReader.ReadAsyncExecute(Task task, Object state)
+   at Microsoft.Data.SqlClient.SqlDataReader.InvokeAsyncCall[T](SqlDataReaderBaseAsyncCallContext`1 context)
+--- End of stack trace from previous location ---
+   at Microsoft.EntityFrameworkCore.Update.AffectedCountModificationCommandBatch.ConsumeResultSetWithRowsAffectedOnlyAsync(Int32 commandIndex, RelationalDataReader reader, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Update.AffectedCountModificationCommandBatch.ConsumeAsync(RelationalDataReader reader, CancellationToken cancellationToken)
+ClientConnectionId:26884968-9af6-49ba-8957-1c6a5c44088f
+Error Number:547,State:0,Class:16
+   --- End of inner exception stack trace ---
+   at Microsoft.EntityFrameworkCore.Update.AffectedCountModificationCommandBatch.ConsumeAsync(RelationalDataReader reader, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Update.ReaderModificationCommandBatch.ExecuteAsync(IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Update.ReaderModificationCommandBatch.ExecuteAsync(IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.SqlServer.Update.Internal.SqlServerModificationCommandBatch.ExecuteAsync(IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Update.Internal.BatchExecutor.ExecuteAsync(IEnumerable`1 commandBatches, IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Update.Internal.BatchExecutor.ExecuteAsync(IEnumerable`1 commandBatches, IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Update.Internal.BatchExecutor.ExecuteAsync(IEnumerable`1 commandBatches, IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Storage.RelationalDatabase.SaveChangesAsync(IList`1 entries, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.ChangeTracking.Internal.StateManager.SaveChangesAsync(IList`1 entriesToSave, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.ChangeTracking.Internal.StateManager.SaveChangesAsync(StateManager stateManager, Boolean acceptAllChangesOnSuccess, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.SqlServer.Storage.Internal.SqlServerExecutionStrategy.ExecuteAsync[TState,TResult](TState state, Func`4 operation, Func`4 verifySucceeded, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.DbContext.SaveChangesAsync(Boolean acceptAllChangesOnSuccess, CancellationToken cancellationToken)
+2025-03-03 19:56:16.236 +05:30 [INF] Executing ObjectResult, writing value of type 'System.String'.
+2025-03-03 19:56:16.237 +05:30 [INF] Executed action EmployeeCompany.Controllers.EmployeeController.Update (EmployeeCompany) in 250.3452ms
+2025-03-03 19:56:16.237 +05:30 [INF] Executed endpoint 'EmployeeCompany.Controllers.EmployeeController.Update (EmployeeCompany)'
+2025-03-03 19:56:16.237 +05:30 [INF] Request finished HTTP/2 PUT https://localhost:44315/api/employees/33 - 500 null text/plain; charset=utf-8 261.7994ms
+2025-03-03 19:56:26.138 +05:30 [INF] Request starting HTTP/2 GET https://localhost:44315/api/employees - null null
+2025-03-03 19:56:26.138 +05:30 [INF] CORS policy execution successful.
+2025-03-03 19:56:26.138 +05:30 [INF] Executing endpoint 'EmployeeCompany.Controllers.EmployeeController.ViewAll (EmployeeCompany)'
+2025-03-03 19:56:26.138 +05:30 [INF] Route matched with {action = "ViewAll", controller = "Employee"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] ViewAll() on controller EmployeeCompany.Controllers.EmployeeController (EmployeeCompany).
+2025-03-03 19:56:26.169 +05:30 [INF] Executed DbCommand (8ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [e].[Id], [e].[DepartmentId], [e].[Email], [e].[FirstName], [e].[HireDate], [e].[LastName], [e].[PhoneNumber], [e].[Salary]
+FROM [EmployeeList] AS [e]
+2025-03-03 19:56:26.170 +05:30 [INF] Executing OkObjectResult, writing value of type 'System.Collections.Generic.List`1[[EmployeeCompany.Models.Employee, EmployeeCompany, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2025-03-03 19:56:26.171 +05:30 [INF] Executed action EmployeeCompany.Controllers.EmployeeController.ViewAll (EmployeeCompany) in 32.3993ms
+2025-03-03 19:56:26.171 +05:30 [INF] Executed endpoint 'EmployeeCompany.Controllers.EmployeeController.ViewAll (EmployeeCompany)'
+2025-03-03 19:56:26.171 +05:30 [INF] Request finished HTTP/2 GET https://localhost:44315/api/employees - 200 null application/json; charset=utf-8 33.9303ms
+2025-03-03 19:56:26.173 +05:30 [INF] Request starting HTTP/2 GET https://localhost:44315/api/employees - null null
+2025-03-03 19:56:26.173 +05:30 [INF] CORS policy execution successful.
+2025-03-03 19:56:26.173 +05:30 [INF] Executing endpoint 'EmployeeCompany.Controllers.EmployeeController.ViewAll (EmployeeCompany)'
+2025-03-03 19:56:26.173 +05:30 [INF] Route matched with {action = "ViewAll", controller = "Employee"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] ViewAll() on controller EmployeeCompany.Controllers.EmployeeController (EmployeeCompany).
+2025-03-03 19:56:26.193 +05:30 [INF] Executed DbCommand (0ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [e].[Id], [e].[DepartmentId], [e].[Email], [e].[FirstName], [e].[HireDate], [e].[LastName], [e].[PhoneNumber], [e].[Salary]
+FROM [EmployeeList] AS [e]
+2025-03-03 19:56:26.194 +05:30 [INF] Executing OkObjectResult, writing value of type 'System.Collections.Generic.List`1[[EmployeeCompany.Models.Employee, EmployeeCompany, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2025-03-03 19:56:26.195 +05:30 [INF] Executed action EmployeeCompany.Controllers.EmployeeController.ViewAll (EmployeeCompany) in 21.2075ms
+2025-03-03 19:56:26.195 +05:30 [INF] Executed endpoint 'EmployeeCompany.Controllers.EmployeeController.ViewAll (EmployeeCompany)'
+2025-03-03 19:56:26.196 +05:30 [INF] Request finished HTTP/2 GET https://localhost:44315/api/employees - 200 null application/json; charset=utf-8 22.9252ms
+2025-03-03 19:56:48.143 +05:30 [INF] Request starting HTTP/2 GET https://localhost:44315/api/employees - null null
+2025-03-03 19:56:48.143 +05:30 [INF] Executing endpoint 'EmployeeCompany.Controllers.EmployeeController.ViewAll (EmployeeCompany)'
+2025-03-03 19:56:48.144 +05:30 [INF] Route matched with {action = "ViewAll", controller = "Employee"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] ViewAll() on controller EmployeeCompany.Controllers.EmployeeController (EmployeeCompany).
+2025-03-03 19:56:48.191 +05:30 [INF] Executed DbCommand (2ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [e].[Id], [e].[DepartmentId], [e].[Email], [e].[FirstName], [e].[HireDate], [e].[LastName], [e].[PhoneNumber], [e].[Salary]
+FROM [EmployeeList] AS [e]
+2025-03-03 19:56:48.196 +05:30 [INF] Executing OkObjectResult, writing value of type 'System.Collections.Generic.List`1[[EmployeeCompany.Models.Employee, EmployeeCompany, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2025-03-03 19:56:48.202 +05:30 [INF] Executed action EmployeeCompany.Controllers.EmployeeController.ViewAll (EmployeeCompany) in 58.2654ms
+2025-03-03 19:56:48.202 +05:30 [INF] Executed endpoint 'EmployeeCompany.Controllers.EmployeeController.ViewAll (EmployeeCompany)'
+2025-03-03 19:56:48.202 +05:30 [INF] Request finished HTTP/2 GET https://localhost:44315/api/employees - 200 null application/json; charset=utf-8 59.7319ms
+2025-03-03 19:56:58.338 +05:30 [INF] Request starting HTTP/2 PUT https://localhost:44315/api/employees/33 - application/json 202
+2025-03-03 19:56:58.338 +05:30 [INF] CORS policy execution successful.
+2025-03-03 19:56:58.338 +05:30 [INF] Executing endpoint 'EmployeeCompany.Controllers.EmployeeController.Update (EmployeeCompany)'
+2025-03-03 19:56:58.338 +05:30 [INF] Route matched with {action = "Update", controller = "Employee"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] Update(Int32, EmployeeCompany.Models.Employee) on controller EmployeeCompany.Controllers.EmployeeController (EmployeeCompany).
+2025-03-03 19:56:58.362 +05:30 [INF] Executed DbCommand (0ms) [Parameters=[@__p_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [e].[Id], [e].[DepartmentId], [e].[Email], [e].[FirstName], [e].[HireDate], [e].[LastName], [e].[PhoneNumber], [e].[Salary]
+FROM [EmployeeList] AS [e]
+WHERE [e].[Id] = @__p_0
+2025-03-03 19:56:58.379 +05:30 [INF] Executed DbCommand (4ms) [Parameters=[@p7='?' (DbType = Int32), @p0='?' (DbType = Int32), @p1='?' (Size = 4000), @p2='?' (Size = 4000), @p3='?' (DbType = DateTime2), @p4='?' (Size = 4000), @p5='?' (Size = 4000), @p6='?' (Precision = 18) (Scale = 2) (DbType = Decimal)], CommandType='"Text"', CommandTimeout='30']
+SET IMPLICIT_TRANSACTIONS OFF;
+SET NOCOUNT ON;
+UPDATE [EmployeeList] SET [DepartmentId] = @p0, [Email] = @p1, [FirstName] = @p2, [HireDate] = @p3, [LastName] = @p4, [PhoneNumber] = @p5, [Salary] = @p6
+OUTPUT 1
+WHERE [Id] = @p7;
+2025-03-03 19:56:58.383 +05:30 [ERR] An exception occurred in the database while saving changes for context type 'EmployeeCompany.EmployeeContext'.
+Microsoft.EntityFrameworkCore.DbUpdateException: An error occurred while saving the entity changes. See the inner exception for details.
+ ---> Microsoft.Data.SqlClient.SqlException (0x80131904): The UPDATE statement conflicted with the FOREIGN KEY constraint "FK_EmployeeList_DepartmentList_DepartmentId". The conflict occurred in database "webapiexercisedb", table "dbo.DepartmentList", column 'DepartmentId'.
+   at Microsoft.Data.SqlClient.SqlConnection.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)
+   at Microsoft.Data.SqlClient.SqlInternalConnection.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)
+   at Microsoft.Data.SqlClient.TdsParser.ThrowExceptionAndWarning(TdsParserStateObject stateObj, Boolean callerHasConnectionLock, Boolean asyncClose)
+   at Microsoft.Data.SqlClient.TdsParser.TryRun(RunBehavior runBehavior, SqlCommand cmdHandler, SqlDataReader dataStream, BulkCopySimpleResultSet bulkCopyHandler, TdsParserStateObject stateObj, Boolean& dataReady)
+   at Microsoft.Data.SqlClient.SqlDataReader.TryHasMoreRows(Boolean& moreRows)
+   at Microsoft.Data.SqlClient.SqlDataReader.TryReadInternal(Boolean setTimeout, Boolean& more)
+   at Microsoft.Data.SqlClient.SqlDataReader.ReadAsyncExecute(Task task, Object state)
+   at Microsoft.Data.SqlClient.SqlDataReader.InvokeAsyncCall[T](SqlDataReaderBaseAsyncCallContext`1 context)
+--- End of stack trace from previous location ---
+   at Microsoft.EntityFrameworkCore.Update.AffectedCountModificationCommandBatch.ConsumeResultSetWithRowsAffectedOnlyAsync(Int32 commandIndex, RelationalDataReader reader, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Update.AffectedCountModificationCommandBatch.ConsumeAsync(RelationalDataReader reader, CancellationToken cancellationToken)
+ClientConnectionId:ae99bf2a-7098-4d3a-90c9-e67ca3675b84
+Error Number:547,State:0,Class:16
+   --- End of inner exception stack trace ---
+   at Microsoft.EntityFrameworkCore.Update.AffectedCountModificationCommandBatch.ConsumeAsync(RelationalDataReader reader, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Update.ReaderModificationCommandBatch.ExecuteAsync(IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Update.ReaderModificationCommandBatch.ExecuteAsync(IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.SqlServer.Update.Internal.SqlServerModificationCommandBatch.ExecuteAsync(IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Update.Internal.BatchExecutor.ExecuteAsync(IEnumerable`1 commandBatches, IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Update.Internal.BatchExecutor.ExecuteAsync(IEnumerable`1 commandBatches, IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Update.Internal.BatchExecutor.ExecuteAsync(IEnumerable`1 commandBatches, IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Storage.RelationalDatabase.SaveChangesAsync(IList`1 entries, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.ChangeTracking.Internal.StateManager.SaveChangesAsync(IList`1 entriesToSave, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.ChangeTracking.Internal.StateManager.SaveChangesAsync(StateManager stateManager, Boolean acceptAllChangesOnSuccess, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.SqlServer.Storage.Internal.SqlServerExecutionStrategy.ExecuteAsync[TState,TResult](TState state, Func`4 operation, Func`4 verifySucceeded, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.DbContext.SaveChangesAsync(Boolean acceptAllChangesOnSuccess, CancellationToken cancellationToken)
+Microsoft.EntityFrameworkCore.DbUpdateException: An error occurred while saving the entity changes. See the inner exception for details.
+ ---> Microsoft.Data.SqlClient.SqlException (0x80131904): The UPDATE statement conflicted with the FOREIGN KEY constraint "FK_EmployeeList_DepartmentList_DepartmentId". The conflict occurred in database "webapiexercisedb", table "dbo.DepartmentList", column 'DepartmentId'.
+   at Microsoft.Data.SqlClient.SqlConnection.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)
+   at Microsoft.Data.SqlClient.SqlInternalConnection.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)
+   at Microsoft.Data.SqlClient.TdsParser.ThrowExceptionAndWarning(TdsParserStateObject stateObj, Boolean callerHasConnectionLock, Boolean asyncClose)
+   at Microsoft.Data.SqlClient.TdsParser.TryRun(RunBehavior runBehavior, SqlCommand cmdHandler, SqlDataReader dataStream, BulkCopySimpleResultSet bulkCopyHandler, TdsParserStateObject stateObj, Boolean& dataReady)
+   at Microsoft.Data.SqlClient.SqlDataReader.TryHasMoreRows(Boolean& moreRows)
+   at Microsoft.Data.SqlClient.SqlDataReader.TryReadInternal(Boolean setTimeout, Boolean& more)
+   at Microsoft.Data.SqlClient.SqlDataReader.ReadAsyncExecute(Task task, Object state)
+   at Microsoft.Data.SqlClient.SqlDataReader.InvokeAsyncCall[T](SqlDataReaderBaseAsyncCallContext`1 context)
+--- End of stack trace from previous location ---
+   at Microsoft.EntityFrameworkCore.Update.AffectedCountModificationCommandBatch.ConsumeResultSetWithRowsAffectedOnlyAsync(Int32 commandIndex, RelationalDataReader reader, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Update.AffectedCountModificationCommandBatch.ConsumeAsync(RelationalDataReader reader, CancellationToken cancellationToken)
+ClientConnectionId:ae99bf2a-7098-4d3a-90c9-e67ca3675b84
+Error Number:547,State:0,Class:16
+   --- End of inner exception stack trace ---
+   at Microsoft.EntityFrameworkCore.Update.AffectedCountModificationCommandBatch.ConsumeAsync(RelationalDataReader reader, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Update.ReaderModificationCommandBatch.ExecuteAsync(IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Update.ReaderModificationCommandBatch.ExecuteAsync(IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.SqlServer.Update.Internal.SqlServerModificationCommandBatch.ExecuteAsync(IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Update.Internal.BatchExecutor.ExecuteAsync(IEnumerable`1 commandBatches, IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Update.Internal.BatchExecutor.ExecuteAsync(IEnumerable`1 commandBatches, IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Update.Internal.BatchExecutor.ExecuteAsync(IEnumerable`1 commandBatches, IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Storage.RelationalDatabase.SaveChangesAsync(IList`1 entries, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.ChangeTracking.Internal.StateManager.SaveChangesAsync(IList`1 entriesToSave, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.ChangeTracking.Internal.StateManager.SaveChangesAsync(StateManager stateManager, Boolean acceptAllChangesOnSuccess, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.SqlServer.Storage.Internal.SqlServerExecutionStrategy.ExecuteAsync[TState,TResult](TState state, Func`4 operation, Func`4 verifySucceeded, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.DbContext.SaveChangesAsync(Boolean acceptAllChangesOnSuccess, CancellationToken cancellationToken)
+2025-03-03 19:56:58.429 +05:30 [INF] Executing ObjectResult, writing value of type 'System.String'.
+2025-03-03 19:56:58.429 +05:30 [INF] Executed action EmployeeCompany.Controllers.EmployeeController.Update (EmployeeCompany) in 91.3162ms
+2025-03-03 19:56:58.430 +05:30 [INF] Executed endpoint 'EmployeeCompany.Controllers.EmployeeController.Update (EmployeeCompany)'
+2025-03-03 19:56:58.430 +05:30 [INF] Request finished HTTP/2 PUT https://localhost:44315/api/employees/33 - 500 null text/plain; charset=utf-8 92.0873ms
+2025-03-03 19:57:12.142 +05:30 [INF] Request starting HTTP/2 DELETE https://localhost:44315/api/employee/34 - null null
+2025-03-03 19:57:12.143 +05:30 [INF] CORS policy execution successful.
+2025-03-03 19:57:12.143 +05:30 [INF] Executing endpoint 'EmployeeCompany.Controllers.EmployeeController.Delete (EmployeeCompany)'
+2025-03-03 19:57:12.162 +05:30 [INF] Route matched with {action = "Delete", controller = "Employee"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] Delete(Int32) on controller EmployeeCompany.Controllers.EmployeeController (EmployeeCompany).
+2025-03-03 19:57:12.181 +05:30 [INF] Executed DbCommand (2ms) [Parameters=[@__p_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [e].[Id], [e].[DepartmentId], [e].[Email], [e].[FirstName], [e].[HireDate], [e].[LastName], [e].[PhoneNumber], [e].[Salary]
+FROM [EmployeeList] AS [e]
+WHERE [e].[Id] = @__p_0
+2025-03-03 19:57:12.200 +05:30 [INF] Executed DbCommand (4ms) [Parameters=[@p0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SET IMPLICIT_TRANSACTIONS OFF;
+SET NOCOUNT ON;
+DELETE FROM [EmployeeList]
+OUTPUT 1
+WHERE [Id] = @p0;
+2025-03-03 19:57:12.206 +05:30 [INF] Executing StatusCodeResult, setting HTTP status code 204
+2025-03-03 19:57:12.207 +05:30 [INF] Executed action EmployeeCompany.Controllers.EmployeeController.Delete (EmployeeCompany) in 44.7812ms
+2025-03-03 19:57:12.207 +05:30 [INF] Executed endpoint 'EmployeeCompany.Controllers.EmployeeController.Delete (EmployeeCompany)'
+2025-03-03 19:57:12.207 +05:30 [INF] Request finished HTTP/2 DELETE https://localhost:44315/api/employee/34 - 204 null null 64.588ms
+2025-03-03 19:57:19.401 +05:30 [INF] Request starting HTTP/2 GET https://localhost:44315/api/employees - null null
+2025-03-03 19:57:19.402 +05:30 [INF] Executing endpoint 'EmployeeCompany.Controllers.EmployeeController.ViewAll (EmployeeCompany)'
+2025-03-03 19:57:19.402 +05:30 [INF] Route matched with {action = "ViewAll", controller = "Employee"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] ViewAll() on controller EmployeeCompany.Controllers.EmployeeController (EmployeeCompany).
+2025-03-03 19:57:19.445 +05:30 [INF] Executed DbCommand (6ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [e].[Id], [e].[DepartmentId], [e].[Email], [e].[FirstName], [e].[HireDate], [e].[LastName], [e].[PhoneNumber], [e].[Salary]
+FROM [EmployeeList] AS [e]
+2025-03-03 19:57:19.446 +05:30 [INF] Executing OkObjectResult, writing value of type 'System.Collections.Generic.List`1[[EmployeeCompany.Models.Employee, EmployeeCompany, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2025-03-03 19:57:19.447 +05:30 [INF] Executed action EmployeeCompany.Controllers.EmployeeController.ViewAll (EmployeeCompany) in 44.6038ms
+2025-03-03 19:57:19.447 +05:30 [INF] Executed endpoint 'EmployeeCompany.Controllers.EmployeeController.ViewAll (EmployeeCompany)'
+2025-03-03 19:57:19.447 +05:30 [INF] Request finished HTTP/2 GET https://localhost:44315/api/employees - 200 null application/json; charset=utf-8 45.785ms
+2025-03-03 19:58:48.793 +05:30 [INF] Request starting HTTP/2 GET https://localhost:44315/api/employees - null null
+2025-03-03 19:58:48.794 +05:30 [INF] CORS policy execution successful.
+2025-03-03 19:58:48.795 +05:30 [INF] Executing endpoint 'EmployeeCompany.Controllers.EmployeeController.ViewAll (EmployeeCompany)'
+2025-03-03 19:58:48.795 +05:30 [INF] Route matched with {action = "ViewAll", controller = "Employee"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] ViewAll() on controller EmployeeCompany.Controllers.EmployeeController (EmployeeCompany).
+2025-03-03 19:58:48.829 +05:30 [INF] Executed DbCommand (4ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [e].[Id], [e].[DepartmentId], [e].[Email], [e].[FirstName], [e].[HireDate], [e].[LastName], [e].[PhoneNumber], [e].[Salary]
+FROM [EmployeeList] AS [e]
+2025-03-03 19:58:48.831 +05:30 [INF] Executing OkObjectResult, writing value of type 'System.Collections.Generic.List`1[[EmployeeCompany.Models.Employee, EmployeeCompany, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2025-03-03 19:58:48.831 +05:30 [INF] Executed action EmployeeCompany.Controllers.EmployeeController.ViewAll (EmployeeCompany) in 35.8741ms
+2025-03-03 19:58:48.831 +05:30 [INF] Executed endpoint 'EmployeeCompany.Controllers.EmployeeController.ViewAll (EmployeeCompany)'
+2025-03-03 19:58:48.831 +05:30 [INF] Request finished HTTP/2 GET https://localhost:44315/api/employees - 200 null application/json; charset=utf-8 38.3692ms
+2025-03-03 19:58:48.833 +05:30 [INF] Request starting HTTP/2 GET https://localhost:44315/api/employees - null null
+2025-03-03 19:58:48.833 +05:30 [INF] CORS policy execution successful.
+2025-03-03 19:58:48.833 +05:30 [INF] Executing endpoint 'EmployeeCompany.Controllers.EmployeeController.ViewAll (EmployeeCompany)'
+2025-03-03 19:58:48.833 +05:30 [INF] Route matched with {action = "ViewAll", controller = "Employee"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] ViewAll() on controller EmployeeCompany.Controllers.EmployeeController (EmployeeCompany).
+2025-03-03 19:58:48.855 +05:30 [INF] Executed DbCommand (0ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [e].[Id], [e].[DepartmentId], [e].[Email], [e].[FirstName], [e].[HireDate], [e].[LastName], [e].[PhoneNumber], [e].[Salary]
+FROM [EmployeeList] AS [e]
+2025-03-03 19:58:48.858 +05:30 [INF] Executing OkObjectResult, writing value of type 'System.Collections.Generic.List`1[[EmployeeCompany.Models.Employee, EmployeeCompany, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2025-03-03 19:58:48.859 +05:30 [INF] Executed action EmployeeCompany.Controllers.EmployeeController.ViewAll (EmployeeCompany) in 25.2407ms
+2025-03-03 19:58:48.859 +05:30 [INF] Executed endpoint 'EmployeeCompany.Controllers.EmployeeController.ViewAll (EmployeeCompany)'
+2025-03-03 19:58:48.859 +05:30 [INF] Request finished HTTP/2 GET https://localhost:44315/api/employees - 200 null application/json; charset=utf-8 25.967ms
+2025-03-03 19:58:54.621 +05:30 [INF] Request starting HTTP/2 OPTIONS https://localhost:44315/api/employee/5 - null null
+2025-03-03 19:58:54.622 +05:30 [INF] CORS policy execution successful.
+2025-03-03 19:58:54.622 +05:30 [INF] Request finished HTTP/2 OPTIONS https://localhost:44315/api/employee/5 - 204 null null 0.9566ms
+2025-03-03 19:58:54.625 +05:30 [INF] Request starting HTTP/2 DELETE https://localhost:44315/api/employee/5 - null null
+2025-03-03 19:58:54.626 +05:30 [INF] CORS policy execution successful.
+2025-03-03 19:58:54.626 +05:30 [INF] Executing endpoint 'EmployeeCompany.Controllers.EmployeeController.Delete (EmployeeCompany)'
+2025-03-03 19:58:54.626 +05:30 [INF] Route matched with {action = "Delete", controller = "Employee"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] Delete(Int32) on controller EmployeeCompany.Controllers.EmployeeController (EmployeeCompany).
+2025-03-03 19:58:54.651 +05:30 [INF] Executed DbCommand (3ms) [Parameters=[@__p_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [e].[Id], [e].[DepartmentId], [e].[Email], [e].[FirstName], [e].[HireDate], [e].[LastName], [e].[PhoneNumber], [e].[Salary]
+FROM [EmployeeList] AS [e]
+WHERE [e].[Id] = @__p_0
+2025-03-03 19:58:54.670 +05:30 [INF] Executed DbCommand (4ms) [Parameters=[@p0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SET IMPLICIT_TRANSACTIONS OFF;
+SET NOCOUNT ON;
+DELETE FROM [EmployeeList]
+OUTPUT 1
+WHERE [Id] = @p0;
+2025-03-03 19:58:54.676 +05:30 [INF] Executing StatusCodeResult, setting HTTP status code 204
+2025-03-03 19:58:54.676 +05:30 [INF] Executed action EmployeeCompany.Controllers.EmployeeController.Delete (EmployeeCompany) in 50.0723ms
+2025-03-03 19:58:54.676 +05:30 [INF] Executed endpoint 'EmployeeCompany.Controllers.EmployeeController.Delete (EmployeeCompany)'
+2025-03-03 19:58:54.678 +05:30 [INF] Request finished HTTP/2 DELETE https://localhost:44315/api/employee/5 - 204 null null 53.1234ms
+2025-03-03 19:58:57.203 +05:30 [INF] Request starting HTTP/2 GET https://localhost:44315/api/employees - null null
+2025-03-03 19:58:57.203 +05:30 [INF] CORS policy execution successful.
+2025-03-03 19:58:57.203 +05:30 [INF] Executing endpoint 'EmployeeCompany.Controllers.EmployeeController.ViewAll (EmployeeCompany)'
+2025-03-03 19:58:57.203 +05:30 [INF] Route matched with {action = "ViewAll", controller = "Employee"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] ViewAll() on controller EmployeeCompany.Controllers.EmployeeController (EmployeeCompany).
+2025-03-03 19:58:57.239 +05:30 [INF] Executed DbCommand (3ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [e].[Id], [e].[DepartmentId], [e].[Email], [e].[FirstName], [e].[HireDate], [e].[LastName], [e].[PhoneNumber], [e].[Salary]
+FROM [EmployeeList] AS [e]
+2025-03-03 19:58:57.240 +05:30 [INF] Executing OkObjectResult, writing value of type 'System.Collections.Generic.List`1[[EmployeeCompany.Models.Employee, EmployeeCompany, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2025-03-03 19:58:57.240 +05:30 [INF] Executed action EmployeeCompany.Controllers.EmployeeController.ViewAll (EmployeeCompany) in 36.877ms
+2025-03-03 19:58:57.240 +05:30 [INF] Executed endpoint 'EmployeeCompany.Controllers.EmployeeController.ViewAll (EmployeeCompany)'
+2025-03-03 19:58:57.241 +05:30 [INF] Request finished HTTP/2 GET https://localhost:44315/api/employees - 200 null application/json; charset=utf-8 37.9709ms
+2025-03-03 19:58:57.242 +05:30 [INF] Request starting HTTP/2 GET https://localhost:44315/api/employees - null null
+2025-03-03 19:58:57.243 +05:30 [INF] CORS policy execution successful.
+2025-03-03 19:58:57.245 +05:30 [INF] Executing endpoint 'EmployeeCompany.Controllers.EmployeeController.ViewAll (EmployeeCompany)'
+2025-03-03 19:58:57.245 +05:30 [INF] Route matched with {action = "ViewAll", controller = "Employee"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] ViewAll() on controller EmployeeCompany.Controllers.EmployeeController (EmployeeCompany).
+2025-03-03 19:58:57.268 +05:30 [INF] Executed DbCommand (3ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [e].[Id], [e].[DepartmentId], [e].[Email], [e].[FirstName], [e].[HireDate], [e].[LastName], [e].[PhoneNumber], [e].[Salary]
+FROM [EmployeeList] AS [e]
+2025-03-03 19:58:57.269 +05:30 [INF] Executing OkObjectResult, writing value of type 'System.Collections.Generic.List`1[[EmployeeCompany.Models.Employee, EmployeeCompany, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2025-03-03 19:58:57.271 +05:30 [INF] Executed action EmployeeCompany.Controllers.EmployeeController.ViewAll (EmployeeCompany) in 26.1034ms
+2025-03-03 19:58:57.272 +05:30 [INF] Executed endpoint 'EmployeeCompany.Controllers.EmployeeController.ViewAll (EmployeeCompany)'
+2025-03-03 19:58:57.272 +05:30 [INF] Request finished HTTP/2 GET https://localhost:44315/api/employees - 200 null application/json; charset=utf-8 29.5925ms
+2025-03-03 19:59:08.199 +05:30 [INF] Request starting HTTP/2 GET https://localhost:44315/api/employees - null null
+2025-03-03 19:59:08.199 +05:30 [INF] CORS policy execution successful.
+2025-03-03 19:59:08.200 +05:30 [INF] Executing endpoint 'EmployeeCompany.Controllers.EmployeeController.ViewAll (EmployeeCompany)'
+2025-03-03 19:59:08.200 +05:30 [INF] Route matched with {action = "ViewAll", controller = "Employee"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] ViewAll() on controller EmployeeCompany.Controllers.EmployeeController (EmployeeCompany).
+2025-03-03 19:59:08.223 +05:30 [INF] Executed DbCommand (0ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [e].[Id], [e].[DepartmentId], [e].[Email], [e].[FirstName], [e].[HireDate], [e].[LastName], [e].[PhoneNumber], [e].[Salary]
+FROM [EmployeeList] AS [e]
+2025-03-03 19:59:08.229 +05:30 [INF] Executing OkObjectResult, writing value of type 'System.Collections.Generic.List`1[[EmployeeCompany.Models.Employee, EmployeeCompany, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2025-03-03 19:59:08.230 +05:30 [INF] Executed action EmployeeCompany.Controllers.EmployeeController.ViewAll (EmployeeCompany) in 29.3379ms
+2025-03-03 19:59:08.230 +05:30 [INF] Executed endpoint 'EmployeeCompany.Controllers.EmployeeController.ViewAll (EmployeeCompany)'
+2025-03-03 19:59:08.231 +05:30 [INF] Request finished HTTP/2 GET https://localhost:44315/api/employees - 200 null application/json; charset=utf-8 32.3813ms
+2025-03-03 19:59:08.233 +05:30 [INF] Request starting HTTP/2 GET https://localhost:44315/api/employees - null null
+2025-03-03 19:59:08.233 +05:30 [INF] CORS policy execution successful.
+2025-03-03 19:59:08.233 +05:30 [INF] Executing endpoint 'EmployeeCompany.Controllers.EmployeeController.ViewAll (EmployeeCompany)'
+2025-03-03 19:59:08.233 +05:30 [INF] Route matched with {action = "ViewAll", controller = "Employee"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] ViewAll() on controller EmployeeCompany.Controllers.EmployeeController (EmployeeCompany).
+2025-03-03 19:59:08.255 +05:30 [INF] Executed DbCommand (2ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [e].[Id], [e].[DepartmentId], [e].[Email], [e].[FirstName], [e].[HireDate], [e].[LastName], [e].[PhoneNumber], [e].[Salary]
+FROM [EmployeeList] AS [e]
+2025-03-03 19:59:08.256 +05:30 [INF] Executing OkObjectResult, writing value of type 'System.Collections.Generic.List`1[[EmployeeCompany.Models.Employee, EmployeeCompany, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2025-03-03 19:59:08.256 +05:30 [INF] Executed action EmployeeCompany.Controllers.EmployeeController.ViewAll (EmployeeCompany) in 23.1736ms
+2025-03-03 19:59:08.256 +05:30 [INF] Executed endpoint 'EmployeeCompany.Controllers.EmployeeController.ViewAll (EmployeeCompany)'
+2025-03-03 19:59:08.258 +05:30 [INF] Request finished HTTP/2 GET https://localhost:44315/api/employees - 200 null application/json; charset=utf-8 25.1831ms
+2025-03-03 19:59:18.134 +05:30 [INF] Request starting HTTP/2 OPTIONS https://localhost:44315/api/employee/23 - null null
+2025-03-03 19:59:18.134 +05:30 [INF] CORS policy execution successful.
+2025-03-03 19:59:18.135 +05:30 [INF] Request finished HTTP/2 OPTIONS https://localhost:44315/api/employee/23 - 204 null null 0.7881ms
+2025-03-03 19:59:18.137 +05:30 [INF] Request starting HTTP/2 DELETE https://localhost:44315/api/employee/23 - null null
+2025-03-03 19:59:18.138 +05:30 [INF] CORS policy execution successful.
+2025-03-03 19:59:18.138 +05:30 [INF] Executing endpoint 'EmployeeCompany.Controllers.EmployeeController.Delete (EmployeeCompany)'
+2025-03-03 19:59:18.138 +05:30 [INF] Route matched with {action = "Delete", controller = "Employee"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] Delete(Int32) on controller EmployeeCompany.Controllers.EmployeeController (EmployeeCompany).
+2025-03-03 19:59:18.156 +05:30 [INF] Executed DbCommand (1ms) [Parameters=[@__p_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [e].[Id], [e].[DepartmentId], [e].[Email], [e].[FirstName], [e].[HireDate], [e].[LastName], [e].[PhoneNumber], [e].[Salary]
+FROM [EmployeeList] AS [e]
+WHERE [e].[Id] = @__p_0
+2025-03-03 19:59:18.173 +05:30 [INF] Executed DbCommand (3ms) [Parameters=[@p0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SET IMPLICIT_TRANSACTIONS OFF;
+SET NOCOUNT ON;
+DELETE FROM [EmployeeList]
+OUTPUT 1
+WHERE [Id] = @p0;
+2025-03-03 19:59:18.173 +05:30 [INF] Executing StatusCodeResult, setting HTTP status code 204
+2025-03-03 19:59:18.173 +05:30 [INF] Executed action EmployeeCompany.Controllers.EmployeeController.Delete (EmployeeCompany) in 35.7805ms
+2025-03-03 19:59:18.174 +05:30 [INF] Executed endpoint 'EmployeeCompany.Controllers.EmployeeController.Delete (EmployeeCompany)'
+2025-03-03 19:59:18.174 +05:30 [INF] Request finished HTTP/2 DELETE https://localhost:44315/api/employee/23 - 204 null null 36.3197ms
+2025-03-03 19:59:22.777 +05:30 [INF] Request starting HTTP/2 OPTIONS https://localhost:44315/api/employee/24 - null null
+2025-03-03 19:59:22.778 +05:30 [INF] CORS policy execution successful.
+2025-03-03 19:59:22.778 +05:30 [INF] Request finished HTTP/2 OPTIONS https://localhost:44315/api/employee/24 - 204 null null 0.9725ms
+2025-03-03 19:59:22.782 +05:30 [INF] Request starting HTTP/2 DELETE https://localhost:44315/api/employee/24 - null null
+2025-03-03 19:59:22.782 +05:30 [INF] CORS policy execution successful.
+2025-03-03 19:59:22.782 +05:30 [INF] Executing endpoint 'EmployeeCompany.Controllers.EmployeeController.Delete (EmployeeCompany)'
+2025-03-03 19:59:22.782 +05:30 [INF] Route matched with {action = "Delete", controller = "Employee"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] Delete(Int32) on controller EmployeeCompany.Controllers.EmployeeController (EmployeeCompany).
+2025-03-03 19:59:22.810 +05:30 [INF] Executed DbCommand (8ms) [Parameters=[@__p_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [e].[Id], [e].[DepartmentId], [e].[Email], [e].[FirstName], [e].[HireDate], [e].[LastName], [e].[PhoneNumber], [e].[Salary]
+FROM [EmployeeList] AS [e]
+WHERE [e].[Id] = @__p_0
+2025-03-03 19:59:22.812 +05:30 [INF] Executing NotFoundObjectResult, writing value of type 'System.String'.
+2025-03-03 19:59:22.813 +05:30 [INF] Executed action EmployeeCompany.Controllers.EmployeeController.Delete (EmployeeCompany) in 30.9728ms
+2025-03-03 19:59:22.813 +05:30 [INF] Executed endpoint 'EmployeeCompany.Controllers.EmployeeController.Delete (EmployeeCompany)'
+2025-03-03 19:59:22.814 +05:30 [INF] Request finished HTTP/2 DELETE https://localhost:44315/api/employee/24 - 404 null text/plain; charset=utf-8 32.0844ms
+2025-03-03 19:59:27.696 +05:30 [INF] Request starting HTTP/2 OPTIONS https://localhost:44315/api/employee/25 - null null
+2025-03-03 19:59:27.696 +05:30 [INF] CORS policy execution successful.
+2025-03-03 19:59:27.696 +05:30 [INF] Request finished HTTP/2 OPTIONS https://localhost:44315/api/employee/25 - 204 null null 0.3906ms
+2025-03-03 19:59:27.699 +05:30 [INF] Request starting HTTP/2 DELETE https://localhost:44315/api/employee/25 - null null
+2025-03-03 19:59:27.700 +05:30 [INF] CORS policy execution successful.
+2025-03-03 19:59:27.700 +05:30 [INF] Executing endpoint 'EmployeeCompany.Controllers.EmployeeController.Delete (EmployeeCompany)'
+2025-03-03 19:59:27.700 +05:30 [INF] Route matched with {action = "Delete", controller = "Employee"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] Delete(Int32) on controller EmployeeCompany.Controllers.EmployeeController (EmployeeCompany).
+2025-03-03 19:59:27.720 +05:30 [INF] Executed DbCommand (3ms) [Parameters=[@__p_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [e].[Id], [e].[DepartmentId], [e].[Email], [e].[FirstName], [e].[HireDate], [e].[LastName], [e].[PhoneNumber], [e].[Salary]
+FROM [EmployeeList] AS [e]
+WHERE [e].[Id] = @__p_0
+2025-03-03 19:59:27.738 +05:30 [INF] Executed DbCommand (4ms) [Parameters=[@p0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SET IMPLICIT_TRANSACTIONS OFF;
+SET NOCOUNT ON;
+DELETE FROM [EmployeeList]
+OUTPUT 1
+WHERE [Id] = @p0;
+2025-03-03 19:59:27.741 +05:30 [INF] Executing StatusCodeResult, setting HTTP status code 204
+2025-03-03 19:59:27.741 +05:30 [INF] Executed action EmployeeCompany.Controllers.EmployeeController.Delete (EmployeeCompany) in 41.6298ms
+2025-03-03 19:59:27.742 +05:30 [INF] Executed endpoint 'EmployeeCompany.Controllers.EmployeeController.Delete (EmployeeCompany)'
+2025-03-03 19:59:27.742 +05:30 [INF] Request finished HTTP/2 DELETE https://localhost:44315/api/employee/25 - 204 null null 42.7759ms
+2025-03-03 19:59:31.205 +05:30 [INF] Request starting HTTP/2 OPTIONS https://localhost:44315/api/employee/28 - null null
+2025-03-03 19:59:31.206 +05:30 [INF] CORS policy execution successful.
+2025-03-03 19:59:31.206 +05:30 [INF] Request finished HTTP/2 OPTIONS https://localhost:44315/api/employee/28 - 204 null null 0.6132ms
+2025-03-03 19:59:31.209 +05:30 [INF] Request starting HTTP/2 DELETE https://localhost:44315/api/employee/28 - null null
+2025-03-03 19:59:31.209 +05:30 [INF] CORS policy execution successful.
+2025-03-03 19:59:31.209 +05:30 [INF] Executing endpoint 'EmployeeCompany.Controllers.EmployeeController.Delete (EmployeeCompany)'
+2025-03-03 19:59:31.209 +05:30 [INF] Route matched with {action = "Delete", controller = "Employee"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] Delete(Int32) on controller EmployeeCompany.Controllers.EmployeeController (EmployeeCompany).
+2025-03-03 19:59:31.228 +05:30 [INF] Executed DbCommand (3ms) [Parameters=[@__p_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [e].[Id], [e].[DepartmentId], [e].[Email], [e].[FirstName], [e].[HireDate], [e].[LastName], [e].[PhoneNumber], [e].[Salary]
+FROM [EmployeeList] AS [e]
+WHERE [e].[Id] = @__p_0
+2025-03-03 19:59:31.243 +05:30 [INF] Executed DbCommand (3ms) [Parameters=[@p0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SET IMPLICIT_TRANSACTIONS OFF;
+SET NOCOUNT ON;
+DELETE FROM [EmployeeList]
+OUTPUT 1
+WHERE [Id] = @p0;
+2025-03-03 19:59:31.243 +05:30 [INF] Executing StatusCodeResult, setting HTTP status code 204
+2025-03-03 19:59:31.244 +05:30 [INF] Executed action EmployeeCompany.Controllers.EmployeeController.Delete (EmployeeCompany) in 34.1666ms
+2025-03-03 19:59:31.244 +05:30 [INF] Executed endpoint 'EmployeeCompany.Controllers.EmployeeController.Delete (EmployeeCompany)'
+2025-03-03 19:59:31.244 +05:30 [INF] Request finished HTTP/2 DELETE https://localhost:44315/api/employee/28 - 204 null null 34.7175ms
+2025-03-03 19:59:33.326 +05:30 [INF] Request starting HTTP/2 GET https://localhost:44315/api/employees - null null
+2025-03-03 19:59:33.327 +05:30 [INF] CORS policy execution successful.
+2025-03-03 19:59:33.327 +05:30 [INF] Executing endpoint 'EmployeeCompany.Controllers.EmployeeController.ViewAll (EmployeeCompany)'
+2025-03-03 19:59:33.327 +05:30 [INF] Route matched with {action = "ViewAll", controller = "Employee"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] ViewAll() on controller EmployeeCompany.Controllers.EmployeeController (EmployeeCompany).
+2025-03-03 19:59:33.357 +05:30 [INF] Executed DbCommand (5ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [e].[Id], [e].[DepartmentId], [e].[Email], [e].[FirstName], [e].[HireDate], [e].[LastName], [e].[PhoneNumber], [e].[Salary]
+FROM [EmployeeList] AS [e]
+2025-03-03 19:59:33.359 +05:30 [INF] Executing OkObjectResult, writing value of type 'System.Collections.Generic.List`1[[EmployeeCompany.Models.Employee, EmployeeCompany, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2025-03-03 19:59:33.360 +05:30 [INF] Executed action EmployeeCompany.Controllers.EmployeeController.ViewAll (EmployeeCompany) in 31.9408ms
+2025-03-03 19:59:33.360 +05:30 [INF] Executed endpoint 'EmployeeCompany.Controllers.EmployeeController.ViewAll (EmployeeCompany)'
+2025-03-03 19:59:33.360 +05:30 [INF] Request finished HTTP/2 GET https://localhost:44315/api/employees - 200 null application/json; charset=utf-8 34.3667ms
+2025-03-03 19:59:33.362 +05:30 [INF] Request starting HTTP/2 GET https://localhost:44315/api/employees - null null
+2025-03-03 19:59:33.362 +05:30 [INF] CORS policy execution successful.
+2025-03-03 19:59:33.362 +05:30 [INF] Executing endpoint 'EmployeeCompany.Controllers.EmployeeController.ViewAll (EmployeeCompany)'
+2025-03-03 19:59:33.363 +05:30 [INF] Route matched with {action = "ViewAll", controller = "Employee"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] ViewAll() on controller EmployeeCompany.Controllers.EmployeeController (EmployeeCompany).
+2025-03-03 19:59:33.380 +05:30 [INF] Executed DbCommand (0ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [e].[Id], [e].[DepartmentId], [e].[Email], [e].[FirstName], [e].[HireDate], [e].[LastName], [e].[PhoneNumber], [e].[Salary]
+FROM [EmployeeList] AS [e]
+2025-03-03 19:59:33.382 +05:30 [INF] Executing OkObjectResult, writing value of type 'System.Collections.Generic.List`1[[EmployeeCompany.Models.Employee, EmployeeCompany, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2025-03-03 19:59:33.383 +05:30 [INF] Executed action EmployeeCompany.Controllers.EmployeeController.ViewAll (EmployeeCompany) in 20.0681ms
+2025-03-03 19:59:33.383 +05:30 [INF] Executed endpoint 'EmployeeCompany.Controllers.EmployeeController.ViewAll (EmployeeCompany)'
+2025-03-03 19:59:33.383 +05:30 [INF] Request finished HTTP/2 GET https://localhost:44315/api/employees - 200 null application/json; charset=utf-8 21.1525ms
+2025-03-03 20:00:41.934 +05:30 [INF] Request starting HTTP/2 GET https://localhost:44315/api/employees - null null
+2025-03-03 20:00:41.936 +05:30 [INF] CORS policy execution successful.
+2025-03-03 20:00:41.936 +05:30 [INF] Executing endpoint 'EmployeeCompany.Controllers.EmployeeController.ViewAll (EmployeeCompany)'
+2025-03-03 20:00:41.936 +05:30 [INF] Route matched with {action = "ViewAll", controller = "Employee"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] ViewAll() on controller EmployeeCompany.Controllers.EmployeeController (EmployeeCompany).
+2025-03-03 20:00:41.975 +05:30 [INF] Executed DbCommand (3ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [e].[Id], [e].[DepartmentId], [e].[Email], [e].[FirstName], [e].[HireDate], [e].[LastName], [e].[PhoneNumber], [e].[Salary]
+FROM [EmployeeList] AS [e]
+2025-03-03 20:00:41.976 +05:30 [INF] Executing OkObjectResult, writing value of type 'System.Collections.Generic.List`1[[EmployeeCompany.Models.Employee, EmployeeCompany, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2025-03-03 20:00:41.976 +05:30 [INF] Executed action EmployeeCompany.Controllers.EmployeeController.ViewAll (EmployeeCompany) in 39.7667ms
+2025-03-03 20:00:41.976 +05:30 [INF] Executed endpoint 'EmployeeCompany.Controllers.EmployeeController.ViewAll (EmployeeCompany)'
+2025-03-03 20:00:41.977 +05:30 [INF] Request finished HTTP/2 GET https://localhost:44315/api/employees - 200 null application/json; charset=utf-8 42.2047ms
+2025-03-03 20:00:41.979 +05:30 [INF] Request starting HTTP/2 GET https://localhost:44315/api/employees - null null
+2025-03-03 20:00:41.979 +05:30 [INF] CORS policy execution successful.
+2025-03-03 20:00:41.980 +05:30 [INF] Executing endpoint 'EmployeeCompany.Controllers.EmployeeController.ViewAll (EmployeeCompany)'
+2025-03-03 20:00:41.981 +05:30 [INF] Route matched with {action = "ViewAll", controller = "Employee"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] ViewAll() on controller EmployeeCompany.Controllers.EmployeeController (EmployeeCompany).
+2025-03-03 20:00:42.001 +05:30 [INF] Executed DbCommand (4ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [e].[Id], [e].[DepartmentId], [e].[Email], [e].[FirstName], [e].[HireDate], [e].[LastName], [e].[PhoneNumber], [e].[Salary]
+FROM [EmployeeList] AS [e]
+2025-03-03 20:00:42.003 +05:30 [INF] Executing OkObjectResult, writing value of type 'System.Collections.Generic.List`1[[EmployeeCompany.Models.Employee, EmployeeCompany, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2025-03-03 20:00:42.004 +05:30 [INF] Executed action EmployeeCompany.Controllers.EmployeeController.ViewAll (EmployeeCompany) in 22.6531ms
+2025-03-03 20:00:42.004 +05:30 [INF] Executed endpoint 'EmployeeCompany.Controllers.EmployeeController.ViewAll (EmployeeCompany)'
+2025-03-03 20:00:42.004 +05:30 [INF] Request finished HTTP/2 GET https://localhost:44315/api/employees - 200 null application/json; charset=utf-8 25.6988ms
+2025-03-03 20:01:36.011 +05:30 [INF] Request starting HTTP/2 OPTIONS https://localhost:44315/api/employees - null null
+2025-03-03 20:01:36.012 +05:30 [INF] CORS policy execution successful.
+2025-03-03 20:01:36.012 +05:30 [INF] Request finished HTTP/2 OPTIONS https://localhost:44315/api/employees - 204 null null 1.3951ms
+2025-03-03 20:01:36.018 +05:30 [INF] Request starting HTTP/2 POST https://localhost:44315/api/employees - application/json 156
+2025-03-03 20:01:36.018 +05:30 [INF] CORS policy execution successful.
+2025-03-03 20:01:36.018 +05:30 [INF] Executing endpoint 'EmployeeCompany.Controllers.EmployeeController.AddEmployee (EmployeeCompany)'
+2025-03-03 20:01:36.018 +05:30 [INF] Route matched with {action = "AddEmployee", controller = "Employee"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] AddEmployee(EmployeeCompany.Models.Employee) on controller EmployeeCompany.Controllers.EmployeeController (EmployeeCompany).
+2025-03-03 20:01:36.021 +05:30 [INF] Executing BadRequestObjectResult, writing value of type 'Microsoft.AspNetCore.Mvc.ValidationProblemDetails'.
+2025-03-03 20:01:36.021 +05:30 [INF] Executed action EmployeeCompany.Controllers.EmployeeController.AddEmployee (EmployeeCompany) in 3.5234ms
+2025-03-03 20:01:36.021 +05:30 [INF] Executed endpoint 'EmployeeCompany.Controllers.EmployeeController.AddEmployee (EmployeeCompany)'
+2025-03-03 20:01:36.022 +05:30 [INF] Request finished HTTP/2 POST https://localhost:44315/api/employees - 400 null application/problem+json; charset=utf-8 4.5276ms
+2025-03-03 20:01:52.199 +05:30 [INF] Request starting HTTP/2 OPTIONS https://localhost:44315/api/employees - null null
+2025-03-03 20:01:52.199 +05:30 [INF] CORS policy execution successful.
+2025-03-03 20:01:52.199 +05:30 [INF] Request finished HTTP/2 OPTIONS https://localhost:44315/api/employees - 204 null null 0.3832ms
+2025-03-03 20:01:52.201 +05:30 [INF] Request starting HTTP/2 POST https://localhost:44315/api/employees - application/json 158
+2025-03-03 20:01:52.201 +05:30 [INF] CORS policy execution successful.
+2025-03-03 20:01:52.201 +05:30 [INF] Executing endpoint 'EmployeeCompany.Controllers.EmployeeController.AddEmployee (EmployeeCompany)'
+2025-03-03 20:01:52.201 +05:30 [INF] Route matched with {action = "AddEmployee", controller = "Employee"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] AddEmployee(EmployeeCompany.Models.Employee) on controller EmployeeCompany.Controllers.EmployeeController (EmployeeCompany).
+2025-03-03 20:01:52.203 +05:30 [INF] Executing BadRequestObjectResult, writing value of type 'Microsoft.AspNetCore.Mvc.ValidationProblemDetails'.
+2025-03-03 20:01:52.204 +05:30 [INF] Executed action EmployeeCompany.Controllers.EmployeeController.AddEmployee (EmployeeCompany) in 2.4754ms
+2025-03-03 20:01:52.204 +05:30 [INF] Executed endpoint 'EmployeeCompany.Controllers.EmployeeController.AddEmployee (EmployeeCompany)'
+2025-03-03 20:01:52.204 +05:30 [INF] Request finished HTTP/2 POST https://localhost:44315/api/employees - 400 null application/problem+json; charset=utf-8 3.2052ms
+2025-03-03 20:03:20.708 +05:30 [INF] Request starting HTTP/2 GET https://localhost:44315/swagger/index.html - null null
+2025-03-03 20:03:20.749 +05:30 [INF] Request finished HTTP/2 GET https://localhost:44315/swagger/index.html - 200 null text/html;charset=utf-8 41.3283ms
+2025-03-03 20:03:20.776 +05:30 [INF] Request starting HTTP/2 GET https://localhost:44315/_framework/aspnetcore-browser-refresh.js - null null
+2025-03-03 20:03:20.777 +05:30 [INF] Request starting HTTP/2 GET https://localhost:44315/_vs/browserLink - null null
+2025-03-03 20:03:20.777 +05:30 [INF] Request finished HTTP/2 GET https://localhost:44315/_framework/aspnetcore-browser-refresh.js - 200 16515 application/javascript; charset=utf-8 1.133ms
+2025-03-03 20:03:20.808 +05:30 [INF] Request finished HTTP/2 GET https://localhost:44315/_vs/browserLink - 200 null text/javascript; charset=UTF-8 30.7292ms
+2025-03-03 20:03:20.914 +05:30 [INF] Request starting HTTP/2 GET https://localhost:44315/swagger/v1/swagger.json - null null
+2025-03-03 20:03:20.918 +05:30 [INF] Request finished HTTP/2 GET https://localhost:44315/swagger/v1/swagger.json - 200 null application/json;charset=utf-8 4.4123ms
+2025-03-03 20:03:32.935 +05:30 [INF] Request starting HTTP/2 GET https://localhost:44315/api/employees - null null
+2025-03-03 20:03:32.935 +05:30 [INF] CORS policy execution successful.
+2025-03-03 20:03:32.936 +05:30 [INF] Executing endpoint 'EmployeeCompany.Controllers.EmployeeController.ViewAll (EmployeeCompany)'
+2025-03-03 20:03:32.936 +05:30 [INF] Route matched with {action = "ViewAll", controller = "Employee"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] ViewAll() on controller EmployeeCompany.Controllers.EmployeeController (EmployeeCompany).
+2025-03-03 20:03:32.961 +05:30 [INF] Executed DbCommand (6ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [e].[Id], [e].[DepartmentId], [e].[Email], [e].[FirstName], [e].[HireDate], [e].[LastName], [e].[PhoneNumber], [e].[Salary]
+FROM [EmployeeList] AS [e]
+2025-03-03 20:03:32.964 +05:30 [INF] Executing OkObjectResult, writing value of type 'System.Collections.Generic.List`1[[EmployeeCompany.Models.Employee, EmployeeCompany, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2025-03-03 20:03:32.965 +05:30 [INF] Executed action EmployeeCompany.Controllers.EmployeeController.ViewAll (EmployeeCompany) in 29.128ms
+2025-03-03 20:03:32.965 +05:30 [INF] Executed endpoint 'EmployeeCompany.Controllers.EmployeeController.ViewAll (EmployeeCompany)'
+2025-03-03 20:03:32.965 +05:30 [INF] Request finished HTTP/2 GET https://localhost:44315/api/employees - 200 null application/json; charset=utf-8 29.9223ms
+2025-03-03 20:03:32.967 +05:30 [INF] Request starting HTTP/2 GET https://localhost:44315/api/employees - null null
+2025-03-03 20:03:32.967 +05:30 [INF] CORS policy execution successful.
+2025-03-03 20:03:32.967 +05:30 [INF] Executing endpoint 'EmployeeCompany.Controllers.EmployeeController.ViewAll (EmployeeCompany)'
+2025-03-03 20:03:32.967 +05:30 [INF] Route matched with {action = "ViewAll", controller = "Employee"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] ViewAll() on controller EmployeeCompany.Controllers.EmployeeController (EmployeeCompany).
+2025-03-03 20:03:32.992 +05:30 [INF] Executed DbCommand (3ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [e].[Id], [e].[DepartmentId], [e].[Email], [e].[FirstName], [e].[HireDate], [e].[LastName], [e].[PhoneNumber], [e].[Salary]
+FROM [EmployeeList] AS [e]
+2025-03-03 20:03:32.997 +05:30 [INF] Executing OkObjectResult, writing value of type 'System.Collections.Generic.List`1[[EmployeeCompany.Models.Employee, EmployeeCompany, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2025-03-03 20:03:32.997 +05:30 [INF] Executed action EmployeeCompany.Controllers.EmployeeController.ViewAll (EmployeeCompany) in 29.3484ms
+2025-03-03 20:03:32.997 +05:30 [INF] Executed endpoint 'EmployeeCompany.Controllers.EmployeeController.ViewAll (EmployeeCompany)'
+2025-03-03 20:03:32.998 +05:30 [INF] Request finished HTTP/2 GET https://localhost:44315/api/employees - 200 null application/json; charset=utf-8 30.76ms
+2025-03-03 20:03:44.808 +05:30 [INF] Request starting HTTP/2 OPTIONS https://localhost:44315/api/employee/33 - null null
+2025-03-03 20:03:44.808 +05:30 [INF] CORS policy execution successful.
+2025-03-03 20:03:44.808 +05:30 [INF] Request finished HTTP/2 OPTIONS https://localhost:44315/api/employee/33 - 204 null null 0.3177ms
+2025-03-03 20:03:44.811 +05:30 [INF] Request starting HTTP/2 DELETE https://localhost:44315/api/employee/33 - null null
+2025-03-03 20:03:44.811 +05:30 [INF] CORS policy execution successful.
+2025-03-03 20:03:44.811 +05:30 [INF] Executing endpoint 'EmployeeCompany.Controllers.EmployeeController.Delete (EmployeeCompany)'
+2025-03-03 20:03:44.811 +05:30 [INF] Route matched with {action = "Delete", controller = "Employee"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] Delete(Int32) on controller EmployeeCompany.Controllers.EmployeeController (EmployeeCompany).
+2025-03-03 20:03:44.830 +05:30 [INF] Executed DbCommand (3ms) [Parameters=[@__p_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [e].[Id], [e].[DepartmentId], [e].[Email], [e].[FirstName], [e].[HireDate], [e].[LastName], [e].[PhoneNumber], [e].[Salary]
+FROM [EmployeeList] AS [e]
+WHERE [e].[Id] = @__p_0
+2025-03-03 20:03:44.844 +05:30 [INF] Executed DbCommand (3ms) [Parameters=[@p0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SET IMPLICIT_TRANSACTIONS OFF;
+SET NOCOUNT ON;
+DELETE FROM [EmployeeList]
+OUTPUT 1
+WHERE [Id] = @p0;
+2025-03-03 20:03:44.845 +05:30 [INF] Executing StatusCodeResult, setting HTTP status code 204
+2025-03-03 20:03:44.845 +05:30 [INF] Executed action EmployeeCompany.Controllers.EmployeeController.Delete (EmployeeCompany) in 34.0753ms
+2025-03-03 20:03:44.845 +05:30 [INF] Executed endpoint 'EmployeeCompany.Controllers.EmployeeController.Delete (EmployeeCompany)'
+2025-03-03 20:03:44.846 +05:30 [INF] Request finished HTTP/2 DELETE https://localhost:44315/api/employee/33 - 204 null null 34.8977ms
+2025-03-03 20:03:47.529 +05:30 [INF] Request starting HTTP/2 GET https://localhost:44315/api/employees - null null
+2025-03-03 20:03:47.530 +05:30 [INF] CORS policy execution successful.
+2025-03-03 20:03:47.530 +05:30 [INF] Executing endpoint 'EmployeeCompany.Controllers.EmployeeController.ViewAll (EmployeeCompany)'
+2025-03-03 20:03:47.530 +05:30 [INF] Route matched with {action = "ViewAll", controller = "Employee"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] ViewAll() on controller EmployeeCompany.Controllers.EmployeeController (EmployeeCompany).
+2025-03-03 20:03:47.550 +05:30 [INF] Executed DbCommand (0ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [e].[Id], [e].[DepartmentId], [e].[Email], [e].[FirstName], [e].[HireDate], [e].[LastName], [e].[PhoneNumber], [e].[Salary]
+FROM [EmployeeList] AS [e]
+2025-03-03 20:03:47.552 +05:30 [INF] Executing OkObjectResult, writing value of type 'System.Collections.Generic.List`1[[EmployeeCompany.Models.Employee, EmployeeCompany, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2025-03-03 20:03:47.553 +05:30 [INF] Executed action EmployeeCompany.Controllers.EmployeeController.ViewAll (EmployeeCompany) in 22.8124ms
+2025-03-03 20:03:47.553 +05:30 [INF] Executed endpoint 'EmployeeCompany.Controllers.EmployeeController.ViewAll (EmployeeCompany)'
+2025-03-03 20:03:47.553 +05:30 [INF] Request finished HTTP/2 GET https://localhost:44315/api/employees - 200 null application/json; charset=utf-8 23.7343ms
+2025-03-03 20:03:47.555 +05:30 [INF] Request starting HTTP/2 GET https://localhost:44315/api/employees - null null
+2025-03-03 20:03:47.555 +05:30 [INF] CORS policy execution successful.
+2025-03-03 20:03:47.555 +05:30 [INF] Executing endpoint 'EmployeeCompany.Controllers.EmployeeController.ViewAll (EmployeeCompany)'
+2025-03-03 20:03:47.555 +05:30 [INF] Route matched with {action = "ViewAll", controller = "Employee"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] ViewAll() on controller EmployeeCompany.Controllers.EmployeeController (EmployeeCompany).
+2025-03-03 20:03:47.575 +05:30 [INF] Executed DbCommand (4ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [e].[Id], [e].[DepartmentId], [e].[Email], [e].[FirstName], [e].[HireDate], [e].[LastName], [e].[PhoneNumber], [e].[Salary]
+FROM [EmployeeList] AS [e]
+2025-03-03 20:03:47.578 +05:30 [INF] Executing OkObjectResult, writing value of type 'System.Collections.Generic.List`1[[EmployeeCompany.Models.Employee, EmployeeCompany, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2025-03-03 20:03:47.578 +05:30 [INF] Executed action EmployeeCompany.Controllers.EmployeeController.ViewAll (EmployeeCompany) in 22.8786ms
+2025-03-03 20:03:47.579 +05:30 [INF] Executed endpoint 'EmployeeCompany.Controllers.EmployeeController.ViewAll (EmployeeCompany)'
+2025-03-03 20:03:47.579 +05:30 [INF] Request finished HTTP/2 GET https://localhost:44315/api/employees - 200 null application/json; charset=utf-8 23.9358ms
+2025-03-03 20:04:25.092 +05:30 [INF] Request starting HTTP/2 OPTIONS https://localhost:44315/api/employees - null null
+2025-03-03 20:04:25.092 +05:30 [INF] CORS policy execution successful.
+2025-03-03 20:04:25.093 +05:30 [INF] Request finished HTTP/2 OPTIONS https://localhost:44315/api/employees - 204 null null 1.0307ms
+2025-03-03 20:04:25.096 +05:30 [INF] Request starting HTTP/2 POST https://localhost:44315/api/employees - application/json 157
+2025-03-03 20:04:25.096 +05:30 [INF] CORS policy execution successful.
+2025-03-03 20:04:25.096 +05:30 [INF] Executing endpoint 'EmployeeCompany.Controllers.EmployeeController.AddEmployee (EmployeeCompany)'
+2025-03-03 20:04:25.096 +05:30 [INF] Route matched with {action = "AddEmployee", controller = "Employee"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] AddEmployee(EmployeeCompany.Models.Employee) on controller EmployeeCompany.Controllers.EmployeeController (EmployeeCompany).
+2025-03-03 20:04:25.127 +05:30 [INF] Executed DbCommand (5ms) [Parameters=[@p0='?' (DbType = Int32), @p1='?' (Size = 4000), @p2='?' (Size = 4000), @p3='?' (DbType = DateTime2), @p4='?' (Size = 4000), @p5='?' (Size = 4000), @p6='?' (Precision = 18) (Scale = 2) (DbType = Decimal)], CommandType='"Text"', CommandTimeout='30']
+SET IMPLICIT_TRANSACTIONS OFF;
+SET NOCOUNT ON;
+INSERT INTO [EmployeeList] ([DepartmentId], [Email], [FirstName], [HireDate], [LastName], [PhoneNumber], [Salary])
+OUTPUT INSERTED.[Id]
+VALUES (@p0, @p1, @p2, @p3, @p4, @p5, @p6);
+2025-03-03 20:04:25.130 +05:30 [INF] Executing CreatedResult, writing value of type 'EmployeeCompany.Models.Employee'.
+2025-03-03 20:04:25.130 +05:30 [INF] Executed action EmployeeCompany.Controllers.EmployeeController.AddEmployee (EmployeeCompany) in 34.339ms
+2025-03-03 20:04:25.130 +05:30 [INF] Executed endpoint 'EmployeeCompany.Controllers.EmployeeController.AddEmployee (EmployeeCompany)'
+2025-03-03 20:04:25.131 +05:30 [INF] Request finished HTTP/2 POST https://localhost:44315/api/employees - 201 null application/json; charset=utf-8 35.0447ms
+2025-03-03 20:04:27.655 +05:30 [INF] Request starting HTTP/2 GET https://localhost:44315/api/employees - null null
+2025-03-03 20:04:27.655 +05:30 [INF] CORS policy execution successful.
+2025-03-03 20:04:27.655 +05:30 [INF] Executing endpoint 'EmployeeCompany.Controllers.EmployeeController.ViewAll (EmployeeCompany)'
+2025-03-03 20:04:27.655 +05:30 [INF] Route matched with {action = "ViewAll", controller = "Employee"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] ViewAll() on controller EmployeeCompany.Controllers.EmployeeController (EmployeeCompany).
+2025-03-03 20:04:27.678 +05:30 [INF] Executed DbCommand (3ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [e].[Id], [e].[DepartmentId], [e].[Email], [e].[FirstName], [e].[HireDate], [e].[LastName], [e].[PhoneNumber], [e].[Salary]
+FROM [EmployeeList] AS [e]
+2025-03-03 20:04:27.679 +05:30 [INF] Executing OkObjectResult, writing value of type 'System.Collections.Generic.List`1[[EmployeeCompany.Models.Employee, EmployeeCompany, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2025-03-03 20:04:27.680 +05:30 [INF] Executed action EmployeeCompany.Controllers.EmployeeController.ViewAll (EmployeeCompany) in 24.7838ms
+2025-03-03 20:04:27.680 +05:30 [INF] Executed endpoint 'EmployeeCompany.Controllers.EmployeeController.ViewAll (EmployeeCompany)'
+2025-03-03 20:04:27.680 +05:30 [INF] Request finished HTTP/2 GET https://localhost:44315/api/employees - 200 null application/json; charset=utf-8 25.4853ms
+2025-03-03 20:04:27.682 +05:30 [INF] Request starting HTTP/2 GET https://localhost:44315/api/employees - null null
+2025-03-03 20:04:27.684 +05:30 [INF] CORS policy execution successful.
+2025-03-03 20:04:27.684 +05:30 [INF] Executing endpoint 'EmployeeCompany.Controllers.EmployeeController.ViewAll (EmployeeCompany)'
+2025-03-03 20:04:27.684 +05:30 [INF] Route matched with {action = "ViewAll", controller = "Employee"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] ViewAll() on controller EmployeeCompany.Controllers.EmployeeController (EmployeeCompany).
+2025-03-03 20:04:27.705 +05:30 [INF] Executed DbCommand (0ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [e].[Id], [e].[DepartmentId], [e].[Email], [e].[FirstName], [e].[HireDate], [e].[LastName], [e].[PhoneNumber], [e].[Salary]
+FROM [EmployeeList] AS [e]
+2025-03-03 20:04:27.707 +05:30 [INF] Executing OkObjectResult, writing value of type 'System.Collections.Generic.List`1[[EmployeeCompany.Models.Employee, EmployeeCompany, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2025-03-03 20:04:27.708 +05:30 [INF] Executed action EmployeeCompany.Controllers.EmployeeController.ViewAll (EmployeeCompany) in 23.363ms
+2025-03-03 20:04:27.708 +05:30 [INF] Executed endpoint 'EmployeeCompany.Controllers.EmployeeController.ViewAll (EmployeeCompany)'
+2025-03-03 20:04:27.708 +05:30 [INF] Request finished HTTP/2 GET https://localhost:44315/api/employees - 200 null application/json; charset=utf-8 26.0254ms
+2025-03-03 20:04:55.067 +05:30 [INF] Request starting HTTP/2 GET https://localhost:44315/api/employees - null null
+2025-03-03 20:04:55.068 +05:30 [INF] CORS policy execution successful.
+2025-03-03 20:04:55.068 +05:30 [INF] Executing endpoint 'EmployeeCompany.Controllers.EmployeeController.ViewAll (EmployeeCompany)'
+2025-03-03 20:04:55.068 +05:30 [INF] Route matched with {action = "ViewAll", controller = "Employee"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] ViewAll() on controller EmployeeCompany.Controllers.EmployeeController (EmployeeCompany).
+2025-03-03 20:04:55.094 +05:30 [INF] Executed DbCommand (3ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [e].[Id], [e].[DepartmentId], [e].[Email], [e].[FirstName], [e].[HireDate], [e].[LastName], [e].[PhoneNumber], [e].[Salary]
+FROM [EmployeeList] AS [e]
+2025-03-03 20:04:55.095 +05:30 [INF] Executing OkObjectResult, writing value of type 'System.Collections.Generic.List`1[[EmployeeCompany.Models.Employee, EmployeeCompany, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2025-03-03 20:04:55.096 +05:30 [INF] Executed action EmployeeCompany.Controllers.EmployeeController.ViewAll (EmployeeCompany) in 28.0517ms
+2025-03-03 20:04:55.096 +05:30 [INF] Executed endpoint 'EmployeeCompany.Controllers.EmployeeController.ViewAll (EmployeeCompany)'
+2025-03-03 20:04:55.097 +05:30 [INF] Request finished HTTP/2 GET https://localhost:44315/api/employees - 200 null application/json; charset=utf-8 29.1407ms
+2025-03-03 20:04:55.100 +05:30 [INF] Request starting HTTP/2 GET https://localhost:44315/api/employees - null null
+2025-03-03 20:04:55.100 +05:30 [INF] CORS policy execution successful.
+2025-03-03 20:04:55.100 +05:30 [INF] Executing endpoint 'EmployeeCompany.Controllers.EmployeeController.ViewAll (EmployeeCompany)'
+2025-03-03 20:04:55.101 +05:30 [INF] Route matched with {action = "ViewAll", controller = "Employee"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] ViewAll() on controller EmployeeCompany.Controllers.EmployeeController (EmployeeCompany).
+2025-03-03 20:04:55.124 +05:30 [INF] Executed DbCommand (3ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [e].[Id], [e].[DepartmentId], [e].[Email], [e].[FirstName], [e].[HireDate], [e].[LastName], [e].[PhoneNumber], [e].[Salary]
+FROM [EmployeeList] AS [e]
+2025-03-03 20:04:55.125 +05:30 [INF] Executing OkObjectResult, writing value of type 'System.Collections.Generic.List`1[[EmployeeCompany.Models.Employee, EmployeeCompany, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2025-03-03 20:04:55.125 +05:30 [INF] Executed action EmployeeCompany.Controllers.EmployeeController.ViewAll (EmployeeCompany) in 24.6036ms
+2025-03-03 20:04:55.125 +05:30 [INF] Executed endpoint 'EmployeeCompany.Controllers.EmployeeController.ViewAll (EmployeeCompany)'
+2025-03-03 20:04:55.125 +05:30 [INF] Request finished HTTP/2 GET https://localhost:44315/api/employees - 200 null application/json; charset=utf-8 25.314ms
+2025-03-03 20:05:04.153 +05:30 [INF] Request starting HTTP/2 GET https://localhost:44315/api/employees - null null
+2025-03-03 20:05:04.154 +05:30 [INF] CORS policy execution successful.
+2025-03-03 20:05:04.154 +05:30 [INF] Executing endpoint 'EmployeeCompany.Controllers.EmployeeController.ViewAll (EmployeeCompany)'
+2025-03-03 20:05:04.155 +05:30 [INF] Route matched with {action = "ViewAll", controller = "Employee"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] ViewAll() on controller EmployeeCompany.Controllers.EmployeeController (EmployeeCompany).
+2025-03-03 20:05:04.181 +05:30 [INF] Executed DbCommand (4ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [e].[Id], [e].[DepartmentId], [e].[Email], [e].[FirstName], [e].[HireDate], [e].[LastName], [e].[PhoneNumber], [e].[Salary]
+FROM [EmployeeList] AS [e]
+2025-03-03 20:05:04.183 +05:30 [INF] Executing OkObjectResult, writing value of type 'System.Collections.Generic.List`1[[EmployeeCompany.Models.Employee, EmployeeCompany, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2025-03-03 20:05:04.184 +05:30 [INF] Executed action EmployeeCompany.Controllers.EmployeeController.ViewAll (EmployeeCompany) in 29.091ms
+2025-03-03 20:05:04.184 +05:30 [INF] Executed endpoint 'EmployeeCompany.Controllers.EmployeeController.ViewAll (EmployeeCompany)'
+2025-03-03 20:05:04.184 +05:30 [INF] Request finished HTTP/2 GET https://localhost:44315/api/employees - 200 null application/json; charset=utf-8 31.1779ms
+2025-03-03 20:05:04.185 +05:30 [INF] Request starting HTTP/2 GET https://localhost:44315/api/employees - null null
+2025-03-03 20:05:04.185 +05:30 [INF] CORS policy execution successful.
+2025-03-03 20:05:04.185 +05:30 [INF] Executing endpoint 'EmployeeCompany.Controllers.EmployeeController.ViewAll (EmployeeCompany)'
+2025-03-03 20:05:04.185 +05:30 [INF] Route matched with {action = "ViewAll", controller = "Employee"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] ViewAll() on controller EmployeeCompany.Controllers.EmployeeController (EmployeeCompany).
+2025-03-03 20:05:04.200 +05:30 [INF] Executed DbCommand (0ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [e].[Id], [e].[DepartmentId], [e].[Email], [e].[FirstName], [e].[HireDate], [e].[LastName], [e].[PhoneNumber], [e].[Salary]
+FROM [EmployeeList] AS [e]
+2025-03-03 20:05:04.205 +05:30 [INF] Executing OkObjectResult, writing value of type 'System.Collections.Generic.List`1[[EmployeeCompany.Models.Employee, EmployeeCompany, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2025-03-03 20:05:04.205 +05:30 [INF] Executed action EmployeeCompany.Controllers.EmployeeController.ViewAll (EmployeeCompany) in 19.6565ms
+2025-03-03 20:05:04.205 +05:30 [INF] Executed endpoint 'EmployeeCompany.Controllers.EmployeeController.ViewAll (EmployeeCompany)'
+2025-03-03 20:05:04.205 +05:30 [INF] Request finished HTTP/2 GET https://localhost:44315/api/employees - 200 null application/json; charset=utf-8 20.1897ms
+2025-03-03 20:05:23.121 +05:30 [INF] Request starting HTTP/2 GET https://localhost:44315/api/employees - null null
+2025-03-03 20:05:23.121 +05:30 [INF] CORS policy execution successful.
+2025-03-03 20:05:23.121 +05:30 [INF] Executing endpoint 'EmployeeCompany.Controllers.EmployeeController.ViewAll (EmployeeCompany)'
+2025-03-03 20:05:23.121 +05:30 [INF] Route matched with {action = "ViewAll", controller = "Employee"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] ViewAll() on controller EmployeeCompany.Controllers.EmployeeController (EmployeeCompany).
+2025-03-03 20:05:23.145 +05:30 [INF] Executed DbCommand (1ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [e].[Id], [e].[DepartmentId], [e].[Email], [e].[FirstName], [e].[HireDate], [e].[LastName], [e].[PhoneNumber], [e].[Salary]
+FROM [EmployeeList] AS [e]
+2025-03-03 20:05:23.152 +05:30 [INF] Executing OkObjectResult, writing value of type 'System.Collections.Generic.List`1[[EmployeeCompany.Models.Employee, EmployeeCompany, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2025-03-03 20:05:23.152 +05:30 [INF] Executed action EmployeeCompany.Controllers.EmployeeController.ViewAll (EmployeeCompany) in 31.4276ms
+2025-03-03 20:05:23.153 +05:30 [INF] Executed endpoint 'EmployeeCompany.Controllers.EmployeeController.ViewAll (EmployeeCompany)'
+2025-03-03 20:05:23.153 +05:30 [INF] Request finished HTTP/2 GET https://localhost:44315/api/employees - 200 null application/json; charset=utf-8 32.1078ms
+2025-03-03 20:05:23.154 +05:30 [INF] Request starting HTTP/2 GET https://localhost:44315/api/employees - null null
+2025-03-03 20:05:23.154 +05:30 [INF] CORS policy execution successful.
+2025-03-03 20:05:23.154 +05:30 [INF] Executing endpoint 'EmployeeCompany.Controllers.EmployeeController.ViewAll (EmployeeCompany)'
+2025-03-03 20:05:23.155 +05:30 [INF] Route matched with {action = "ViewAll", controller = "Employee"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] ViewAll() on controller EmployeeCompany.Controllers.EmployeeController (EmployeeCompany).
+2025-03-03 20:05:23.175 +05:30 [INF] Executed DbCommand (3ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [e].[Id], [e].[DepartmentId], [e].[Email], [e].[FirstName], [e].[HireDate], [e].[LastName], [e].[PhoneNumber], [e].[Salary]
+FROM [EmployeeList] AS [e]
+2025-03-03 20:05:23.176 +05:30 [INF] Executing OkObjectResult, writing value of type 'System.Collections.Generic.List`1[[EmployeeCompany.Models.Employee, EmployeeCompany, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2025-03-03 20:05:23.177 +05:30 [INF] Executed action EmployeeCompany.Controllers.EmployeeController.ViewAll (EmployeeCompany) in 22.4771ms
+2025-03-03 20:05:23.177 +05:30 [INF] Executed endpoint 'EmployeeCompany.Controllers.EmployeeController.ViewAll (EmployeeCompany)'
+2025-03-03 20:05:23.178 +05:30 [INF] Request finished HTTP/2 GET https://localhost:44315/api/employees - 200 null application/json; charset=utf-8 24.0278ms
+2025-03-03 20:06:50.250 +05:30 [INF] Request starting HTTP/2 GET https://localhost:44315/swagger/index.html - null null
+2025-03-03 20:06:50.763 +05:30 [INF] Application started. Press Ctrl+C to shut down.
+2025-03-03 20:06:50.765 +05:30 [INF] Hosting environment: Development
+2025-03-03 20:06:50.765 +05:30 [INF] Content root path: C:\Users\hello\Downloads\Desktop\Visual Studio\EmployeeCompany\EmployeeCompany
+2025-03-03 20:06:51.453 +05:30 [INF] Request finished HTTP/2 GET https://localhost:44315/swagger/index.html - 200 null text/html;charset=utf-8 1227.9094ms
+2025-03-03 20:06:51.489 +05:30 [INF] Request starting HTTP/2 GET https://localhost:44315/_vs/browserLink - null null
+2025-03-03 20:06:51.489 +05:30 [INF] Request starting HTTP/2 GET https://localhost:44315/_framework/aspnetcore-browser-refresh.js - null null
+2025-03-03 20:06:51.505 +05:30 [INF] Request finished HTTP/2 GET https://localhost:44315/_framework/aspnetcore-browser-refresh.js - 200 16515 application/javascript; charset=utf-8 8.3875ms
+2025-03-03 20:06:51.617 +05:30 [INF] Request finished HTTP/2 GET https://localhost:44315/_vs/browserLink - 200 null text/javascript; charset=UTF-8 129.3458ms
+2025-03-03 20:06:51.769 +05:30 [INF] Request starting HTTP/2 GET https://localhost:44315/swagger/v1/swagger.json - null null
+2025-03-03 20:06:51.799 +05:30 [INF] Request finished HTTP/2 GET https://localhost:44315/swagger/v1/swagger.json - 200 null application/json;charset=utf-8 30.4761ms
+2025-03-03 20:07:39.536 +05:30 [INF] Request starting HTTP/2 GET https://localhost:44315/api/employees - null null
+2025-03-03 20:07:39.567 +05:30 [INF] CORS policy execution successful.
+2025-03-03 20:07:39.577 +05:30 [INF] Executing endpoint 'EmployeeCompany.Controllers.EmployeeController.ViewAll (EmployeeCompany)'
+2025-03-03 20:07:39.659 +05:30 [INF] Route matched with {action = "ViewAll", controller = "Employee"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] ViewAll() on controller EmployeeCompany.Controllers.EmployeeController (EmployeeCompany).
+2025-03-03 20:07:40.948 +05:30 [WRN] No store type was specified for the decimal property 'Salary' on entity type 'Employee'. This will cause values to be silently truncated if they do not fit in the default precision and scale. Explicitly specify the SQL server column type that can accommodate all the values in 'OnModelCreating' using 'HasColumnType', specify precision and scale using 'HasPrecision', or configure a value converter using 'HasConversion'.
+2025-03-03 20:07:42.396 +05:30 [INF] Executed DbCommand (140ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [e].[Id], [e].[DepartmentId], [e].[Email], [e].[FirstName], [e].[HireDate], [e].[LastName], [e].[PhoneNumber], [e].[Salary]
+FROM [EmployeeList] AS [e]
+2025-03-03 20:07:42.561 +05:30 [INF] Executing OkObjectResult, writing value of type 'System.Collections.Generic.List`1[[EmployeeCompany.Models.Employee, EmployeeCompany, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2025-03-03 20:07:42.592 +05:30 [INF] Request starting HTTP/2 GET https://localhost:44315/api/employees - null null
+2025-03-03 20:07:42.594 +05:30 [INF] CORS policy execution successful.
+2025-03-03 20:07:42.597 +05:30 [INF] Executing endpoint 'EmployeeCompany.Controllers.EmployeeController.ViewAll (EmployeeCompany)'
+2025-03-03 20:07:42.604 +05:30 [INF] Route matched with {action = "ViewAll", controller = "Employee"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] ViewAll() on controller EmployeeCompany.Controllers.EmployeeController (EmployeeCompany).
+2025-03-03 20:07:42.610 +05:30 [INF] Executed action EmployeeCompany.Controllers.EmployeeController.ViewAll (EmployeeCompany) in 2930.9003ms
+2025-03-03 20:07:42.612 +05:30 [INF] Executed endpoint 'EmployeeCompany.Controllers.EmployeeController.ViewAll (EmployeeCompany)'
+2025-03-03 20:07:42.637 +05:30 [INF] Request finished HTTP/2 GET https://localhost:44315/api/employees - 200 null application/json; charset=utf-8 3100.8038ms
+2025-03-03 20:07:42.664 +05:30 [INF] Executed DbCommand (3ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [e].[Id], [e].[DepartmentId], [e].[Email], [e].[FirstName], [e].[HireDate], [e].[LastName], [e].[PhoneNumber], [e].[Salary]
+FROM [EmployeeList] AS [e]
+2025-03-03 20:07:42.666 +05:30 [INF] Executing OkObjectResult, writing value of type 'System.Collections.Generic.List`1[[EmployeeCompany.Models.Employee, EmployeeCompany, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2025-03-03 20:07:42.667 +05:30 [INF] Executed action EmployeeCompany.Controllers.EmployeeController.ViewAll (EmployeeCompany) in 63.2033ms
+2025-03-03 20:07:42.668 +05:30 [INF] Executed endpoint 'EmployeeCompany.Controllers.EmployeeController.ViewAll (EmployeeCompany)'
+2025-03-03 20:07:42.670 +05:30 [INF] Request finished HTTP/2 GET https://localhost:44315/api/employees - 200 null application/json; charset=utf-8 76.7057ms
+2025-03-03 20:08:20.304 +05:30 [INF] Request starting HTTP/2 OPTIONS https://localhost:44315/api/employees - null null
+2025-03-03 20:08:20.305 +05:30 [INF] CORS policy execution successful.
+2025-03-03 20:08:20.307 +05:30 [INF] Request finished HTTP/2 OPTIONS https://localhost:44315/api/employees - 204 null null 3.2964ms
+2025-03-03 20:08:20.310 +05:30 [INF] Request starting HTTP/2 POST https://localhost:44315/api/employees - application/json 153
+2025-03-03 20:08:20.310 +05:30 [INF] CORS policy execution successful.
+2025-03-03 20:08:20.311 +05:30 [INF] Executing endpoint 'EmployeeCompany.Controllers.EmployeeController.AddEmployee (EmployeeCompany)'
+2025-03-03 20:08:20.329 +05:30 [INF] Route matched with {action = "AddEmployee", controller = "Employee"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] AddEmployee(EmployeeCompany.Models.Employee) on controller EmployeeCompany.Controllers.EmployeeController (EmployeeCompany).
+2025-03-03 20:08:20.892 +05:30 [INF] Executed DbCommand (76ms) [Parameters=[@p0='?' (DbType = Int32), @p1='?' (Size = 4000), @p2='?' (Size = 4000), @p3='?' (DbType = DateTime2), @p4='?' (Size = 4000), @p5='?' (Size = 4000), @p6='?' (Precision = 18) (Scale = 2) (DbType = Decimal)], CommandType='"Text"', CommandTimeout='30']
+SET IMPLICIT_TRANSACTIONS OFF;
+SET NOCOUNT ON;
+INSERT INTO [EmployeeList] ([DepartmentId], [Email], [FirstName], [HireDate], [LastName], [PhoneNumber], [Salary])
+OUTPUT INSERTED.[Id]
+VALUES (@p0, @p1, @p2, @p3, @p4, @p5, @p6);
+2025-03-03 20:08:20.932 +05:30 [INF] Executing CreatedResult, writing value of type 'EmployeeCompany.Models.Employee'.
+2025-03-03 20:08:20.933 +05:30 [INF] Executed action EmployeeCompany.Controllers.EmployeeController.AddEmployee (EmployeeCompany) in 603.7744ms
+2025-03-03 20:08:20.934 +05:30 [INF] Executed endpoint 'EmployeeCompany.Controllers.EmployeeController.AddEmployee (EmployeeCompany)'
+2025-03-03 20:08:20.934 +05:30 [INF] Request finished HTTP/2 POST https://localhost:44315/api/employees - 201 null application/json; charset=utf-8 624.9101ms
+2025-03-03 20:08:25.396 +05:30 [INF] Request starting HTTP/2 GET https://localhost:44315/api/employees - null null
+2025-03-03 20:08:25.397 +05:30 [INF] CORS policy execution successful.
+2025-03-03 20:08:25.398 +05:30 [INF] Executing endpoint 'EmployeeCompany.Controllers.EmployeeController.ViewAll (EmployeeCompany)'
+2025-03-03 20:08:25.398 +05:30 [INF] Route matched with {action = "ViewAll", controller = "Employee"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] ViewAll() on controller EmployeeCompany.Controllers.EmployeeController (EmployeeCompany).
+2025-03-03 20:08:25.430 +05:30 [INF] Executed DbCommand (3ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [e].[Id], [e].[DepartmentId], [e].[Email], [e].[FirstName], [e].[HireDate], [e].[LastName], [e].[PhoneNumber], [e].[Salary]
+FROM [EmployeeList] AS [e]
+2025-03-03 20:08:25.431 +05:30 [INF] Executing OkObjectResult, writing value of type 'System.Collections.Generic.List`1[[EmployeeCompany.Models.Employee, EmployeeCompany, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2025-03-03 20:08:25.432 +05:30 [INF] Executed action EmployeeCompany.Controllers.EmployeeController.ViewAll (EmployeeCompany) in 33.771ms
+2025-03-03 20:08:25.432 +05:30 [INF] Executed endpoint 'EmployeeCompany.Controllers.EmployeeController.ViewAll (EmployeeCompany)'
+2025-03-03 20:08:25.433 +05:30 [INF] Request finished HTTP/2 GET https://localhost:44315/api/employees - 200 null application/json; charset=utf-8 37.3412ms
+2025-03-03 20:08:25.435 +05:30 [INF] Request starting HTTP/2 GET https://localhost:44315/api/employees - null null
+2025-03-03 20:08:25.437 +05:30 [INF] CORS policy execution successful.
+2025-03-03 20:08:25.437 +05:30 [INF] Executing endpoint 'EmployeeCompany.Controllers.EmployeeController.ViewAll (EmployeeCompany)'
+2025-03-03 20:08:25.438 +05:30 [INF] Route matched with {action = "ViewAll", controller = "Employee"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] ViewAll() on controller EmployeeCompany.Controllers.EmployeeController (EmployeeCompany).
+2025-03-03 20:08:25.463 +05:30 [INF] Executed DbCommand (0ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [e].[Id], [e].[DepartmentId], [e].[Email], [e].[FirstName], [e].[HireDate], [e].[LastName], [e].[PhoneNumber], [e].[Salary]
+FROM [EmployeeList] AS [e]
+2025-03-03 20:08:25.464 +05:30 [INF] Executing OkObjectResult, writing value of type 'System.Collections.Generic.List`1[[EmployeeCompany.Models.Employee, EmployeeCompany, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2025-03-03 20:08:25.465 +05:30 [INF] Executed action EmployeeCompany.Controllers.EmployeeController.ViewAll (EmployeeCompany) in 26.8211ms
+2025-03-03 20:08:25.465 +05:30 [INF] Executed endpoint 'EmployeeCompany.Controllers.EmployeeController.ViewAll (EmployeeCompany)'
+2025-03-03 20:08:25.466 +05:30 [INF] Request finished HTTP/2 GET https://localhost:44315/api/employees - 200 null application/json; charset=utf-8 31.4144ms
+2025-03-03 20:08:35.696 +05:30 [INF] Request starting HTTP/2 GET https://localhost:44315/api/employees - null null
+2025-03-03 20:08:35.697 +05:30 [INF] CORS policy execution successful.
+2025-03-03 20:08:35.698 +05:30 [INF] Executing endpoint 'EmployeeCompany.Controllers.EmployeeController.ViewAll (EmployeeCompany)'
+2025-03-03 20:08:35.698 +05:30 [INF] Route matched with {action = "ViewAll", controller = "Employee"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] ViewAll() on controller EmployeeCompany.Controllers.EmployeeController (EmployeeCompany).
+2025-03-03 20:08:35.735 +05:30 [INF] Executed DbCommand (4ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [e].[Id], [e].[DepartmentId], [e].[Email], [e].[FirstName], [e].[HireDate], [e].[LastName], [e].[PhoneNumber], [e].[Salary]
+FROM [EmployeeList] AS [e]
+2025-03-03 20:08:35.738 +05:30 [INF] Executing OkObjectResult, writing value of type 'System.Collections.Generic.List`1[[EmployeeCompany.Models.Employee, EmployeeCompany, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2025-03-03 20:08:35.740 +05:30 [INF] Executed action EmployeeCompany.Controllers.EmployeeController.ViewAll (EmployeeCompany) in 41.1567ms
+2025-03-03 20:08:35.741 +05:30 [INF] Executed endpoint 'EmployeeCompany.Controllers.EmployeeController.ViewAll (EmployeeCompany)'
+2025-03-03 20:08:35.741 +05:30 [INF] Request finished HTTP/2 GET https://localhost:44315/api/employees - 200 null application/json; charset=utf-8 45.0523ms
+2025-03-03 20:08:35.742 +05:30 [INF] Request starting HTTP/2 GET https://localhost:44315/api/employees - null null
+2025-03-03 20:08:35.742 +05:30 [INF] CORS policy execution successful.
+2025-03-03 20:08:35.743 +05:30 [INF] Executing endpoint 'EmployeeCompany.Controllers.EmployeeController.ViewAll (EmployeeCompany)'
+2025-03-03 20:08:35.743 +05:30 [INF] Route matched with {action = "ViewAll", controller = "Employee"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] ViewAll() on controller EmployeeCompany.Controllers.EmployeeController (EmployeeCompany).
+2025-03-03 20:08:35.764 +05:30 [INF] Executed DbCommand (2ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [e].[Id], [e].[DepartmentId], [e].[Email], [e].[FirstName], [e].[HireDate], [e].[LastName], [e].[PhoneNumber], [e].[Salary]
+FROM [EmployeeList] AS [e]
+2025-03-03 20:08:35.766 +05:30 [INF] Executing OkObjectResult, writing value of type 'System.Collections.Generic.List`1[[EmployeeCompany.Models.Employee, EmployeeCompany, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2025-03-03 20:08:35.767 +05:30 [INF] Executed action EmployeeCompany.Controllers.EmployeeController.ViewAll (EmployeeCompany) in 23.7814ms
+2025-03-03 20:08:35.767 +05:30 [INF] Executed endpoint 'EmployeeCompany.Controllers.EmployeeController.ViewAll (EmployeeCompany)'
+2025-03-03 20:08:35.767 +05:30 [INF] Request finished HTTP/2 GET https://localhost:44315/api/employees - 200 null application/json; charset=utf-8 25.2737ms
+2025-03-03 20:08:45.910 +05:30 [INF] Request starting HTTP/2 OPTIONS https://localhost:44315/api/employee/37 - null null
+2025-03-03 20:08:45.911 +05:30 [INF] CORS policy execution successful.
+2025-03-03 20:08:45.912 +05:30 [INF] Request finished HTTP/2 OPTIONS https://localhost:44315/api/employee/37 - 204 null null 1.7348ms
+2025-03-03 20:08:45.916 +05:30 [INF] Request starting HTTP/2 DELETE https://localhost:44315/api/employee/37 - null null
+2025-03-03 20:08:45.916 +05:30 [INF] CORS policy execution successful.
+2025-03-03 20:08:45.917 +05:30 [INF] Executing endpoint 'EmployeeCompany.Controllers.EmployeeController.Delete (EmployeeCompany)'
+2025-03-03 20:08:45.926 +05:30 [INF] Route matched with {action = "Delete", controller = "Employee"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] Delete(Int32) on controller EmployeeCompany.Controllers.EmployeeController (EmployeeCompany).
+2025-03-03 20:08:46.194 +05:30 [INF] Executed DbCommand (3ms) [Parameters=[@__p_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [e].[Id], [e].[DepartmentId], [e].[Email], [e].[FirstName], [e].[HireDate], [e].[LastName], [e].[PhoneNumber], [e].[Salary]
+FROM [EmployeeList] AS [e]
+WHERE [e].[Id] = @__p_0
+2025-03-03 20:08:46.237 +05:30 [INF] Executed DbCommand (9ms) [Parameters=[@p0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SET IMPLICIT_TRANSACTIONS OFF;
+SET NOCOUNT ON;
+DELETE FROM [EmployeeList]
+OUTPUT 1
+WHERE [Id] = @p0;
+2025-03-03 20:08:46.253 +05:30 [INF] Executing StatusCodeResult, setting HTTP status code 204
+2025-03-03 20:08:46.254 +05:30 [INF] Executed action EmployeeCompany.Controllers.EmployeeController.Delete (EmployeeCompany) in 327.5299ms
+2025-03-03 20:08:46.254 +05:30 [INF] Executed endpoint 'EmployeeCompany.Controllers.EmployeeController.Delete (EmployeeCompany)'
+2025-03-03 20:08:46.254 +05:30 [INF] Request finished HTTP/2 DELETE https://localhost:44315/api/employee/37 - 204 null null 338.4828ms
+2025-03-03 20:08:51.273 +05:30 [INF] Request starting HTTP/2 GET https://localhost:44315/api/employees - null null
+2025-03-03 20:08:51.273 +05:30 [INF] CORS policy execution successful.
+2025-03-03 20:08:51.274 +05:30 [INF] Executing endpoint 'EmployeeCompany.Controllers.EmployeeController.ViewAll (EmployeeCompany)'
+2025-03-03 20:08:51.274 +05:30 [INF] Route matched with {action = "ViewAll", controller = "Employee"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] ViewAll() on controller EmployeeCompany.Controllers.EmployeeController (EmployeeCompany).
+2025-03-03 20:08:51.312 +05:30 [INF] Executed DbCommand (3ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [e].[Id], [e].[DepartmentId], [e].[Email], [e].[FirstName], [e].[HireDate], [e].[LastName], [e].[PhoneNumber], [e].[Salary]
+FROM [EmployeeList] AS [e]
+2025-03-03 20:08:51.313 +05:30 [INF] Executing OkObjectResult, writing value of type 'System.Collections.Generic.List`1[[EmployeeCompany.Models.Employee, EmployeeCompany, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2025-03-03 20:08:51.316 +05:30 [INF] Executed action EmployeeCompany.Controllers.EmployeeController.ViewAll (EmployeeCompany) in 41.4685ms
+2025-03-03 20:08:51.317 +05:30 [INF] Executed endpoint 'EmployeeCompany.Controllers.EmployeeController.ViewAll (EmployeeCompany)'
+2025-03-03 20:08:51.318 +05:30 [INF] Request finished HTTP/2 GET https://localhost:44315/api/employees - 200 null application/json; charset=utf-8 44.7703ms
+2025-03-03 20:08:51.321 +05:30 [INF] Request starting HTTP/2 GET https://localhost:44315/api/employees - null null
+2025-03-03 20:08:51.323 +05:30 [INF] CORS policy execution successful.
+2025-03-03 20:08:51.323 +05:30 [INF] Executing endpoint 'EmployeeCompany.Controllers.EmployeeController.ViewAll (EmployeeCompany)'
+2025-03-03 20:08:51.323 +05:30 [INF] Route matched with {action = "ViewAll", controller = "Employee"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] ViewAll() on controller EmployeeCompany.Controllers.EmployeeController (EmployeeCompany).
+2025-03-03 20:08:51.358 +05:30 [INF] Executed DbCommand (9ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [e].[Id], [e].[DepartmentId], [e].[Email], [e].[FirstName], [e].[HireDate], [e].[LastName], [e].[PhoneNumber], [e].[Salary]
+FROM [EmployeeList] AS [e]
+2025-03-03 20:08:51.359 +05:30 [INF] Executing OkObjectResult, writing value of type 'System.Collections.Generic.List`1[[EmployeeCompany.Models.Employee, EmployeeCompany, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2025-03-03 20:08:51.360 +05:30 [INF] Executed action EmployeeCompany.Controllers.EmployeeController.ViewAll (EmployeeCompany) in 36.454ms
+2025-03-03 20:08:51.360 +05:30 [INF] Executed endpoint 'EmployeeCompany.Controllers.EmployeeController.ViewAll (EmployeeCompany)'
+2025-03-03 20:08:51.361 +05:30 [INF] Request finished HTTP/2 GET https://localhost:44315/api/employees - 200 null application/json; charset=utf-8 39.9478ms

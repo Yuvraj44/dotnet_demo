@@ -10,5 +10,6 @@ namespace EmployeeCompany
 
         public DbSet<Employee> EmployeeList { get; set; }
         public DbSet<Department> DepartmentList { get; set; }
+        public DbSet<UserCredentials> UserCredentialsList { get; set; }
     }
 }

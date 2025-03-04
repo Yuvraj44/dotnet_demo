@@ -3,16 +3,16 @@
   "WorkspaceRootPath": "C:\\Users\\hello\\Downloads\\Desktop\\Visual Studio\\EmployeeCompany\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{B84C3FCB-3A0C-48CF-932E-111D651311B4}|EmployeeCompany\\EmployeeCompany.csproj|c:\\users\\hello\\downloads\\desktop\\visual studio\\employeecompany\\employeecompany\\models\\employee.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{B84C3FCB-3A0C-48CF-932E-111D651311B4}|EmployeeCompany\\EmployeeCompany.csproj|solutionrelative:employeecompany\\models\\employee.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{B84C3FCB-3A0C-48CF-932E-111D651311B4}|EmployeeCompany\\EmployeeCompany.csproj|c:\\users\\hello\\downloads\\desktop\\visual studio\\employeecompany\\employeecompany\\models\\usercredentials.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{B84C3FCB-3A0C-48CF-932E-111D651311B4}|EmployeeCompany\\EmployeeCompany.csproj|solutionrelative:employeecompany\\models\\usercredentials.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{B84C3FCB-3A0C-48CF-932E-111D651311B4}|EmployeeCompany\\EmployeeCompany.csproj|c:\\users\\hello\\downloads\\desktop\\visual studio\\employeecompany\\employeecompany\\models\\department.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{B84C3FCB-3A0C-48CF-932E-111D651311B4}|EmployeeCompany\\EmployeeCompany.csproj|solutionrelative:employeecompany\\models\\department.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\hello\\Downloads\\Desktop\\Visual Studio\\EmployeeCompany\\EmployeeCompany\\Migrations\\20250304115415_User table name1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:EmployeeCompany\\Migrations\\20250304115415_User table name1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{B84C3FCB-3A0C-48CF-932E-111D651311B4}|EmployeeCompany\\EmployeeCompany.csproj|c:\\users\\hello\\downloads\\desktop\\visual studio\\employeecompany\\employeecompany\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{B84C3FCB-3A0C-48CF-932E-111D651311B4}|EmployeeCompany\\EmployeeCompany.csproj|solutionrelative:employeecompany\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{B84C3FCB-3A0C-48CF-932E-111D651311B4}|EmployeeCompany\\EmployeeCompany.csproj|c:\\users\\hello\\downloads\\desktop\\visual studio\\employeecompany\\employeecompany\\controllers\\employeecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{B84C3FCB-3A0C-48CF-932E-111D651311B4}|EmployeeCompany\\EmployeeCompany.csproj|solutionrelative:employeecompany\\controllers\\employeecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -22,46 +22,49 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 1,
+          "SelectedChildIndex": 2,
           "Children": [
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{3ae79031-e1bc-11d0-8f78-00a0c9110057}"
+            },
             {
               "$type": "Document",
               "DocumentIndex": 1,
-              "Title": "Department.cs",
-              "DocumentMoniker": "C:\\Users\\hello\\Downloads\\Desktop\\Visual Studio\\EmployeeCompany\\EmployeeCompany\\Models\\Department.cs",
-              "RelativeDocumentMoniker": "EmployeeCompany\\Models\\Department.cs",
-              "ToolTip": "C:\\Users\\hello\\Downloads\\Desktop\\Visual Studio\\EmployeeCompany\\EmployeeCompany\\Models\\Department.cs",
-              "RelativeToolTip": "EmployeeCompany\\Models\\Department.cs",
-              "ViewState": "AgIAAAUAAAAAAAAAAAAuwA0AAAAAAAAAAAAAAA==",
+              "Title": "20250304115415_User table name1.cs",
+              "DocumentMoniker": "C:\\Users\\hello\\Downloads\\Desktop\\Visual Studio\\EmployeeCompany\\EmployeeCompany\\Migrations\\20250304115415_User table name1.cs",
+              "RelativeDocumentMoniker": "EmployeeCompany\\Migrations\\20250304115415_User table name1.cs",
+              "ToolTip": "C:\\Users\\hello\\Downloads\\Desktop\\Visual Studio\\EmployeeCompany\\EmployeeCompany\\Migrations\\20250304115415_User table name1.cs",
+              "RelativeToolTip": "EmployeeCompany\\Migrations\\20250304115415_User table name1.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-02-23T14:05:54.974Z",
-              "IsPinned": true,
+              "WhenOpened": "2025-03-04T11:54:15.283Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 0,
-              "Title": "Employee.cs",
-              "DocumentMoniker": "C:\\Users\\hello\\Downloads\\Desktop\\Visual Studio\\EmployeeCompany\\EmployeeCompany\\Models\\Employee.cs",
-              "RelativeDocumentMoniker": "EmployeeCompany\\Models\\Employee.cs",
-              "ToolTip": "C:\\Users\\hello\\Downloads\\Desktop\\Visual Studio\\EmployeeCompany\\EmployeeCompany\\Models\\Employee.cs",
-              "RelativeToolTip": "EmployeeCompany\\Models\\Employee.cs",
-              "ViewState": "AgIAAA4AAAAAAAAAAAA3wBwAAAAtAAAAAAAAAA==",
+              "Title": "UserCredentials.cs",
+              "DocumentMoniker": "C:\\Users\\hello\\Downloads\\Desktop\\Visual Studio\\EmployeeCompany\\EmployeeCompany\\Models\\UserCredentials.cs",
+              "RelativeDocumentMoniker": "EmployeeCompany\\Models\\UserCredentials.cs",
+              "ToolTip": "C:\\Users\\hello\\Downloads\\Desktop\\Visual Studio\\EmployeeCompany\\EmployeeCompany\\Models\\UserCredentials.cs",
+              "RelativeToolTip": "EmployeeCompany\\Models\\UserCredentials.cs",
+              "ViewState": "AgIAAAUAAAAAAAAAAAAswBsAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-02-23T14:05:28.372Z",
+              "WhenOpened": "2025-03-04T11:50:27.246Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 2,
-              "Title": "Program.cs",
-              "DocumentMoniker": "C:\\Users\\hello\\Downloads\\Desktop\\Visual Studio\\EmployeeCompany\\EmployeeCompany\\Program.cs",
-              "RelativeDocumentMoniker": "EmployeeCompany\\Program.cs",
-              "ToolTip": "C:\\Users\\hello\\Downloads\\Desktop\\Visual Studio\\EmployeeCompany\\EmployeeCompany\\Program.cs",
-              "RelativeToolTip": "EmployeeCompany\\Program.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAACgAAAAVAAAAAAAAAA==",
+              "Title": "EmployeeController.cs",
+              "DocumentMoniker": "C:\\Users\\hello\\Downloads\\Desktop\\Visual Studio\\EmployeeCompany\\EmployeeCompany\\Controllers\\EmployeeController.cs",
+              "RelativeDocumentMoniker": "EmployeeCompany\\Controllers\\EmployeeController.cs",
+              "ToolTip": "C:\\Users\\hello\\Downloads\\Desktop\\Visual Studio\\EmployeeCompany\\EmployeeCompany\\Controllers\\EmployeeController.cs",
+              "RelativeToolTip": "EmployeeCompany\\Controllers\\EmployeeController.cs",
+              "ViewState": "AgIAAHcAAAAAAAAAAAAswHwAAAAKAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-02-22T13:16:04.656Z",
+              "WhenOpened": "2025-03-04T11:50:29.079Z",
               "EditorCaption": ""
             }
           ]

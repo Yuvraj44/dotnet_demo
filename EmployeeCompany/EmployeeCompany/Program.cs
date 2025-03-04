@@ -15,6 +15,14 @@ builder.Services.AddDbContext<EmployeeCompany.EmployeeContext>(options =>
     options.UseSqlServer(
         builder.Configuration.GetConnectionString("DefaultConnectionString")));
 
+builder.Services.AddCors(options =>
+{
+    options.AddPolicy("AllowAll",
+        policy => policy.AllowAnyOrigin()
+                       .AllowAnyMethod()
+                       .AllowAnyHeader());
+});
+
 
 Log.Logger = new LoggerConfiguration()
     .MinimumLevel.Information()
@@ -39,5 +47,7 @@ app.UseHttpsRedirection();
 app.UseAuthorization();
 
 app.MapControllers();
+
+app.UseCors("AllowAll");
 
 app.Run();
